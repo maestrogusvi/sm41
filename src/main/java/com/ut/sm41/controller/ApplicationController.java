@@ -4,14 +4,22 @@ import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
+@RequestMapping("/api/v1")
 public class ApplicationController {
 
     @Autowired
     ApplicationService applicationService;
 
-    @GetMapping("/sm/inicio")
+    @GetMapping("/")
     public String inicio(){
         return applicationService.firstService();
+    }
+
+    @GetMapping("/testHttp")
+    public String testHttp() throws IOException {
+        return applicationService.testHttp();
     }
 }
