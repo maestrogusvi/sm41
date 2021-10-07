@@ -2,6 +2,7 @@ package com.ut.sm41.service;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.ut.sm41.dto.BeeceptorDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,10 +18,13 @@ public class ApplicationService {
         return "service";
     }
 
-    public String testHttp() throws IOException {
+    public BeeceptorDTO testHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm42.free.beeceptor.com/api/v1/","GET",null,null,"json",null, null));
-
-        return json.get("status").toString();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        BeeceptorDTO beeceptorDTO = new BeeceptorDTO();
+        beeceptorDTO.setCode(json.get("code").getAsString());
+        beeceptorDTO.setMessage(json.get("message").getAsString());
+        beeceptorDTO.setStatus(json.get("status").getAsString());
+        return beeceptorDTO;
     }
 }
