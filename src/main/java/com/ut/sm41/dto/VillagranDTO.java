@@ -1,6 +1,7 @@
 package com.ut.sm41.dto;
 
 public class VillagranDTO {
+
     int id;
     String name;
 
@@ -23,3 +24,4 @@ public class VillagranDTO {
         this.name = name;
     }
 }
+
