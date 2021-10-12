@@ -6,6 +6,7 @@ public class ZapataDTO {
         String name;
 
         public ZapataDTO() {
+
         }
 
         public int getId() {
