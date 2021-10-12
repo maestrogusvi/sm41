@@ -7,6 +7,7 @@ public class ZapataDTO {
 
         public ZapataDTO() {
 
+
         }
 
         public int getId() {
