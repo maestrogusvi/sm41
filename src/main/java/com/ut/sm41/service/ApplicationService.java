@@ -43,10 +43,10 @@ public class ApplicationService {
     public BadilloDTO BadilloHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://badillosm41.free.beeceptor.com","GET",null,null,"json",null, null));
-        BadilloDTO BadilloDTO = new BadilloDTO();
-        BadilloDTO.setName(json.get("name").getAsString());
-        BadilloDTO.setId(json.get("id").getAsInt());
-        BadilloDTO.setStatus(json.get("status").getAsString());
-        return BadilloDTO;
+        BadilloDTO badilloDTO = new BadilloDTO();
+        badilloDTO.setName(json.get("name").getAsString());
+        badilloDTO.setId(json.get("id").getAsInt());
+        badilloDTO.setStatus(json.get("status").getAsString());
+        return badilloDTO;
     }
 }
