@@ -33,5 +33,4 @@ public class BeeceptorDTO {
         this.message = message;
     }
 
-
 }

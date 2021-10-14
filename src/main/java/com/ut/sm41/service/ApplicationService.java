@@ -38,4 +38,5 @@ public class ApplicationService {
         zapataDTO.setStatus(json.get("status").getAsString());
         return zapataDTO;
     }
+
 }
