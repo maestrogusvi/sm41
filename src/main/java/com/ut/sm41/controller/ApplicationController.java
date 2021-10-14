@@ -24,4 +24,8 @@ public class ApplicationController {
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
     }
+    @GetMapping("/BautistaHttp")
+    public BautistaDTO BautistaHttp() throws IOException {
+        return applicationService.BautistaHttp();
+    }
 }
