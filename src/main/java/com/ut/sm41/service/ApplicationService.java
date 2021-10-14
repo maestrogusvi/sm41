@@ -27,4 +27,14 @@ public class ApplicationService {
         beeceptorDTO.setStatus(json.get("status").getAsString());
         return beeceptorDTO;
     }
+
+    public EstradaDTO testHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://estrada.free.beeceptor.com","GET",null,null,"json",null, null));
+        EstradaDTO estradaDTO = new EstradaDTO();
+        estradaDTO.setCode(json.get("name").getAsString());
+        estradaDTO.setMessage(json.get("id").getAsInt());
+        estradaDTO.setStatus(json.get("status").getAsString());
+        return estradaDTO;
+    }
 }

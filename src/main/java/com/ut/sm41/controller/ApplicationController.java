@@ -24,4 +24,9 @@ public class ApplicationController {
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
     }
+
+    @GetMapping("/estradaHttp")
+    public EstradaDTO estradaHttp() throws IOException {
+        return applicationService.estradaHttp();
+    }
 }

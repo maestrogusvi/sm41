@@ -4,6 +4,7 @@ public class EstradaDTO {
 
     int id;
     String name;
+    String status;
 
     public EstradaDTO() {}
 
@@ -15,4 +16,11 @@ public class EstradaDTO {
 
     public void setName(String name) { this.name = name; }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
