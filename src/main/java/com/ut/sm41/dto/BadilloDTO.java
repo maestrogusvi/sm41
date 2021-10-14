@@ -4,6 +4,7 @@ public class BadilloDTO {
 
     int id;
     String name;
+    String Status;
 
     public BadilloDTO() {
     }
@@ -22,5 +23,13 @@ public class BadilloDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
     }
 }

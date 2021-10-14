@@ -1,6 +1,7 @@
 package com.ut.sm41.controller;
 
 import com.google.gson.JsonObject;
+import com.ut.sm41.dto.BadilloDTO;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,10 @@ public class ApplicationController {
     @GetMapping("/testHttp")
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
+    }
+
+    @GetMapping("/BadilloHttp")
+    public BadilloDTO BadilloHttp() throws IOException {
+        return applicationService.BadilloHttp();
     }
 }
