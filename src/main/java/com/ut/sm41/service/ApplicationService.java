@@ -20,11 +20,21 @@ public class ApplicationService {
 
     public BeeceptorDTO testHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com","GET",null,null,"json",null, null));
         BeeceptorDTO beeceptorDTO = new BeeceptorDTO();
         beeceptorDTO.setCode(json.get("code").getAsString());
         beeceptorDTO.setMessage(json.get("message").getAsString());
         beeceptorDTO.setStatus(json.get("status").getAsString());
         return beeceptorDTO;
+    }
+
+    public VazquezDTO vazquezHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com","GET",null,null,"json",null, null));
+        VazquezDTO vazquezDTO = new VazquezDTO();
+        VazquezDTO.setName(json.get("name").getAsString());
+        VazquezDTO.setId(json.get("id").getAsInt());
+        VazquezDTO.setStatus(json.get("status").getAsString());
+        return VazquezDTO;
     }
 }
