@@ -1,0 +1,108 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>HELP.md\r\ntarget/\r\n!.mvn/wrapper/maven-wrapper.jar\r\n!**/src/main/**/target/\r\n!**/src/test/**/target/\r\n\r\n### STS ###\r\n.apt_generated\r\n.classpath\r\n.factorypath\r\n.project\r\n.settings\r\n.springBeans\r\n.sts4-cache\r\n\r\n### IntelliJ IDEA ###\r\n.idea\r\n*.iws\r\n*.iml\r\n*.ipr\r\n\r\n### NetBeans ###\r\n/nbproject/private/\r\n/nbbuild/\r\n/dist/\r\n/nbdist/\r\n/.nb-gradle/\r\nbuild/\r\n!**/src/main/**/build/\r\n!**/src/test/**/build/\r\n\r\n### VS Code ###\r\n.vscode/\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 7cefd40d044dcd039d0329f731fc4ec001d17203)
++++ b/.gitignore	(date 1634095429960)
+@@ -1,33 +1,23 @@
+-HELP.md
+-target/
+-!.mvn/wrapper/maven-wrapper.jar
+-!**/src/main/**/target/
+-!**/src/test/**/target/
++# Compiled class file
++*.class
+ 
+-### STS ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
++# Log file
++*.log
+ 
+-### IntelliJ IDEA ###
+-.idea
+-*.iws
+-*.iml
+-*.ipr
++# BlueJ files
++*.ctxt
+ 
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-build/
+-!**/src/main/**/build/
+-!**/src/test/**/build/
++# Mobile Tools for Java (J2ME)
++.mtj.tmp/
+ 
+-### VS Code ###
+-.vscode/
++# Package Files #
++*.jar
++*.war
++*.nar
++*.ear
++*.zip
++*.tar.gz
++*.rar
++
++# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
++hs_err_pid*
+Index: src/main/java/com/ut/sm41/dto/BeeceptorDTO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ut/sm41/dto/BeeceptorDTO.java b/src/main/java/com/ut/sm41/dto/BeeceptorDTO.java
+new file mode 100644
+--- /dev/null	(date 1634096568132)
++++ b/src/main/java/com/ut/sm41/dto/BeeceptorDTO.java	(date 1634096568132)
+@@ -0,0 +1,35 @@
++package com.ut.sm41.dto;
++
++public class BeeceptorDTO {
++
++    String status;
++    String code;
++    String message;
++
++    public BeeceptorDTO() {
++    }
++
++    public String getStatus() {
++        return status;
++    }
++
++    public void setStatus(String status) {
++        this.status = status;
++    }
++
++    public String getCode() {
++        return code;
++    }
++
++    public void setCode(String code) {
++        this.code = code;
++    }
++
++    public String getMessage() {
++        return message;
++    }
++
++    public void setMessage(String message) {
++        this.message = message;
++    }
++}
