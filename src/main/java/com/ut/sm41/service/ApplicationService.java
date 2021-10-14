@@ -3,6 +3,7 @@ package com.ut.sm41.service;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.ZapataDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,15 @@ public class ApplicationService {
         beeceptorDTO.setMessage(json.get("message").getAsString());
         beeceptorDTO.setStatus(json.get("status").getAsString());
         return beeceptorDTO;
+    }
+
+    public ZapataDTO zapataHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://zapatasm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        ZapataDTO zapataDTO = new ZapataDTO();
+        zapataDTO.setName(json.get("name").getAsString());
+        zapataDTO.setId(json.get("id").getAsInt());
+        zapataDTO.setStatus(json.get("status").getAsString());
+        return zapataDTO;
     }
 }
