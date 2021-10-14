@@ -4,6 +4,7 @@ public class CaamalDTO {
 
     int id;
     String name;
+    String status;
 
     public CaamalDTO() {
 
@@ -13,9 +14,7 @@ public class CaamalDTO {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(int id) {this.id = id;}
 
     public String getName() {
         return name;
@@ -23,5 +22,13 @@ public class CaamalDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
