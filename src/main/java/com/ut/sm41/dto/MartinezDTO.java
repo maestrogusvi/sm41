@@ -2,7 +2,7 @@ package com.ut.sm41.dto;
 
 public class MartinezDTO {
     int id;
-    string name;
+    String name;
 
     public MartinezDTO() {
     }
@@ -15,11 +15,11 @@ public class MartinezDTO {
         this.id = id;
     }
 
-    public string getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(string name) {
+    public void setName(String name) {
         this.name = name;
     }
 }

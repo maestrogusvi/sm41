@@ -3,6 +3,7 @@ package com.ut.sm41.service;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.VazquezDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,9 +33,9 @@ public class ApplicationService {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com","GET",null,null,"json",null, null));
         VazquezDTO vazquezDTO = new VazquezDTO();
-        VazquezDTO.setName(json.get("name").getAsString());
-        VazquezDTO.setId(json.get("id").getAsInt());
-        VazquezDTO.setStatus(json.get("status").getAsString());
-        return VazquezDTO;
+        vazquezDTO.setName(json.get("name").getAsString());
+        vazquezDTO.setId(json.get("id").getAsInt());
+        vazquezDTO.setStatus(json.get("status").getAsString());
+        return vazquezDTO;
     }
 }
