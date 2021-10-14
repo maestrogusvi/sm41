@@ -25,6 +25,7 @@ public class ApplicationController {
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
     }
+
     @GetMapping("/zapataHttp")
     public ZapataDTO zapataHttp() throws IOException {
         return applicationService.zapataHttp();
