@@ -1,6 +1,7 @@
 package com.ut.sm41.controller;
 
 import com.google.gson.JsonObject;
+import com.ut.sm41.dto.BadilloDTO;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.dto.MartinezDTO;
 import com.ut.sm41.service.ApplicationService;
