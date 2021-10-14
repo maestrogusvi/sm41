@@ -41,7 +41,7 @@ public class ApplicationService {
 
     public MartinezDTO martinezHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://pavelsm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://batunsm41.free.beeceptor.com","GET",null,null,"json",null, null));
         MartinezDTO martinezDTO = new MartinezDTO();
         martinezDTO.setName(json.get("name").getAsString());
         martinezDTO.setId(json.get("id").getAsInt());
