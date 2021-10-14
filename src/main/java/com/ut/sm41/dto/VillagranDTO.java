@@ -4,6 +4,7 @@ public class VillagranDTO {
 
     int id;
     String name;
+    String status;
 
     public VillagranDTO() {
     }
@@ -22,6 +23,13 @@ public class VillagranDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
 

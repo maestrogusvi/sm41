@@ -3,6 +3,7 @@ package com.ut.sm41.controller;
 import com.google.gson.JsonObject;
 import com.ut.sm41.dto.AnotaDTO;
 import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.VillagranDTO;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,5 +30,9 @@ public class ApplicationController {
     @GetMapping("/AnotaHttp")
     public AnotaDTO AnotaHttp() throws IOException {
         return applicationService.AnotaHttp();
+    }
+    @GetMapping("/VillagranHttp")
+    public VillagranDTO VillagranHttp() throws IOException {
+        return applicationService.VillagranHttp();
     }
 }

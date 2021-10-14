@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.AnotaDTO;
 import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.VillagranDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +37,14 @@ public class ApplicationService {
         AnotaDTO.setId(json.get("id").getAsInt());
         AnotaDTO.setStatus(json.get("status").getAsString());
         return AnotaDTO;
+    }
+    public VillagranDTO VillagranHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        VillagranDTO VillagranDTO = new VillagranDTO();
+        VillagranDTO.setName(json.get("name").getAsString());
+        VillagranDTO.setId(json.get("id").getAsInt());
+        VillagranDTO.setStatus(json.get("status").getAsString());
+        return VillagranDTO;
     }
 }
