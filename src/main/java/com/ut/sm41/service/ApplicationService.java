@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.AnotaDTO;
 import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.SilvaDTO;
 import com.ut.sm41.dto.VillagranDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,5 +47,14 @@ public class ApplicationService {
         VillagranDTO.setId(json.get("id").getAsInt());
         VillagranDTO.setStatus(json.get("status").getAsString());
         return VillagranDTO;
+    }
+    public SilvaDTO SilvaHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita.free.beeceptor.com","GET",null,null,"json",null, null));
+        SilvaDTO silvaDTO = new SilvaDTO();
+        silvaDTO.setName(json.get("name").getAsString());
+        silvaDTO.setId(json.get("id").getAsInt());
+        silvaDTO.setStatus(json.get("status").getAsString());
+        return silvaDTO;
     }
 }
