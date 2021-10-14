@@ -2,7 +2,6 @@ package com.ut.sm41.controller;
 
 import com.google.gson.JsonObject;
 import com.ut.sm41.dto.BeeceptorDTO;
-import com.ut.sm41.dto.ZapataDTO;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,5 +28,8 @@ public class ApplicationController {
     @GetMapping("/zapataHttp")
     public ZapataDTO zapataHttp() throws IOException {
         return applicationService.zapataHttp();
+    @GetMapping("/BautistaHttp")
+    public BautistaDTO BautistaHttp() throws IOException {
+        return applicationService.bautistaHttp();
     }
 }
