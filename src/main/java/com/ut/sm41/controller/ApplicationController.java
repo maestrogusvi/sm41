@@ -2,6 +2,8 @@ package com.ut.sm41.controller;
 
 import com.google.gson.JsonObject;
 import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.EstradaDTO;
+import com.ut.sm41.dto.RamirezDTO;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,8 +32,8 @@ public class ApplicationController {
         return applicationService.estradaHttp();
     }
 
-    @GetMapping("/christopherHttp")
-    public RamirezDTO christopherHttp() throws IOException {
-        return applicationService.christopherHttp();
+    @GetMapping("/ramirezHttp")
+    public RamirezDTO ramirezHttp() throws IOException {
+        return applicationService.ramirezHttp();
     }
 }

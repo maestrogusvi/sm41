@@ -3,6 +3,8 @@ package com.ut.sm41.service;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.EstradaDTO;
+import com.ut.sm41.dto.RamirezDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,22 +30,22 @@ public class ApplicationService {
         return beeceptorDTO;
     }
 
-    public EstradaDTO testHttp() throws IOException {
+    public EstradaDTO estradaHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://estrada.free.beeceptor.com","GET",null,null,"json",null, null));
         EstradaDTO estradaDTO = new EstradaDTO();
-        estradaDTO.setCode(json.get("name").getAsString());
-        estradaDTO.setMessage(json.get("id").getAsInt());
+        estradaDTO.setName(json.get("name").getAsString());
+        estradaDTO.setId(json.get("id").getAsInt());
         estradaDTO.setStatus(json.get("status").getAsString());
         return estradaDTO;
     }
 
-    public RamirezDTO testHttp() throws IOException {
+    public RamirezDTO ramirezHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://christopher.free.beeceptor.com","GET",null,null,"json",null, null));
         RamirezDTO ramirezDTO = new RamirezDTO();
-        ramirezDTO.setCode(json.get("name").getAsString());
-        ramirezDTO.setMessage(json.get("id").getAsInt());
+        ramirezDTO.setName(json.get("name").getAsString());
+        ramirezDTO.setId(json.get("id").getAsInt());
         ramirezDTO.setStatus(json.get("status").getAsString());
         return ramirezDTO;
     }
