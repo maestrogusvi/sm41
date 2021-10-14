@@ -30,11 +30,11 @@ public class ApplicationService {
     }
     public BautistaDTO BautistaHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://bautistasm41.free.beeceptor.com","GET",null,null,"json",null, null));
-        BautistaDTO BautistaDTO = new BautistaDTO();
-        BautistaDTO.setId(json.get("id").getAsInt();
-        BautistaDTO.setName(json.get("name").getAsString());
-        BautistaDTO.setStatus(json.get("status").getAsString());
-        return BautistaDTO;
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        BautistaDTO bautistaDTO = new BautistaDTO();
+        bautistaDTO.setId(json.get("id").getAsInt());
+        bautistaDTO.setName(json.get("name").getAsString());
+        bautistaDTO.setStatus(json.get("status").getAsString());
+        return bautistaDTO;
     }
 }
