@@ -4,7 +4,7 @@ public class RamirezDTO {
 
     int id;
     String name;
-    String status;
+
 
     public RamirezDTO() {
     }
@@ -25,11 +25,4 @@ public class RamirezDTO {
         this.name = name;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }
