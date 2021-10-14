@@ -1,12 +1,12 @@
 package com.ut.sm41.dto;
 
-public class MartinezDTO {
+public class BadilloDTO {
 
     int id;
     String name;
-    String status;
+    String Status;
 
-    public MartinezDTO() {
+    public BadilloDTO() {
     }
 
     public int getId() {
@@ -26,10 +26,10 @@ public class MartinezDTO {
     }
 
     public String getStatus() {
-        return status;
+        return Status;
     }
 
     public void setStatus(String status) {
-        this.status = status;
+        Status = status;
     }
 }
