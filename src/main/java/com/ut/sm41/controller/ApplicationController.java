@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.dto.ZapataDTO;
 import com.ut.sm41.dto.BautistaDTO;
+import com.ut.sm41.dto.AriasDTO;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -36,4 +37,10 @@ public class ApplicationController {
     public BautistaDTO BautistaHttp() throws IOException {
         return applicationService.bautistaHttp();
     }
+
+    @GetMapping("/ariasHttp")
+    public AriasDTO ariasHttp() throws IOException {
+        return applicationService.ariasHttp();
+    }
+
 }

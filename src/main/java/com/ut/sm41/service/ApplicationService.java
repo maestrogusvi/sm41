@@ -6,6 +6,7 @@ import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.dto.ZapataDTO;
 import com.ut.sm41.dto.BautistaDTO;
+import com.ut.sm41.dto.AriasDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -49,5 +50,15 @@ public class ApplicationService {
         bautistaDTO.setName(json.get("name").getAsString());
         bautistaDTO.setStatus(json.get("status").getAsString());
         return bautistaDTO;
+    }
+
+        public AriasDTO ariasHttp() throws IOException{
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ariasmaysm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        AriasDTO ariasDTO = new AriasDTO();
+        ariasDTO.setId(json.get("id").getAsInt());
+        ariasDTO.setName(json.get("name").getAsString());
+        ariasDTO.setStatus(json.get("status").getAsString());
+        return ariasDTO;
     }
 }
