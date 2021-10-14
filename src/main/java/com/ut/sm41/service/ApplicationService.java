@@ -37,4 +37,14 @@ public class ApplicationService {
         estradaDTO.setStatus(json.get("status").getAsString());
         return estradaDTO;
     }
+
+    public RamirezDTO testHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://christopher.free.beeceptor.com","GET",null,null,"json",null, null));
+        RamirezDTO ramirezDTO = new RamirezDTO();
+        ramirezDTO.setCode(json.get("name").getAsString());
+        ramirezDTO.setMessage(json.get("id").getAsInt());
+        ramirezDTO.setStatus(json.get("status").getAsString());
+        return ramirezDTO;
+    }
 }

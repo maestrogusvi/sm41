@@ -29,4 +29,9 @@ public class ApplicationController {
     public EstradaDTO estradaHttp() throws IOException {
         return applicationService.estradaHttp();
     }
+
+    @GetMapping("/christopherHttp")
+    public RamirezDTO christopherHttp() throws IOException {
+        return applicationService.christopherHttp();
+    }
 }
