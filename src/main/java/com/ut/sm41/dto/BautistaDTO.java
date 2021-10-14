@@ -23,4 +23,7 @@ public class BautistaDTO {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void setStatus(String status) {
+    }
 }
