@@ -39,9 +39,9 @@ public class ApplicationController {
     public AnotaDTO AnotaHttp() throws IOException {
         return applicationService.AnotaHttp();
     }
-    @GetMapping("/VillagranHttp")
-    public VillagranDTO VillagranHttp() throws IOException {
-        return applicationService.VillagranHttp();
+    @GetMapping("/villagranHttp")
+    public VillagranDTO villagranHttp() throws IOException {
+        return applicationService.villagranHttp();
     }
     @GetMapping("/SilvaHttp")
     public SilvaDTO SilvaHttp() throws IOException {

@@ -42,7 +42,7 @@ public class ApplicationService {
         anotaDTO.setStatus(json.get("status").getAsString());
         return anotaDTO;
     }
-    public VillagranDTO VillagranHttp() throws IOException {
+    public VillagranDTO villagranHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com","GET",null,null,"json",null, null));
         VillagranDTO villagranDTO = new VillagranDTO();
