@@ -61,7 +61,7 @@ public class ApplicationService {
         return silvaDTO;
     }
 
-    public CaamalDTO CaamalHttp() throws IOException {
+    public CaamalDTO caamalHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com", "GET", null, null, "json", null, null));
         CaamalDTO caamalDTO = new CaamalDTO();
