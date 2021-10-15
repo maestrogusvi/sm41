@@ -4,6 +4,7 @@ public class TunDTO {
 
     int id;
     String name;
+    String status;
 
     public TunDTO() {
     }
@@ -22,5 +23,13 @@ public class TunDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -4,6 +4,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.exception.BusinessException;
+import com.ut.sm41.dto.CaamalDTO;
+import com.ut.sm41.dto.TunDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -42,5 +44,15 @@ public class ApplicationService {
         caamalDTO.setId(json.get("id").getAsInt());
         caamalDTO.setStatus(json.get("status").getAsString());
         return caamalDTO;
+    }
+
+    public TunDTO tunHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41tun.free.beeceptor.com","GET",null,null,"json",null, null));
+        TunDTO tunDTO = new TunDTO();
+        tunDTO.setName(json.get("name").getAsString());
+        tunDTO.setId(json.get("id").getAsInt());
+        tunDTO.setStatus(json.get("status").getAsString());
+        return tunDTO;
     }
 }
