@@ -33,7 +33,7 @@ public class ApplicationService {
         beeceptorDTO.setStatus(json.get("status").getAsString());
         return beeceptorDTO;
     }
-    public AnotaDTO AnotaHttp() throws IOException {
+    public AnotaDTO anotaHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com","GET",null,null,"json",null, null));
         AnotaDTO anotaDTO = new AnotaDTO();
