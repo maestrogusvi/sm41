@@ -64,11 +64,11 @@ public class ApplicationService {
     public CaamalDTO CaamalHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com", "GET", null, null, "json", null, null));
-        CaamalDTO CaamalDTO = new CaamalDTO();
-        CaamalDTO.setName(json.get("name").getAsString());
-        CaamalDTO.setId(json.get("id").getAsInt());
-        CaamalDTO.setStatus(json.get("status").getAsString());
-        return CaamalDTO;
+        CaamalDTO caamalDTO = new CaamalDTO();
+        caamalDTO.setName(json.get("name").getAsString());
+        caamalDTO.setId(json.get("id").getAsInt());
+        caamalDTO.setStatus(json.get("status").getAsString());
+        return caamalDTO;
     }
 
 
