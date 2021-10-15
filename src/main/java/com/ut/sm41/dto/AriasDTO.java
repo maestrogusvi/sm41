@@ -21,12 +21,12 @@ public class AriasDTO {
         return name;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public void setStatus(String status) {
