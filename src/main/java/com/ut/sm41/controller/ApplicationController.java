@@ -49,7 +49,7 @@ public class ApplicationController {
     }
 
     @GetMapping("/caamalHttp")
-    public CaamalDTO CaamalHttp() throws IOException {
+    public CaamalDTO caamalHttp() throws IOException {
         return applicationService.caamalHttp();
     }
 
