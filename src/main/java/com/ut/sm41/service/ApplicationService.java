@@ -3,7 +3,6 @@ package com.ut.sm41.service;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.*;
-import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.exception.BusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -51,7 +50,7 @@ public class ApplicationService {
         villagranDTO.setStatus(json.get("status").getAsString());
         return villagranDTO;
     }
-    public SilvaDTO SilvaHttp() throws IOException {
+    public SilvaDTO silvaHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita.free.beeceptor.com","GET",null,null,"json",null, null));
         SilvaDTO silvaDTO = new SilvaDTO();

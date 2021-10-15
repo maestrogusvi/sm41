@@ -40,9 +40,9 @@ public class ApplicationController {
     public VillagranDTO villagranHttp() throws IOException {
         return applicationService.villagranHttp();
     }
-    @GetMapping("/SilvaHttp")
-    public SilvaDTO SilvaHttp() throws IOException {
-        return applicationService.SilvaHttp();
+    @GetMapping("/silvaHttp")
+    public SilvaDTO silvaHttp() throws IOException {
+        return applicationService.silvaHttp();
     }
 
     @GetMapping("/caamalHttp")
