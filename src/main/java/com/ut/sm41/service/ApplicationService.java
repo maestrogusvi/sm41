@@ -3,6 +3,7 @@ package com.ut.sm41.service;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.MontejoDTO;
 import com.ut.sm41.exception.BusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -51,5 +52,14 @@ public class ApplicationService {
         romanoDTO.setId(json.get("id").getAsInt());
         romanoDTO.setStatus(json.get("status").getAsString());
         return romanoDTO;
+    }
+    public MontejoDTO montejoHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com","GET",null,null,"json",null, null));
+        MontejoDTO montejoDTO = new MontejoDTO();
+        montejoDTO.setName(json.get("name").getAsString());
+        montejoDTO.setId(json.get("id").getAsInt());
+        montejoDTO.setStatus(json.get("status").getAsString());
+        return montejoDTO;
     }
 }
