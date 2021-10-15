@@ -4,6 +4,7 @@ public class MontejoDTO {
 
     int id;
     String name;
+    String status;
 
     public MontejoDTO() {
     }
@@ -20,7 +21,13 @@ public class MontejoDTO {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String name) {this.name = name;}
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
