@@ -43,4 +43,8 @@ public class ApplicationController {
         return applicationService.ariasHttp();
     }
 
+    @GetMapping("/sotoHttp")
+    public SotoDTO sotoHttp() throws IOException {
+        return applicationService.sotoHttp();
+    }
 }

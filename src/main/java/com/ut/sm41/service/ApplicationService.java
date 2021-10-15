@@ -3,10 +3,7 @@ package com.ut.sm41.service;
 import ch.qos.logback.core.pattern.parser.Parser;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.ut.sm41.dto.BeeceptorDTO;
-import com.ut.sm41.dto.ZapataDTO;
-import com.ut.sm41.dto.BautistaDTO;
-import com.ut.sm41.dto.AriasDTO;
+import com.ut.sm41.dto.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,5 +57,15 @@ public class ApplicationService {
         ariasDTO.setName(json.get("name").getAsString());
         ariasDTO.setStatus(json.get("status").getAsString());
         return ariasDTO;
+    }
+
+        public SotoDTO sotoHttp() throws IOException{
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://miner512.free.beeceptor.com","GET",null,null,"json",null, null));
+        SotoDTO sotoDTO = new SotoDTO();
+        sotoDTO.setId(json.get("id").getAsInt());
+        sotoDTO.setName(json.get("name").getAsString());
+        sotoDTO.setStatus(json.get("status").getAsString());
+        return sotoDTO;
     }
 }
