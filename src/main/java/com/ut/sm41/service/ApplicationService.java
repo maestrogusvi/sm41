@@ -53,6 +53,7 @@ public class ApplicationService {
         romanoDTO.setStatus(json.get("status").getAsString());
         return romanoDTO;
     }
+
     public MontejoDTO montejoHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com","GET",null,null,"json",null, null));
