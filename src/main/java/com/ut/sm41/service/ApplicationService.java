@@ -33,11 +33,11 @@ public class ApplicationService {
     public AnotaDTO AnotaHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com","GET",null,null,"json",null, null));
-        AnotaDTO AnotaDTO = new AnotaDTO();
-        AnotaDTO.setName(json.get("name").getAsString());
-        AnotaDTO.setId(json.get("id").getAsInt());
-        AnotaDTO.setStatus(json.get("status").getAsString());
-        return AnotaDTO;
+        AnotaDTO anotaDTO = new AnotaDTO();
+        anotaDTO.setName(json.get("name").getAsString());
+        anotaDTO.setId(json.get("id").getAsInt());
+        anotaDTO.setStatus(json.get("status").getAsString());
+        return anotaDTO;
     }
     public VillagranDTO VillagranHttp() throws IOException {
         JsonParser parser = new JsonParser();
