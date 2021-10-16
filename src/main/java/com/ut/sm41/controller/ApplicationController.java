@@ -1,10 +1,8 @@
 package com.ut.sm41.controller;
 
 import com.google.gson.JsonObject;
-import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
-import com.ut.sm41.dto.CaamalDTO;
-import com.ut.sm41.dto.TunDTO;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,5 +41,10 @@ public class ApplicationController {
     @GetMapping("/tunHttp")
     public TunDTO tunHttp() throws IOException {
         return applicationService.tunHttp();
+    }
+
+    @GetMapping("/dominguezHttp")
+    public DominguezDTO dominguezHttp() throws IOException {
+        return applicationService.dominguezHttp();
     }
 }

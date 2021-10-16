@@ -2,10 +2,8 @@ package com.ut.sm41.service;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.ut.sm41.dto.BeeceptorDTO;
+import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
-import com.ut.sm41.dto.CaamalDTO;
-import com.ut.sm41.dto.TunDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -54,5 +52,15 @@ public class ApplicationService {
         tunDTO.setId(json.get("id").getAsInt());
         tunDTO.setStatus(json.get("status").getAsString());
         return tunDTO;
+    }
+
+    public DominguezDTO dominguezHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ernestodp11.free.beeceptor.com","GET",null,null,"json",null, null));
+        DominguezDTO dominguezDTO = new DominguezDTO();
+        dominguezDTO.setName(json.get("name").getAsString());
+        dominguezDTO.setId(json.get("id").getAsInt());
+        dominguezDTO.setStatus(json.get("status").getAsString());
+        return dominguezDTO;
     }
 }
