@@ -35,12 +35,12 @@ public class ApplicationController {
         return applicationService.testHttp();
     }
 
-    @GetMapping("/testHttp")
+    @GetMapping("/caamalHttp")
     public CaamalDTO caamalHttp() throws IOException {
         return applicationService.caamalHttp();
     }
 
-    @GetMapping("/testHttp")
+    @GetMapping("/tunHttp")
     public TunDTO tunHttp() throws IOException {
         return applicationService.tunHttp();
     }

@@ -28,7 +28,7 @@ public class ApplicationService {
         if(json.get("code")== null){
             throw new BusinessException("Code doesn´t exist", HttpStatus.FORBIDDEN);
         }
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41caamal.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject Json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41caamal.free.beeceptor.com","GET",null,null,"json",null, null));
         BeeceptorDTO beeceptorDTO = new BeeceptorDTO();
         beeceptorDTO.setCode(json.get("code").getAsString());
         beeceptorDTO.setMessage(json.get("message").getAsString());
