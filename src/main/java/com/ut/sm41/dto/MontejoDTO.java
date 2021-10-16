@@ -3,7 +3,8 @@ package com.ut.sm41.dto;
 public class MontejoDTO {
 
     int id;
-    string name;
+    String name;
+    String status;
 
     public MontejoDTO() {
     }
@@ -16,11 +17,17 @@ public class MontejoDTO {
         this.id = id;
     }
 
-    public string getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(string name) {
-        this.name = name;
+    public void setName(String name) {this.name = name;}
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
