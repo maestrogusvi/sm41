@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.dto.MontejoDTO;
+import com.ut.sm41.dto.MartinezDTO;
 import com.ut.sm41.exception.BusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -62,5 +63,15 @@ public class ApplicationService {
         montejoDTO.setId(json.get("id").getAsInt());
         montejoDTO.setStatus(json.get("status").getAsString());
         return montejoDTO;
+    }
+
+    public MartinezDTO martinezHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com","GET",null,null,"json",null, null));
+        MartinezDTO martinezDTO = new MartinezDTO();
+        martinezDTO.setName(json.get("name").getAsString());
+        martinezDTO.setId(json.get("id").getAsInt());
+        martinezDTO.setStatus(json.get("status").getAsString());
+        return martinezDTO;
     }
 }

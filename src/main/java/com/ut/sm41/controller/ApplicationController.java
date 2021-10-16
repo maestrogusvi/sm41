@@ -6,6 +6,7 @@ import com.ut.sm41.dto.MontejoDTO;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.dto.RomanoDTO;
 import com.ut.sm41.dto.VazquezDTO;
+import com.ut.sm41.dto.MartinezDTO;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -47,5 +48,10 @@ public class ApplicationController {
     @GetMapping("/montejoHttp")
     public MontejoDTO montejoHttp() throws IOException {
         return applicationService.montejoHttp();
+    }
+
+    @GetMapping("/martinezHttp")
+    public MartinezDTO martinezHttp() throws IOException {
+        return applicationService.martinezHttp();
     }
 }
