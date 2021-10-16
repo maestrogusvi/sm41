@@ -4,6 +4,7 @@ public class TukDTO {
 
     int id;
     String name;
+    String status;
 
     public TukDTO() {
     }
@@ -22,5 +23,13 @@ public class TukDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

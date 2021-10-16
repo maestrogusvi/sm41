@@ -52,4 +52,10 @@ public class ApplicationController {
     public SotoDTO sotoHttp() throws IOException {
         return applicationService.sotoHttp();
     }
+
+    @GetMapping("/tukHttp")
+    public TukDTO tukHttp() throws IOException {
+        return applicationService.tukHttp();
+    }
 }
+

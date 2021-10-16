@@ -73,4 +73,14 @@ public class ApplicationService {
         sotoDTO.setStatus(json.get("status").getAsString());
         return sotoDTO;
     }
+
+    public TukDTO tukHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://tukerubiel01.free.beeceptor.com","GET",null,null,"json",null, null));
+        TukDTO tukDTO = new TukDTO();
+        tukDTO.setId(json.get("id").getAsInt());
+        tukDTO.setName(json.get("name").getAsString());
+        tukDTO.setStatus(json.get("status").getAsString());
+        return tukDTO;
+    }
 }
