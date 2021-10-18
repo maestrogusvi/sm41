@@ -39,7 +39,7 @@ public class ApplicationController {
     }
 
     @GetMapping("/BautistaHttp")
-    public BautistaDTO BautistaHttp() throws IOException {
+    public BautistaDTO bautistaHttp() throws IOException {
         return applicationService.bautistaHttp();
     }
 
