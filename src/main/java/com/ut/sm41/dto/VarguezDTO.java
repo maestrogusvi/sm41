@@ -1,9 +1,10 @@
 package com.ut.sm41.dto;
 
 public class VarguezDTO {
+
     int id;
     String name;
-
+    String status;
 
     public VarguezDTO() {
     }
@@ -22,5 +23,13 @@ public class VarguezDTO {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }
