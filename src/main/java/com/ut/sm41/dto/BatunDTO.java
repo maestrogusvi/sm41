@@ -6,9 +6,6 @@ public class BatunDTO {
     String name;
     String status;
 
-    public BatunDTO(){
-    }
-
     public int getId(){
         return id;
     }
@@ -25,13 +22,15 @@ public class BatunDTO {
         this.name = name;
     }
 
-    public void setStatus(String status) {
+    public void getStatus(String status) {
         this.status = status;
+
     }
 
-    public String getstatus(){
+    public String getStatus(){
         return status;
     }
 }
+
 
 

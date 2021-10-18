@@ -1,9 +1,6 @@
 package com.ut.sm41.controller;
 
-import com.ut.sm41.dto.BadilloDTO;
-import com.ut.sm41.dto.BeeceptorDTO;
-import com.ut.sm41.dto.MartinezDTO;
-import com.ut.sm41.dto.VarguezDTO;
+import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +34,7 @@ public class ApplicationController {
     }
     @GetMapping("/BatunHttp")
     public BatunDTO BatunHttp() throws IOException {
-        return applicationService.BatunHttp();
+        return applicationService.batunHttp ();
     }
 
     @GetMapping("/BadilloHttp")

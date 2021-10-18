@@ -3,11 +3,11 @@ package com.ut.sm41.service;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BadilloDTO;
+import com.ut.sm41.dto.BatunDTO;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.dto.MartinezDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.ut.sm41.dto.BatunDTO;
 import java.io.IOException;
 
 @Service
@@ -29,13 +29,13 @@ public class ApplicationService {
         beeceptorDTO.setStatus(json.get("status").getAsString());
         return beeceptorDTO;
     }
-    public BatunDTO BatunHttp() throws IOException {
+    public BatunDTO batunHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
         BatunDTO BatunDTO = new BatunDTO();
         BatunDTO.setName(json.get("name").getAsString());
         BatunDTO.setId(json.get("Id").getAsInt());
-        BatunDTO.setStatus(json.get("status").getAsString());
+        BatunDTO.getStatus(json.get("status").getAsString());
         return BatunDTO;
     }
 
@@ -59,3 +59,5 @@ public class ApplicationService {
         return badilloDTO;
     }
 }
+
+
