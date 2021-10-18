@@ -3,7 +3,6 @@ package com.ut.sm41.service;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.*;
-import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.exception.BusinessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,7 +41,7 @@ public class ApplicationService {
         anotaDTO.setStatus(json.get("status").getAsString());
         return anotaDTO;
     }
-    public VillagranDTO VillagranHttp() throws IOException {
+    public VillagranDTO villagranHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com","GET",null,null,"json",null, null));
         VillagranDTO villagranDTO = new VillagranDTO();
@@ -51,7 +50,7 @@ public class ApplicationService {
         villagranDTO.setStatus(json.get("status").getAsString());
         return villagranDTO;
     }
-    public SilvaDTO SilvaHttp() throws IOException {
+    public SilvaDTO silvaHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita.free.beeceptor.com","GET",null,null,"json",null, null));
         SilvaDTO silvaDTO = new SilvaDTO();
@@ -61,7 +60,7 @@ public class ApplicationService {
         return silvaDTO;
     }
 
-    public CaamalDTO CaamalHttp() throws IOException {
+    public CaamalDTO caamalHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com", "GET", null, null, "json", null, null));
         CaamalDTO caamalDTO = new CaamalDTO();

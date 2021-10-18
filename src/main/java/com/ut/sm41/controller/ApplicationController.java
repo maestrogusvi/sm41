@@ -1,6 +1,5 @@
 package com.ut.sm41.controller;
 
-import com.google.gson.JsonObject;
 import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.service.ApplicationService;
@@ -37,18 +36,18 @@ public class ApplicationController {
     public AnotaDTO anotaHttp() throws IOException {
         return applicationService.anotaHttp();
     }
-    @GetMapping("/VillagranHttp")
-    public VillagranDTO VillagranHttp() throws IOException {
-        return applicationService.VillagranHttp();
+    @GetMapping("/villagranHttp")
+    public VillagranDTO villagranHttp() throws IOException {
+        return applicationService.villagranHttp();
     }
-    @GetMapping("/SilvaHttp")
-    public SilvaDTO SilvaHttp() throws IOException {
-        return applicationService.SilvaHttp();
+    @GetMapping("/silvaHttp")
+    public SilvaDTO silvaHttp() throws IOException {
+        return applicationService.silvaHttp();
     }
 
-    @GetMapping("/CaamalHttp")
-    public CaamalDTO CaamalHttp() throws IOException {
-        return applicationService.CaamalHttp();
+    @GetMapping("/caamalHttp")
+    public CaamalDTO caamalHttp() throws IOException {
+        return applicationService.caamalHttp();
     }
 
 
