@@ -38,7 +38,7 @@ public class ApplicationController {
         return applicationService.zapataHttp();
     }
 
-    @GetMapping("/BautistaHttp")
+    @GetMapping("/bautistaHttp")
     public BautistaDTO bautistaHttp() throws IOException {
         return applicationService.bautistaHttp();
     }
