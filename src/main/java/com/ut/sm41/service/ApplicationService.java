@@ -11,25 +11,8 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 @Service
-public class ApplicationService {
+public interface ApplicationService {
 
-    @Autowired
-    HttpService httpService;
-
-    public String firstService(){
-        return "service";
-    }
-
-    public BeeceptorDTO testHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
-        if(json.get("code")== null){
-            throw new BusinessException("Code doesn´t exist", HttpStatus.FORBIDDEN);
-        }
-        BeeceptorDTO beeceptorDTO = new BeeceptorDTO();
-        beeceptorDTO.setCode(json.get("code").getAsString());
-        beeceptorDTO.setMessage(json.get("message").getAsString());
-        beeceptorDTO.setStatus(json.get("status").getAsString());
-        return beeceptorDTO;
-    }
+     String firstService();
+     BeeceptorDTO testHttp() throws IOException ;
 }
