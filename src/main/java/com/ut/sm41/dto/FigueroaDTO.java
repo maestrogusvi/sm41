@@ -3,7 +3,6 @@ package com.ut.sm41.dto;
 public class FigueroaDTO {
     int id;
     String name;
-    String status;
 
     public FigueroaDTO() {
     }
@@ -24,7 +23,4 @@ public class FigueroaDTO {
         this.name = name;
     }
 
-    public String getStatus() { return status; }
-
-    public void setStatus(String status) { this.status = status; }
 }

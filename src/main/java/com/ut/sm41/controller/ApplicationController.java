@@ -34,13 +34,4 @@ public class ApplicationController {
         return applicationService.ramirezHttp();
     }
 
-    @GetMapping("/hauHttp")
-    public HauDTO hauHttp() throws IOException {
-        return applicationService.hauHttp();
-    }
-
-    @GetMapping("/figueroaHttp")
-    public FigueroaDTO figueroaHttp() throws IOException {
-        return applicationService.figueroaHttp();
-    }
 }

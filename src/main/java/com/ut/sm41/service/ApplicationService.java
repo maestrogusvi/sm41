@@ -48,23 +48,4 @@ public class ApplicationService {
         return ramirezDTO;
     }
 
-    public HauDTO hauHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://hau.free.beeceptor.com","GET",null,null,"json",null, null));
-        HauDTO hauDTO = new HauDTO();
-        hauDTO.setName(json.get("name").getAsString());
-        hauDTO.setId(json.get("id").getAsInt());
-        hauDTO.setStatus(json.get("status").getAsString());
-        return hauDTO;
-    }
-
-    public FigueroaDTO figueroaHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://figueroa.free.beeceptor.com","GET",null,null,"json",null, null));
-        FigueroaDTO figueroaDTO = new FigueroaDTO();
-        figueroaDTO.setName(json.get("name").getAsString());
-        figueroaDTO.setId(json.get("id").getAsInt());
-        figueroaDTO.setStatus(json.get("status").getAsString());
-        return figueroaDTO;
-    }
 }
