@@ -33,7 +33,7 @@ public class ApplicationController {
         return applicationService.testHttp();
     }
     @GetMapping("/BatunHttp")
-    public BatunDTO BatunHttp() throws IOException {
+    public BatunDTO batunHttp() throws IOException {
         return applicationService.batunHttp ();
     }
 
