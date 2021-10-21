@@ -55,8 +55,8 @@ public class ApplicationController {
         return applicationService.martinezHttp();
     }
 
-    @GetMapping("/testPostHttp")
+    @GetMapping("/vazquezPostHttp")
     public void testPostHttp() throws IOException{
-        applicationService.testPostHttp();
+        applicationService.vazquezPostHttp();
     }
 }
