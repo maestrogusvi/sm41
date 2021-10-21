@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.dto.EstradaDTO;
+import com.ut.sm41.dto.HauDTO;
 import com.ut.sm41.dto.RamirezDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -48,5 +49,14 @@ public class ApplicationService {
         ramirezDTO.setId(json.get("id").getAsInt());
         ramirezDTO.setStatus(json.get("status").getAsString());
         return ramirezDTO;
+    }
+    public HauDTO hauHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://alfasm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        HauDTO hauDTO = new HauDTO();
+        hauDTO.setName(json.get("code").getAsString());
+        hauDTO.setId(json.get("message").getAsInt());
+        hauDTO.setStatus(json.get("status").getAsString());
+        return hauDTO;
     }
 }
