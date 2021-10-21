@@ -22,6 +22,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         return "service";
     }
 
+    @Override
     public BeeceptorDTO testHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
@@ -35,6 +36,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         return beeceptorDTO;
     }
 
+    @Override
     public AnotaDTO anotaHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com","GET",null,null,"json",null, null));
@@ -45,6 +47,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         return anotaDTO;
     }
 
+    @Override
     public VillagranDTO villagranHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com","GET",null,null,"json",null, null));
@@ -55,6 +58,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         return villagranDTO;
     }
 
+    @Override
     public SilvaDTO silvaHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita.free.beeceptor.com","GET",null,null,"json",null, null));
@@ -65,6 +69,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         return silvaDTO;
     }
 
+    @Override
     public CaamalDTO caamalHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com", "GET", null, null, "json", null, null));
