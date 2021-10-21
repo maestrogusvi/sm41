@@ -16,11 +16,9 @@ public interface ApplicationService {
     String firstService();
 
     BeeceptorDTO testHttp() throws IOException;
-    void testpostHttp() throws IOException;
-
-    void anotapostHttp() throws IOException;
 
     AnotaDTO anotaHttp() throws IOException;
+    void anotaPostHttp() throws IOException;
 
     VillagranDTO villagranHttp() throws IOException;
 

@@ -1,5 +1,7 @@
 package com.ut.sm41.dto;
 
+import org.yaml.snakeyaml.events.Event;
+
 public class AnotaDTO {
 
     int id;
@@ -13,7 +15,7 @@ public class AnotaDTO {
         return id;
     }
 
-    public static void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -21,7 +23,7 @@ public class AnotaDTO {
         return name;
     }
 
-    public static void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -29,7 +31,7 @@ public class AnotaDTO {
         return status;
     }
 
-    public static void setStatus(String status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -41,7 +43,8 @@ public class AnotaDTO {
                 ", status='" + status + '\'' +
                 '}';
     }
-    public static String toJson() {
+
+    public String toJson() {
         return "{" +
                 "\"id\":\"" + id + "\"," +
                 "\"name\":\"" + name + "\"," +

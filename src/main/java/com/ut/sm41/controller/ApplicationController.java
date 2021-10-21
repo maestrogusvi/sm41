@@ -27,14 +27,18 @@ public class ApplicationController {
         return applicationService.firstService();
     }
 
-    @GetMapping("/anotaPostHttp")
-    public void anotaPostHttp() throws IOException {
-      applicationService.anotapostHttp();
+    @GetMapping("/testHttp")
+    public BeeceptorDTO testHttp() throws IOException {
+        return applicationService.testHttp();
     }
 
     @GetMapping("/anotaHttp")
     public AnotaDTO anotaHttp() throws IOException {
         return applicationService.anotaHttp();
+    }
+    @GetMapping("/anotaPostHttp")
+    public void anotaPostHttp() throws IOException {
+        applicationService.anotaPostHttp();
     }
     @GetMapping("/villagranHttp")
     public VillagranDTO villagranHttp() throws IOException {

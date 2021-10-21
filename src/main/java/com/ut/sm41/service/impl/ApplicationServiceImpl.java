@@ -37,17 +37,13 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public void testpostHttp() throws IOException {
-
-    }
-
-    @Override
-    public void anotapostHttp() throws IOException {
+    public void anotaPostHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        AnotaDTO.setId(13);
-        AnotaDTO.setName("from Post");
-        AnotaDTO.setStatus("Success");
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/testPost","POST",null,null,"json",AnotaDTO.toJson(), null));
+        AnotaDTO anotaDTO = new AnotaDTO();
+        anotaDTO.setId(12);
+        anotaDTO.setName("from Post");
+        anotaDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/testPost","POST",null,null,"json",anotaDTO.toJson(), null));
 
     }
 
