@@ -17,11 +17,11 @@ public interface ApplicationService {
     String firstService();
     BeeceptorDTO testHttp() throws IOException ;
 
-    AriasDTO testHttp() throws IOException ;
-    BautistaDTO testHttp() throws IOException ;
-    SotoDTO testHttp() throws IOException ;
-    TukDTO testHttp() throws IOException ;
-    ZapataDTO testHttp() throws IOException ;
+    AriasDTO ariasHttp() throws IOException ;
+    BautistaDTO bautistaHttp() throws IOException ;
+    SotoDTO sotoHttp() throws IOException ;
+    TukDTO tukHttp() throws IOException ;
+    ZapataDTO zapataHttp() throws IOException ;
 
 
 }

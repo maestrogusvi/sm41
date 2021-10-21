@@ -1,5 +1,5 @@
 package com.ut.sm41.service.impl;
-package com.ut.sm41.service.impl;
+
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
