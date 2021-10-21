@@ -1,0 +1,88 @@
+Index: src/main/java/com/ut/sm41/controller/ApplicationController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ut.sm41.controller;\r\n\r\nimport com.google.gson.JsonObject;\r\nimport com.ut.sm41.dto.BadilloDTO;\r\nimport com.ut.sm41.dto.BeeceptorDTO;\r\nimport com.ut.sm41.dto.MartinezDTO;\r\nimport com.ut.sm41.service.ApplicationService;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.web.bind.annotation.*;\r\n\r\nimport java.io.IOException;\r\n\r\n@RestController\r\n@RequestMapping(\"/api/v1\")\r\npublic class ApplicationController {\r\n\r\n    @Autowired\r\n    ApplicationService applicationService;\r\n\r\n    @GetMapping(\"/\")\r\n    public String inicio(){\r\n        return applicationService.firstService();\r\n    }\r\n\r\n    @GetMapping(\"/testHttp\")\r\n    public BeeceptorDTO testHttp() throws IOException {\r\n        return applicationService.testHttp();\r\n    }\r\n\r\n    @GetMapping(\"/BadilloHttp\")\r\n    public BadilloDTO BadilloHttp() throws IOException {\r\n        return applicationService.BadilloHttp();\r\n    }\r\n\r\n    @GetMapping(\"/martinezHttp\")\r\n    public MartinezDTO martinezHttp() throws IOException {\r\n        return applicationService.martinezHttp();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ut/sm41/controller/ApplicationController.java b/src/main/java/com/ut/sm41/controller/ApplicationController.java
+--- a/src/main/java/com/ut/sm41/controller/ApplicationController.java	(revision d1ac50fd52af746514ceeb7b07febdc8137745a1)
++++ b/src/main/java/com/ut/sm41/controller/ApplicationController.java	(date 1634221940821)
+@@ -4,6 +4,7 @@
+ import com.ut.sm41.dto.BadilloDTO;
+ import com.ut.sm41.dto.BeeceptorDTO;
+ import com.ut.sm41.dto.MartinezDTO;
++import com.ut.sm41.dto.CadenaDTO;
+ import com.ut.sm41.service.ApplicationService;
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.web.bind.annotation.*;
+@@ -36,4 +37,9 @@
+     public MartinezDTO martinezHttp() throws IOException {
+         return applicationService.martinezHttp();
+     }
++
++    @GetMapping("/cadenaHttp")
++    public CadenaDTO cadenaHttp() throws IOException {
++        return applicationService.cadenaHttp();
++    }
+ }
+Index: src/main/java/com/ut/sm41/service/ApplicationService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ut.sm41.service;\r\n\r\nimport com.google.gson.JsonObject;\r\nimport com.google.gson.JsonParser;\r\nimport com.ut.sm41.dto.BadilloDTO;\r\nimport com.ut.sm41.dto.BeeceptorDTO;\r\nimport com.ut.sm41.dto.MartinezDTO;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Service;\r\n\r\nimport java.io.IOException;\r\n\r\n@Service\r\npublic class ApplicationService {\r\n\r\n    @Autowired\r\n    HttpService httpService;\r\n\r\n    public String firstService(){\r\n        return \"service\";\r\n    }\r\n\r\n    public BeeceptorDTO testHttp() throws IOException {\r\n        JsonParser parser = new JsonParser();\r\n        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS(\"https://pavelsm41.free.beeceptor.com\",\"GET\",null,null,\"json\",null, null));\r\n        BeeceptorDTO beeceptorDTO = new BeeceptorDTO();\r\n        beeceptorDTO.setCode(json.get(\"code\").getAsString());\r\n        beeceptorDTO.setMessage(json.get(\"message\").getAsString());\r\n        beeceptorDTO.setStatus(json.get(\"status\").getAsString());\r\n        return beeceptorDTO;\r\n    }\r\n\r\n    public MartinezDTO martinezHttp() throws IOException {\r\n        JsonParser parser = new JsonParser();\r\n        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS(\"https://pavelsm41.free.beeceptor.com\",\"GET\",null,null,\"json\",null, null));\r\n        MartinezDTO martinezDTO = new MartinezDTO();\r\n        martinezDTO.setName(json.get(\"name\").getAsString());\r\n        martinezDTO.setId(json.get(\"id\").getAsInt());\r\n        martinezDTO.setStatus(json.get(\"status\").getAsString());\r\n        return martinezDTO;\r\n    }\r\n\r\n    public BadilloDTO BadilloHttp() throws IOException {\r\n        JsonParser parser = new JsonParser();\r\n        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS(\"https://badillosm41.free.beeceptor.com\",\"GET\",null,null,\"json\",null, null));\r\n        BadilloDTO badilloDTO = new BadilloDTO();\r\n        badilloDTO.setName(json.get(\"name\").getAsString());\r\n        badilloDTO.setId(json.get(\"id\").getAsInt());\r\n        badilloDTO.setStatus(json.get(\"status\").getAsString());\r\n        return badilloDTO;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ut/sm41/service/ApplicationService.java b/src/main/java/com/ut/sm41/service/ApplicationService.java
+--- a/src/main/java/com/ut/sm41/service/ApplicationService.java	(revision d1ac50fd52af746514ceeb7b07febdc8137745a1)
++++ b/src/main/java/com/ut/sm41/service/ApplicationService.java	(date 1634221940837)
+@@ -5,6 +5,7 @@
+ import com.ut.sm41.dto.BadilloDTO;
+ import com.ut.sm41.dto.BeeceptorDTO;
+ import com.ut.sm41.dto.MartinezDTO;
++import com.ut.sm41.dto.CadenaDTO;
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Service;
+ 
+@@ -49,4 +50,14 @@
+         badilloDTO.setStatus(json.get("status").getAsString());
+         return badilloDTO;
+     }
++
++    public CadenaDTO cadenaHttp() throws IOException {
++        JsonParser parser = new JsonParser();
++        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://cadenasm41.free.beeceptor.com","GET",null,null,"json",null, null));
++        CadenaDTO cadenaDTO = new CadenaDTO();
++        cadenaDTO.setName(json.get("name").getAsString());
++        cadenaDTO.setId(json.get("id").getAsInt());
++        cadenaDTO.setStatus(json.get("status").getAsString());
++        return cadenaDTO;
++    }
+ }
+Index: src/main/java/com/ut/sm41/dto/CadenaDTO.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ut.sm41.dto;\r\n\r\npublic class CadenaDTO {\r\n\r\n    int id;\r\n    String name;\r\n\r\n    public CadenaDTO() {\r\n    }\r\n\r\n    public int getId() {\r\n        return id;\r\n    }\r\n\r\n    public void setId(int id) {\r\n        this.id = id;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ut/sm41/dto/CadenaDTO.java b/src/main/java/com/ut/sm41/dto/CadenaDTO.java
+--- a/src/main/java/com/ut/sm41/dto/CadenaDTO.java	(revision d1ac50fd52af746514ceeb7b07febdc8137745a1)
++++ b/src/main/java/com/ut/sm41/dto/CadenaDTO.java	(date 1634220029239)
+@@ -4,6 +4,7 @@
+ 
+     int id;
+     String name;
++    String status;
+ 
+     public CadenaDTO() {
+     }
+@@ -23,4 +24,8 @@
+     public void setName(String name) {
+         this.name = name;
+     }
++
++    public String getStatus() { return status; }
++
++    public void setStatus(String status) { this.status = status; }
+ }
