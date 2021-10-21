@@ -51,4 +51,9 @@ public class ApplicationController {
     public VarguezDTO varguezHttp() throws IOException {
         return applicationService.varguezHttp();
     }
+
+    @GetMapping("/cadenaHttp")
+    public CadenaDTO cadenaHttp() throws IOException {
+        return applicationService.cadenaHttp();
+    }
 }

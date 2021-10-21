@@ -65,6 +65,16 @@ public class ApplicationService {
         varguezDTO.setStatus(json.get("status").getAsString());
         return varguezDTO;
     }
+
+    public CadenaDTO cadenaHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://cadenasm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        CadenaDTO cadenaDTO = new CadenaDTO();
+        cadenaDTO.setName(json.get("name").getAsString());
+        cadenaDTO.setId(json.get("id").getAsInt());
+        cadenaDTO.setStatus(json.get("status").getAsString());
+        return cadenaDTO;
+    }
 }
 
 
