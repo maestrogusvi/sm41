@@ -32,7 +32,7 @@ public class ApplicationController {
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
     }
-    @GetMapping("/BatunHttp")
+    @GetMapping("/batunHttp")
     public BatunDTO batunHttp() throws IOException {
         return applicationService.batunHttp ();
     }
