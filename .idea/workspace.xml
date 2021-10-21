@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="faa82e0c-1747-4f34-afae-49361a01fefd" name="Changes" comment="Feat(CadenaDTO) new DTO" />
+    <list default="true" id="8ec78ae3-7b17-4e27-87df-710dd9f66e89" name="Changes" comment="Feat(BusinessException)">
+      <change afterPath="$PROJECT_DIR$/.idea/sm41.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/exception/BusinessException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2021_02_16_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2021_02_16_p__m___Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/controller/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/dto/BatunDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/dto/BatunDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/dto/VarguezDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/dto/VarguezDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/ApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/ApplicationService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,18 +31,27 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Matrix" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Matrix_Cadena" />
+        <entry key="$PROJECT_DIR$" value="Matrix_Varguez" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ut/sm41/controller/ApplicationController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ut/sm41/service/ApplicationService.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectId" id="1zCJcOu3ECK47WAqgqM8VUUPZ0L" />
+  <component name="ProjectId" id="1zTbzIhmHJeszmHWK9LsqTOutSs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -43,7 +65,10 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RunManager">
     <configuration name="Sm41Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -57,39 +82,37 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="faa82e0c-1747-4f34-afae-49361a01fefd" name="Changes" comment="" />
-      <created>1633646219023</created>
+      <changelist id="99716f70-be98-4a8b-b733-aab2539ebca6" name="Changes" comment="" />
+      <created>1634175287555</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1633646219023</updated>
-      <workItem from="1633646231175" duration="186000" />
-      <workItem from="1633646559660" duration="1736000" />
-      <workItem from="1634089025547" duration="1301000" />
-      <workItem from="1634090494942" duration="284000" />
-      <workItem from="1634090820483" duration="300000" />
-      <workItem from="1634091164100" duration="165000" />
-      <workItem from="1634091397102" duration="42000" />
-      <workItem from="1634098981432" duration="205000" />
-      <workItem from="1634099289132" duration="145000" />
-      <workItem from="1634099472006" duration="332000" />
-      <workItem from="1634099840632" duration="962000" />
-      <workItem from="1634100903379" duration="74000" />
-      <workItem from="1634219350444" duration="6016000" />
-      <workItem from="1634411000259" duration="940000" />
-      <workItem from="1634412009133" duration="2063000" />
-      <workItem from="1634599000722" duration="188000" />
-      <workItem from="1634668246056" duration="1624000" />
-      <workItem from="1634675704008" duration="4138000" />
-      <workItem from="1634736216709" duration="6087000" />
+      <updated>1634175287555</updated>
+      <workItem from="1634175292102" duration="6547000" />
+      <workItem from="1634217489542" duration="4280000" />
+      <workItem from="1634581201377" duration="352000" />
     </task>
-    <task id="LOCAL-00001" summary="Feat(CadenaDTO) new DTO">
-      <created>1634100500429</created>
+    <task id="LOCAL-00001" summary="feat(BatunDTO) new DTO">
+      <created>1634193243238</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1634100500429</updated>
+      <updated>1634193243238</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix(ApplicationController)add new endpoint BatunHttp">
+      <created>1634221465270</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1634221465270</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix(ApplicationController)add new endpoint BatunHttp">
+      <created>1634679021797</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1634679021797</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,17 +124,12 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="CUSTOM_BOOLEAN_PROPERTIES">
-                <map>
-                  <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/Matrix" />
                       </list>
                     </value>
                   </entry>
@@ -122,10 +140,27 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feat(CadenaDTO) new DTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat(CadenaDTO) new DTO" />
+    <MESSAGE value="feat(BatunDTO) new DTO" />
+    <MESSAGE value="fix(ApplicationController)add new endpoint BatunHttp" />
+    <MESSAGE value="Feat(BusinessException)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat(BusinessException)" />
   </component>
 </project>

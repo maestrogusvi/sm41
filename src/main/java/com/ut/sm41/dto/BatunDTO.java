@@ -4,9 +4,7 @@ public class BatunDTO {
 
     int id;
     String name;
-
-    public BatunDTO(){
-    }
+    String status;
 
     public int getId(){
         return id;
@@ -23,4 +21,16 @@ public class BatunDTO {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void getStatus(String status) {
+        this.status = status;
+
+    }
+
+    public String getStatus(){
+        return status;
+    }
 }
+
+
+
