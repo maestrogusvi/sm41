@@ -14,6 +14,16 @@ public interface ApplicationService {
      String firstService();
 
      BeeceptorDTO testHttp() throws IOException ;
+
+     BatunDTO batunHttp() throws IOException;
+
+     MartinezDTO martinezHttp() throws IOException;
+
+     BadilloDTO BadilloHttp() throws IOException;
+
+     VarguezDTO varguezHttp() throws IOException;
+
+     CadenaDTO cadenaHttp() throws IOException;
 }
 
 
