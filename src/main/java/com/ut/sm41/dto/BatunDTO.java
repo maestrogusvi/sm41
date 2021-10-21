@@ -6,6 +6,9 @@ public class BatunDTO {
     String name;
     String status;
 
+    public batunDTO();{
+    }
+
     public int getId(){
         return id;
     }

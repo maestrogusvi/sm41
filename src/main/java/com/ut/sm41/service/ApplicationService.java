@@ -19,7 +19,7 @@ public interface ApplicationService {
 
      MartinezDTO martinezHttp() throws IOException;
 
-     BadilloDTO BadilloHttp() throws IOException;
+     BadilloDTO badilloHttp() throws IOException;
 
      VarguezDTO varguezHttp() throws IOException;
 

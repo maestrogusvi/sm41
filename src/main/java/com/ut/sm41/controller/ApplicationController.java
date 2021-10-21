@@ -33,13 +33,13 @@ public class ApplicationController {
         return applicationService.testHttp();
     }
     @GetMapping("/BatunHttp")
-    public BatunDTO BatunHttp() throws IOException {
+    public BatunDTO batunHttp() throws IOException {
         return applicationService.batunHttp ();
     }
 
-    @GetMapping("/BadilloHttp")
-    public BadilloDTO BadilloHttp() throws IOException {
-        return applicationService.BadilloHttp();
+    @GetMapping("/badilloHttp")
+    public BadilloDTO badilloHttp() throws IOException {
+        return applicationService.badilloHttp();
     }
 
     @GetMapping("/martinezHttp")
