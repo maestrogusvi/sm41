@@ -9,6 +9,7 @@ public class BeeceptorDTO {
     public BeeceptorDTO() {
     }
 
+
     public String getStatus() {
         return status;
     }
@@ -31,5 +32,22 @@ public class BeeceptorDTO {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "status='" + status + '\'' +
+                ", code='" + code + '\'' +
+                ", message='" + message + '\'' +
+                '}';
+    }
+
+    public String toJson() {
+        return "{" +
+                "\"status\":\"" + status + "\"," +
+                " \"code\":\"" + code + "\"," +
+                " \"message\":\"" + message +"\""+
+                '}';
     }
 }

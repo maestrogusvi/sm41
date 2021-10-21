@@ -32,4 +32,9 @@ public class ApplicationController {
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
     }
+
+    @GetMapping("/testPostHttp")
+    public void testPostHttp() throws IOException{
+        applicationService.testPostHttp();
+    }
 }
