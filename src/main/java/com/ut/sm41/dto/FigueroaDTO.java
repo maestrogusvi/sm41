@@ -4,6 +4,9 @@ public class FigueroaDTO {
     int id;
     String name;
 
+    public FigueroaDTO() {
+    }
+
     public int getId() {
         return id;
     }
@@ -20,7 +23,4 @@ public class FigueroaDTO {
         this.name = name;
     }
 
-    public FigueroaDTO() {
-
-    }
 }
