@@ -57,7 +57,13 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public HauDTO hauHttp() throws IOException {
-        return null;
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://alfasm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        HauDTO hauDTO = new HauDTO();
+        hauDTO.setName(json.get("name").getAsString());
+        hauDTO.setId(json.get("id").getAsInt());
+        hauDTO.setStatus(json.get("status").getAsString());
+        return hauDTO;
     }
 
 }
