@@ -34,11 +34,11 @@ HttpService httpService;
     public BatunDTO batunHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
-        BatunDTO batunDTO = new BatunDTO();
-        batunDTO.setName(json.get("name").getAsString());
-        batunDTO.setId(json.get("Id").getAsInt());
-        batunDTO.getStatus(json.get("status").getAsString());
-        return batunDTO;
+        BatunDTO BatunDTO = new BatunDTO();
+        BatunDTO.setName(json.get("name").getAsString());
+        BatunDTO.setId(json.get("Id").getAsInt());
+        BatunDTO.getStatus(json.get("status").getAsString());
+        return BatunDTO;
     }
 @Override
     public MartinezDTO martinezHttp() throws IOException {
@@ -50,6 +50,7 @@ HttpService httpService;
         martinezDTO.setStatus(json.get("status").getAsString());
         return martinezDTO;
     }
+
     @Override
     public BadilloDTO badilloHttp() throws IOException {
         JsonParser parser = new JsonParser();
