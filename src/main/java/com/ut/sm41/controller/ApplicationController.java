@@ -6,6 +6,7 @@ import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.dto.EstradaDTO;
 import com.ut.sm41.dto.RamirezDTO;
 import com.ut.sm41.dto.HauDTO;
+import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

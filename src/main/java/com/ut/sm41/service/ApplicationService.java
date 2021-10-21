@@ -13,52 +13,17 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 @Service
-public class ApplicationService {
+public interface ApplicationService {
 
-    @Autowired
-    HttpService httpService;
 
-    public String firstService(){
-        return "service";
-    }
 
-    public BeeceptorDTO testHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
-        BeeceptorDTO beeceptorDTO = new BeeceptorDTO();
-        beeceptorDTO.setCode(json.get("code").getAsString());
-        beeceptorDTO.setMessage(json.get("message").getAsString());
-        beeceptorDTO.setStatus(json.get("status").getAsString());
-        return beeceptorDTO;
-    }
+     String firstService();
 
-    public EstradaDTO estradaHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://estrada.free.beeceptor.com","GET",null,null,"json",null, null));
-        EstradaDTO estradaDTO = new EstradaDTO();
-        estradaDTO.setName(json.get("name").getAsString());
-        estradaDTO.setId(json.get("id").getAsInt());
-        estradaDTO.setStatus(json.get("status").getAsString());
-        return estradaDTO;
-    }
+     BeeceptorDTO testHttp() throws IOException;
 
-    public RamirezDTO ramirezHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://christopher.free.beeceptor.com","GET",null,null,"json",null, null));
-        RamirezDTO ramirezDTO = new RamirezDTO();
-        ramirezDTO.setName(json.get("name").getAsString());
-        ramirezDTO.setId(json.get("id").getAsInt());
-        ramirezDTO.setStatus(json.get("status").getAsString());
-        return ramirezDTO;
-    }
+     EstradaDTO estradaHttp() throws IOException ;
 
-    public HauDTO hauHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://alfasm41.free.beeceptor.com","GET",null,null,"json",null, null));
-        HauDTO hauDTO = new HauDTO();
-        hauDTO.setName(json.get("code").getAsString());
-        hauDTO.setId(json.get("message").getAsInt());
-        hauDTO.setStatus(json.get("status").getAsString());
-        return hauDTO;
-    }
+     RamirezDTO ramirezHttp() throws IOException ;
+
+     HauDTO hauHttp() throws IOException ;
 }

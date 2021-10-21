@@ -55,4 +55,9 @@ public class ApplicationServiceImpl implements ApplicationService {
         return ramirezDTO;
     }
 
+    @Override
+    public HauDTO hauHttp() throws IOException {
+        return null;
+    }
+
 }
