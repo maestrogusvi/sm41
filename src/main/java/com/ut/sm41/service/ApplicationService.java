@@ -11,56 +11,17 @@ import com.ut.sm41.dto.CaamalDTO;
 import java.io.IOException;
 
 @Service
-public class ApplicationService {
+public interface ApplicationService {
 
-    @Autowired
-    HttpService httpService;
 
-    public String firstService(){
-        return "service";
-    }
 
-    public BeeceptorDTO testHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
-        if(json.get("code")== null){
-            throw new BusinessException("Code doesn´t exist", HttpStatus.FORBIDDEN);
-        }
-        JsonObject Json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41caamal.free.beeceptor.com","GET",null,null,"json",null, null));
-        BeeceptorDTO beeceptorDTO = new BeeceptorDTO();
-        beeceptorDTO.setCode(json.get("code").getAsString());
-        beeceptorDTO.setMessage(json.get("message").getAsString());
-        beeceptorDTO.setStatus(json.get("status").getAsString());
-        return beeceptorDTO;
-    }
+     String firstService();
 
-    public CaamalDTO caamalHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41caamal.free.beeceptor.com","GET",null,null,"json",null, null));
-        CaamalDTO caamalDTO = new CaamalDTO();
-        caamalDTO.setName(json.get("name").getAsString());
-        caamalDTO.setId(json.get("id").getAsInt());
-        caamalDTO.setStatus(json.get("status").getAsString());
-        return caamalDTO;
-    }
+    BeeceptorDTO testHttp() throws IOException;
 
-    public TunDTO tunHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41tun.free.beeceptor.com","GET",null,null,"json",null, null));
-        TunDTO tunDTO = new TunDTO();
-        tunDTO.setName(json.get("name").getAsString());
-        tunDTO.setId(json.get("id").getAsInt());
-        tunDTO.setStatus(json.get("status").getAsString());
-        return tunDTO;
-    }
+    CaamalDTO caamalHttp() throws IOException;
 
-    public DominguezDTO dominguezHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ernestodp11.free.beeceptor.com","GET",null,null,"json",null, null));
-        DominguezDTO dominguezDTO = new DominguezDTO();
-        dominguezDTO.setName(json.get("name").getAsString());
-        dominguezDTO.setId(json.get("id").getAsInt());
-        dominguezDTO.setStatus(json.get("status").getAsString());
-        return dominguezDTO;
-    }
+    TunDTO tunHttp() throws IOException;
+
+    DominguezDTO dominguezHttp() throws IOException;
 }
