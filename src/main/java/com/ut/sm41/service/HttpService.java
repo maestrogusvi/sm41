@@ -24,8 +24,6 @@ public class HttpService {
 
 
 
-
-
     public String sendRequestHttpS(String url, String method, String username, String password, String type, String body, String token) throws IOException {
         URL obt= new URL(url);
         HttpURLConnection con =null;
