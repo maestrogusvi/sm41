@@ -4,6 +4,7 @@ import com.google.gson.JsonParser;
 import com.ut.sm41.dto.*;
 import com.ut.sm41.service.ApplicationService;
 import com.ut.sm41.service.HttpService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -11,7 +12,8 @@ import java.io.IOException;
 @Service
 public class ApplicationServiceimpl implements ApplicationService {
 
-
+@Autowired
+HttpService httpService;
 
 
     @Override
