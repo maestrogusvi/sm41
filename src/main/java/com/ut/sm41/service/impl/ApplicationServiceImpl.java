@@ -39,7 +39,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         beeceptorDTO.setStatus(json.get("status").getAsString());
         return beeceptorDTO;
     }
-
+    @Override
     public CaamalDTO caamalHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41caamal.free.beeceptor.com","GET",null,null,"json",null, null));
@@ -49,7 +49,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         caamalDTO.setStatus(json.get("status").getAsString());
         return caamalDTO;
     }
-
+    @Override
     public TunDTO tunHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41tun.free.beeceptor.com","GET",null,null,"json",null, null));
@@ -59,7 +59,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         tunDTO.setStatus(json.get("status").getAsString());
         return tunDTO;
     }
-
+    @Override
     public DominguezDTO dominguezHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ernestodp11.free.beeceptor.com","GET",null,null,"json",null, null));
