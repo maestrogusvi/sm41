@@ -9,7 +9,7 @@ public class CaamalDTO {
     public CaamalDTO() {
     }
 
-    public int getId() {
+    public int getId(int i) {
         return id;
     }
 
@@ -17,7 +17,7 @@ public class CaamalDTO {
         this.id = id;
     }
 
-    public String getName() {
+    public String getName(String from_post) {
         return name;
     }
 
@@ -25,11 +25,28 @@ public class CaamalDTO {
         this.name = name;
     }
 
-    public String getStatus() {
+    public String getStatus(String s) {
         return status;
     }
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
+    public String toJson() {
+        return "{" +
+                "\"id\":\"" + status + "\"," +
+                "\"name\":\"" + name + "\"," +
+                "\"status\":\"" + status + "\"" +
+                '}';
     }
 }

@@ -79,4 +79,15 @@ public class ApplicationServiceImpl implements ApplicationService {
         caamalDTO.setStatus(json.get("status").getAsString());
         return caamalDTO;
     }
+
+    @Override
+    public void testPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        CaamalDTO caamalDTO = new CaamalDTO();
+        caamalDTO.setId(500);
+        caamalDTO.setName("from Post");
+        caamalDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com/api/v1/testPost", "POST", null, null, "json", caamalDTO.toJson(), null));
+
+    }
 }
