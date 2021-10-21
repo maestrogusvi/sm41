@@ -54,4 +54,9 @@ public class ApplicationController {
     public MartinezDTO martinezHttp() throws IOException {
         return applicationService.martinezHttp();
     }
+
+    @GetMapping("/testPostHttp")
+    public void testPostHttp() throws IOException{
+        applicationService.testPostHttp();
+    }
 }
