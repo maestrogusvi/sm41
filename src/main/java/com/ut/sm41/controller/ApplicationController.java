@@ -37,9 +37,9 @@ public class ApplicationController {
         return applicationService.batunHttp ();
     }
 
-    @GetMapping("/BadilloHttp")
-    public BadilloDTO BadilloHttp() throws IOException {
-        return applicationService.BadilloHttp();
+    @GetMapping("/badilloHttp")
+    public BadilloDTO badilloHttp() throws IOException {
+        return applicationService.badilloHttp();
     }
 
     @GetMapping("/martinezHttp")

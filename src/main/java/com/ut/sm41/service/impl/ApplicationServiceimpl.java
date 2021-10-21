@@ -51,7 +51,7 @@ HttpService httpService;
         return martinezDTO;
     }
     @Override
-    public BadilloDTO BadilloHttp() throws IOException {
+    public BadilloDTO badilloHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://badillosm41.free.beeceptor.com","GET",null,null,"json",null, null));
         BadilloDTO badilloDTO = new BadilloDTO();
