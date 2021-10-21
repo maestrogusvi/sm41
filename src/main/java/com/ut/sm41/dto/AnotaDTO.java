@@ -13,7 +13,7 @@ public class AnotaDTO {
         return id;
     }
 
-    public void setId(int id) {
+    public static void setId(int id) {
         this.id = id;
     }
 
@@ -21,7 +21,7 @@ public class AnotaDTO {
         return name;
     }
 
-    public void setName(String name) {
+    public static void setName(String name) {
         this.name = name;
     }
 
@@ -29,7 +29,23 @@ public class AnotaDTO {
         return status;
     }
 
-    public void setStatus(String status) {
+    public static void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+    public static String toJson() {
+        return "{" +
+                "\"id\":\"" + id + "\"," +
+                "\"name\":\"" + name + "\"," +
+                "\"status\":\"" + status + "\"" +
+                '}';
     }
 }

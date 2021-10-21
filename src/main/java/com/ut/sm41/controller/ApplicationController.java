@@ -27,9 +27,9 @@ public class ApplicationController {
         return applicationService.firstService();
     }
 
-    @GetMapping("/testHttp")
-    public BeeceptorDTO testHttp() throws IOException {
-        return applicationService.testHttp();
+    @GetMapping("/anotaPostHttp")
+    public void anotaPostHttp() throws IOException {
+      applicationService.anotapostHttp();
     }
 
     @GetMapping("/anotaHttp")
