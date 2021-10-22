@@ -45,6 +45,15 @@ public class ApplicationServiceImpl implements ApplicationService {
         return estradaDTO;
     }
 
+    public void estradaPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        EstradaDTO estradaDTO = new EstradaDTO();
+        estradaDTO.setId(200);
+        estradaDTO.setName("Luis Estrada");
+        estradaDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://estrada.free.beeceptor.com/api/v1/estradaPostHttp","POST",null,null,"json",estradaDTO.toJson(), null));
+    }
+
     public RamirezDTO ramirezHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://christopher.free.beeceptor.com", "GET", null, null, "json", null, null));
@@ -64,6 +73,15 @@ public class ApplicationServiceImpl implements ApplicationService {
         hauDTO.setId(json.get("id").getAsInt());
         hauDTO.setStatus(json.get("status").getAsString());
         return hauDTO;
+    }
+
+    public void hauPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        HauDTO hauDTO = new HauDTO();
+        hauDTO.setId(100);
+        hauDTO.setName("Gregorio Hau");
+        hauDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://hau.free.beeceptor.com/api/v1/hauPostHttp","POST",null,null,"json",hauDTO.toJson(), null));
     }
 
 }

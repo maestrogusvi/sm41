@@ -23,4 +23,20 @@ public class EstradaDTO {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
+    public String toJson() {
+        return "{" +
+                "\"id\":" + id + "," +
+                " \"name\":\"" + name + "\"," +
+                " \"status\":\"" + status +"\""+
+                '}';
+    }
 }

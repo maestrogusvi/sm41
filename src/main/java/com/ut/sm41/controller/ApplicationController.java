@@ -42,6 +42,11 @@ public class ApplicationController {
         return applicationService.estradaHttp();
     }
 
+    @GetMapping("/estradaPostHttp")
+    public void testPostHttp() throws IOException {
+        applicationService.estradaPostHttp();
+    }
+
     @GetMapping("/ramirezHttp")
     public RamirezDTO ramirezHttp() throws IOException {
         return applicationService.ramirezHttp();
@@ -51,4 +56,10 @@ public class ApplicationController {
     public HauDTO hauHttp() throws IOException {
         return applicationService.hauHttp();
     }
+
+    @GetMapping("/hauPostHttp")
+    public void hauPostHttp() throws IOException {
+        applicationService.hauPostHttp();
+    }
+
 }

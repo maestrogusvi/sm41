@@ -15,15 +15,17 @@ import java.io.IOException;
 @Service
 public interface ApplicationService {
 
-
-
      String firstService();
 
      BeeceptorDTO testHttp() throws IOException;
 
      EstradaDTO estradaHttp() throws IOException ;
+     void estradaPostHttp() throws IOException;
 
      RamirezDTO ramirezHttp() throws IOException ;
 
      HauDTO hauHttp() throws IOException ;
+     void hauPostHttp() throws IOException;
+
+
 }
