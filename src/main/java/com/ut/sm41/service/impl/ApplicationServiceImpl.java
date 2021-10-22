@@ -14,21 +14,21 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 @Service
-public class ApplicationServiceImpl implements ApplicationService{
+public class ApplicationServiceImpl implements ApplicationService {
 
     @Autowired
     HttpService httpService;
 
     @Override
-    public String firstService(){
+    public String firstService() {
         return "service";
     }
 
     @Override
     public BeeceptorDTO testHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
-        if(json.get("code")== null){
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com", "GET", null, null, "json", null, null));
+        if (json.get("code") == null) {
             throw new BusinessException("Code doesn´t exist", HttpStatus.FORBIDDEN);
         }
         BeeceptorDTO beeceptorDTO = new BeeceptorDTO();
@@ -37,6 +37,7 @@ public class ApplicationServiceImpl implements ApplicationService{
         beeceptorDTO.setStatus(json.get("status").getAsString());
         return beeceptorDTO;
     }
+
     @Override
     public void testPostHttp() throws IOException {
         JsonParser parser = new JsonParser();
@@ -45,7 +46,8 @@ public class ApplicationServiceImpl implements ApplicationService{
         beeceptorDTO.setMessage("from Post");
         beeceptorDTO.setCode("500");
 
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com/api/v1/testPost","POST",null,null,"json",beeceptorDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com/api/v1/testPost", "POST", null, null, "json", beeceptorDTO.toJson(), null));
+    }
 
     public ZapataDTO zapataHttp() throws IOException {
         JsonParser parser = new JsonParser();
@@ -57,9 +59,9 @@ public class ApplicationServiceImpl implements ApplicationService{
         return zapataDTO;
     }
 
-    public BautistaDTO bautistaHttp() throws IOException{
+    public BautistaDTO bautistaHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://bautistasm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://bautistasm41.free.beeceptor.com", "GET", null, null, "json", null, null));
         BautistaDTO bautistaDTO = new BautistaDTO();
         bautistaDTO.setId(json.get("id").getAsInt());
         bautistaDTO.setName(json.get("name").getAsString());
@@ -67,9 +69,9 @@ public class ApplicationServiceImpl implements ApplicationService{
         return bautistaDTO;
     }
 
-    public AriasDTO ariasHttp() throws IOException{
+    public AriasDTO ariasHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ariasmaysm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ariasmaysm41.free.beeceptor.com", "GET", null, null, "json", null, null));
         AriasDTO ariasDTO = new AriasDTO();
         ariasDTO.setId(json.get("id").getAsInt());
         ariasDTO.setName(json.get("name").getAsString());
@@ -77,9 +79,9 @@ public class ApplicationServiceImpl implements ApplicationService{
         return ariasDTO;
     }
 
-    public SotoDTO sotoHttp() throws IOException{
+    public SotoDTO sotoHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://miner512.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://miner512.free.beeceptor.com", "GET", null, null, "json", null, null));
         SotoDTO sotoDTO = new SotoDTO();
         sotoDTO.setId(json.get("id").getAsInt());
         sotoDTO.setName(json.get("name").getAsString());
@@ -89,7 +91,7 @@ public class ApplicationServiceImpl implements ApplicationService{
 
     public TukDTO tukHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://tukerubiel01.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://tukerubiel01.free.beeceptor.com", "GET", null, null, "json", null, null));
         TukDTO tukDTO = new TukDTO();
         tukDTO.setId(json.get("id").getAsInt());
         tukDTO.setName(json.get("name").getAsString());
@@ -105,7 +107,7 @@ public class ApplicationServiceImpl implements ApplicationService{
         bautistaDTO.setName("from Post");
         bautistaDTO.setStatus("Success");
 
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://bautistasm41.free.beeceptor.com/api/v1/bautistaPost","POST",null,null,"json" ,bautistaDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://bautistasm41.free.beeceptor.com/api/v1/bautistaPost", "POST", null, null, "json", bautistaDTO.toJson(), null));
 
     }
 
@@ -116,10 +118,10 @@ public class ApplicationServiceImpl implements ApplicationService{
         zapataDTO.setName("from Post");
         zapataDTO.setStatus("Success");
 
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://zapatasm41.free.beeceptor.com/api/v1/zapataPost","POST",null,null,"json" ,zapataDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://zapatasm41.free.beeceptor.com/api/v1/zapataPost", "POST", null, null, "json", zapataDTO.toJson(), null));
 
     }
-    
+
     public void sotoPostHttp() throws IOException {
         JsonParser parser = new JsonParser();
         SotoDTO sotoDTO = new SotoDTO();
@@ -127,7 +129,7 @@ public class ApplicationServiceImpl implements ApplicationService{
         sotoDTO.setName("from Post");
         sotoDTO.setStatus("Success");
 
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://miner512.free.beeceptor.com/api/v1/miner512Post","POST",null,null,"json" ,sotoDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://miner512.free.beeceptor.com/api/v1/miner512Post", "POST", null, null, "json", sotoDTO.toJson(), null));
 
     }
 
@@ -138,6 +140,7 @@ public class ApplicationServiceImpl implements ApplicationService{
         ariasDTO.setName("from Post");
         ariasDTO.setStatus("Success");
 
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ariasmaysm41.free.beeceptor.com","POST",null,null,"json" ,ariasDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ariasmaysm41.free.beeceptor.com", "POST", null, null, "json", ariasDTO.toJson(), null));
 
     }
+}
