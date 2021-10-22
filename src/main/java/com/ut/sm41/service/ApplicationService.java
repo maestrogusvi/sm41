@@ -26,5 +26,7 @@ public interface ApplicationService {
     void bautistaPostHttp() throws IOException;
     void zapataPostHttp() throws IOException;
     void sotoPostHttp() throws IOException;
+    void ariasPostHttp() throws IOException;
+
 
 }

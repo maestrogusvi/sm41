@@ -68,6 +68,12 @@ public class ApplicationController {
         applicationService.zapataPostHttp();
     }
 
+    @GetMapping("/ariasPostHttp")
+    public void ariasPostHttp() throws IOException{
+        applicationService.ariasPostHttp();
+    }
+
+
     @GetMapping("/sotoPostHttp")
     public void sotoPostHttp() throws IOException{
         applicationService.sotoPostHttp();
