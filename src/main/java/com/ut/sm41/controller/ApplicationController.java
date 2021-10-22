@@ -47,4 +47,10 @@ public class ApplicationController {
     public DominguezDTO dominguezHttp() throws IOException {
         return applicationService.dominguezHttp();
     }
+
+    @GetMapping("/tunPostHttp")
+    public void tunPostHttp() throws IOException{
+        applicationService.tunPostHttp();
+    }
+
 }
