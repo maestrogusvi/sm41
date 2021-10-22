@@ -80,4 +80,19 @@ public class ApplicationServiceImpl implements ApplicationService {
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41tun.free.beeceptor.com/api/v1/testPost","POST",null,null,"json",tunDTO.toJson(), null));
 
     }
+
+    @Override
+    public void caamalPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        CaamalDTO caamalDTO = new CaamalDTO();
+        caamalDTO.setId(12);
+        caamalDTO.setName("Antonio Caamal");
+        caamalDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://spiderman.free.beeceptor.com/api/v1/testPost","POST",null,null,"json", caamalDTO.toJson(), null));
+
+
+    }
+
+
+
 }
