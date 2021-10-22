@@ -35,26 +35,6 @@ public class ApplicationServiceImpl implements ApplicationService {
         return beeceptorDTO;
     }
 
-    public EstradaDTO estradaHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://estrada.free.beeceptor.com", "GET", null, null, "json", null, null));
-        EstradaDTO estradaDTO = new EstradaDTO();
-        estradaDTO.setName(json.get("name").getAsString());
-        estradaDTO.setId(json.get("id").getAsInt());
-        estradaDTO.setStatus(json.get("status").getAsString());
-        return estradaDTO;
-    }
-
-    public RamirezDTO ramirezHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://christopher.free.beeceptor.com", "GET", null, null, "json", null, null));
-        RamirezDTO ramirezDTO = new RamirezDTO();
-        ramirezDTO.setName(json.get("name").getAsString());
-        ramirezDTO.setId(json.get("id").getAsInt());
-        ramirezDTO.setStatus(json.get("status").getAsString());
-        return ramirezDTO;
-    }
-
     @Override
     public HauDTO hauHttp() throws IOException {
         JsonParser parser = new JsonParser();
@@ -64,6 +44,16 @@ public class ApplicationServiceImpl implements ApplicationService {
         hauDTO.setId(json.get("id").getAsInt());
         hauDTO.setStatus(json.get("status").getAsString());
         return hauDTO;
+    }
+
+    @Override
+    public void testPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        HauDTO hauDTO = new HauDTO();
+        hauDTO.setName("Gregorio Hau");
+        hauDTO.setId(Integer.parseInt("0421"));
+        hauDTO.setStatus("Bienvenido Sr. Stark");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://alfasm41.free.beeceptor.com/api/v1/testPost","POST",null,null,"json", hauDTO.toJson(), null));
     }
 
 }
