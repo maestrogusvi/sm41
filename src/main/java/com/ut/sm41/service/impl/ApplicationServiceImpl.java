@@ -110,4 +110,16 @@ public class ApplicationServiceImpl implements ApplicationService{
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://zapatasm41.free.beeceptor.com/api/v1/zapataPost","POST",null,null,"json" ,zapataDTO.toJson(), null));
 
     }
+
+    public void ariasPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        AriasDTO ariasDTO = new AriasDTO();
+        ariasDTO.setId(501);
+        ariasDTO.setName("from Post");
+        ariasDTO.setStatus("Success");
+
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ariasmaysm41.free.beeceptor.com","POST",null,null,"json" ,ariasDTO.toJson(), null));
+
+    }
+
 }
