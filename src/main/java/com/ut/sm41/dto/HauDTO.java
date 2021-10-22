@@ -32,6 +32,7 @@ public class HauDTO {
         this.status = status;
     }
 
+    @Override
     public String toString() {
         return "{" +
                 "id=" + id +
@@ -47,4 +48,5 @@ public class HauDTO {
                 "\"status\":\"" + status + "\"" +
                 '}';
     }
+
 }

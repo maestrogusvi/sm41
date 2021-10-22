@@ -35,35 +35,6 @@ public class ApplicationServiceImpl implements ApplicationService {
         return beeceptorDTO;
     }
 
-    public EstradaDTO estradaHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://estrada.free.beeceptor.com", "GET", null, null, "json", null, null));
-        EstradaDTO estradaDTO = new EstradaDTO();
-        estradaDTO.setName(json.get("name").getAsString());
-        estradaDTO.setId(json.get("id").getAsInt());
-        estradaDTO.setStatus(json.get("status").getAsString());
-        return estradaDTO;
-    }
-
-    public void estradaPostHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        EstradaDTO estradaDTO = new EstradaDTO();
-        estradaDTO.setId(200);
-        estradaDTO.setName("Luis Estrada");
-        estradaDTO.setStatus("Success");
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://estrada.free.beeceptor.com/api/v1/estradaPostHttp","POST",null,null,"json",estradaDTO.toJson(), null));
-    }
-
-    public RamirezDTO ramirezHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://christopher.free.beeceptor.com", "GET", null, null, "json", null, null));
-        RamirezDTO ramirezDTO = new RamirezDTO();
-        ramirezDTO.setName(json.get("name").getAsString());
-        ramirezDTO.setId(json.get("id").getAsInt());
-        ramirezDTO.setStatus(json.get("status").getAsString());
-        return ramirezDTO;
-    }
-
     @Override
     public HauDTO hauHttp() throws IOException {
         JsonParser parser = new JsonParser();
@@ -75,13 +46,14 @@ public class ApplicationServiceImpl implements ApplicationService {
         return hauDTO;
     }
 
-    public void hauPostHttp() throws IOException {
+    @Override
+    public void testPostHttp() throws IOException {
         JsonParser parser = new JsonParser();
         HauDTO hauDTO = new HauDTO();
-        hauDTO.setId(100);
         hauDTO.setName("Gregorio Hau");
-        hauDTO.setStatus("Success");
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://hau.free.beeceptor.com/api/v1/hauPostHttp","POST",null,null,"json",hauDTO.toJson(), null));
+        hauDTO.setId(Integer.parseInt("0421"));
+        hauDTO.setStatus("Bienvenido Sr. Stark");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://alfasm41.free.beeceptor.com/api/v1/testPost","POST",null,null,"json", hauDTO.toJson(), null));
     }
 
 }
