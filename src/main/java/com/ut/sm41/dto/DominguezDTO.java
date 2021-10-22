@@ -1,7 +1,7 @@
 package com.ut.sm41.dto;
 
 public class DominguezDTO {
-    String id;
+    int id;
     String name;
     String status;
 
@@ -9,7 +9,7 @@ public class DominguezDTO {
     public DominguezDTO() {
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 

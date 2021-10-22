@@ -29,4 +29,5 @@ public interface ApplicationService {
 
     void caamalPostHttp() throws IOException;
 
+    void dominguezPostHttp() throws IOException;
 }

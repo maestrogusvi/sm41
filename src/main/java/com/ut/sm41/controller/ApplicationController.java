@@ -59,4 +59,8 @@ public class ApplicationController {
       applicationService.caamalPostHttp();
     }
 
+    @GetMapping("/dominguezPostHttp")
+    public void dominguezPostHttp() throws IOException{
+        applicationService.caamalPostHttp();
+    }
 }
