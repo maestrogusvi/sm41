@@ -44,6 +44,11 @@ public class ApplicationController {
     public VillagranDTO villagranHttp() throws IOException {
         return applicationService.villagranHttp();
     }
+    @GetMapping("/villagranPostHttp")
+    public void villagranPostHttp() throws IOException{
+        applicationService.villagranPostHttp();
+    }
+
     @GetMapping("/silvaHttp")
     public SilvaDTO silvaHttp() throws IOException {
         return applicationService.silvaHttp();

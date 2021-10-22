@@ -68,6 +68,15 @@ public class ApplicationServiceImpl implements ApplicationService {
         villagranDTO.setStatus(json.get("status").getAsString());
         return villagranDTO;
     }
+    @Override
+    public void villagranPostHttp() throws IOException{
+        JsonParser parser = new JsonParser();
+        VillagranDTO villagranDTO= new VillagranDTO();
+        villagranDTO.setId(12);
+        villagranDTO.setName("from Post");
+        villagranDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com/api/v1/villagranPost","POST",null,null,"json", villagranDTO.toJson(),null));
+    }
 
     @Override
     public SilvaDTO silvaHttp() throws IOException {

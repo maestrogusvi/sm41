@@ -21,6 +21,7 @@ public interface ApplicationService {
     void anotaPostHttp() throws IOException;
 
     VillagranDTO villagranHttp() throws IOException;
+    void villagranPostHttp() throws IOException;
 
     SilvaDTO silvaHttp() throws IOException;
 
