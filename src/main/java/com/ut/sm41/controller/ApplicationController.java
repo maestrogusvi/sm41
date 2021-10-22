@@ -54,6 +54,11 @@ public class ApplicationController {
         return applicationService.silvaHttp();
     }
 
+    @GetMapping("/silvaPostHttp")
+    public void silvaPostHttp() throws IOException {
+        applicationService.silvaPostHttp();
+    }
+
     @GetMapping("/caamalHttp")
     public CaamalDTO caamalHttp() throws IOException {
         return applicationService.caamalHttp();

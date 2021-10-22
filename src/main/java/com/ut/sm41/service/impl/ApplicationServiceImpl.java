@@ -25,7 +25,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public BeeceptorDTO testHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
+JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
         if(json.get("code")== null){
             throw new BusinessException("Code doesn´t exist", HttpStatus.FORBIDDEN);
         }
@@ -88,6 +88,18 @@ public class ApplicationServiceImpl implements ApplicationService {
         silvaDTO.setStatus(json.get("status").getAsString());
         return silvaDTO;
     }
+
+    @Override
+    public void silvaPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        SilvaDTO silvaDTO = new SilvaDTO();
+        silvaDTO.setId(500);
+        silvaDTO.setName("Andres");
+        silvaDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita1.free.beeceptor.com/api/v1/silvaPostHttp","POST",null,null,"json",silvaDTO.toJson(), null));
+    }
+
+
 
     @Override
     public CaamalDTO caamalHttp() throws IOException {

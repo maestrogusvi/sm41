@@ -24,6 +24,7 @@ public interface ApplicationService {
     void villagranPostHttp() throws IOException;
 
     SilvaDTO silvaHttp() throws IOException;
+    void silvaPostHttp() throws  IOException;
 
     CaamalDTO caamalHttp() throws IOException;
     void caamalPostHttp() throws IOException;
