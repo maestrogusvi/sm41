@@ -4,6 +4,7 @@ public class BautistaDTO {
 
     int id;
     String name;
+    String status;
 
     public BautistaDTO() {
     }
@@ -24,6 +25,24 @@ public class BautistaDTO {
         this.name = name;
     }
 
-    public void setStatus(String status) {
+    public String getStatus() {return status;}
+
+    public void setStatus(String status) {this.status = status;}
+
+    @Override
+    public String toString() {
+        return "BautistaDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
+    public String toJson() {
+        return "{" +
+                "\"id\":\"" + id + "\"," +
+                "\"name\":\"" + name + "\"," +
+                "\"status\":\"" + status +  "\"" +
+                '}';
     }
 }

@@ -57,5 +57,10 @@ public class ApplicationController {
     public TukDTO tukHttp() throws IOException {
         return applicationService.tukHttp();
     }
+    
+    @GetMapping("/bautistaPostHttp")
+    public void bautistaHttp() throws IOException{
+        applicationService.bautistaHttp();
+    }
 }
 

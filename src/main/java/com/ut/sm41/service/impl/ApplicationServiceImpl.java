@@ -88,4 +88,15 @@ public class ApplicationServiceImpl implements ApplicationService{
         return tukDTO;
     }
 
+    @Override
+    public void bautistaPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        BautistaDTO bautistaDTO = new BautistaDTO();
+        bautistaDTO.setId("501");
+        bautistaDTO.setName("from Post");
+        bautistaDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://bautistasm41.free.beeceptor.com/api/v1/bautistaPost","POST",null,null,"json", bautistaDTO.toJson(),null, null));
+
+    }
+
 }

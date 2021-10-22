@@ -23,5 +23,7 @@ public interface ApplicationService {
     TukDTO tukHttp() throws IOException ;
     ZapataDTO zapataHttp() throws IOException ;
 
+    void bautistaPostHttps() throws IOException;
+
 
 }
