@@ -32,6 +32,10 @@ public class ApplicationController {
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
     }
+    @GetMapping("/testPostHttp")
+    public void testPostHttp() throws IOException{
+        applicationService.testPostHttp();
+    }
 
     @GetMapping("/zapataHttp")
     public ZapataDTO zapataHttp() throws IOException {
@@ -57,7 +61,7 @@ public class ApplicationController {
     public TukDTO tukHttp() throws IOException {
         return applicationService.tukHttp();
     }
-    
+
     @GetMapping("/bautistaPostHttp")
     public void bautistaPostHttp() throws IOException{
         applicationService.bautistaPostHttp();
