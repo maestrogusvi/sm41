@@ -36,6 +36,10 @@ public class ApplicationController {
     public BatunDTO batunHttp() throws IOException {
         return applicationService.batunHttp ();
     }
+    @GetMapping("/batunPostHttp")
+    public void  batunPostHttp( ) throws IOException {
+        applicationService.batunPosthttp();
+    }
 
     @GetMapping("/badilloHttp")
     public BadilloDTO badilloHttp() throws IOException {

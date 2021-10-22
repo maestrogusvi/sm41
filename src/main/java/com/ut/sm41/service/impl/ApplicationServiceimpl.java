@@ -37,10 +37,22 @@ HttpService httpService;
         BatunDTO batunDTO = new BatunDTO();
         batunDTO.setName(json.get("name").getAsString());
         batunDTO.setId(json.get("Id").getAsInt());
-        batunDTO.getStatus(json.get("status").getAsString());
+        batunDTO.setStatus(json.get("status").getAsString());
         return batunDTO;
     }
-@Override
+
+    public void batunPosthttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        BatunDTO batunDTO = new BatunDTO();
+        batunDTO.setName("name");
+        batunDTO.setId(500);
+        batunDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://batunsm41.free.beeceptor.com/api/v1/batunPost","POST",null,null,"json", batunDTO.toJson(), null));
+
+    }
+
+
+    @Override
     public MartinezDTO martinezHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://batunsm41.free.beeceptor.com","GET",null,null,"json",null, null));
