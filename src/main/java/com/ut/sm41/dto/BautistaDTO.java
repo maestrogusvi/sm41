@@ -31,7 +31,7 @@ public class BautistaDTO {
 
     @Override
     public String toString() {
-        return "BautistaDTO{" +
+        return "{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", status='" + status + '\'' +

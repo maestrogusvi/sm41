@@ -59,8 +59,8 @@ public class ApplicationController {
     }
     
     @GetMapping("/bautistaPostHttp")
-    public void bautistaHttp() throws IOException{
-        applicationService.bautistaHttp();
+    public void bautistaPostHttp() throws IOException{
+        applicationService.bautistaPostHttp();
     }
 }
 
