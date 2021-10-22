@@ -62,5 +62,10 @@ public class ApplicationController {
     public void bautistaPostHttp() throws IOException{
         applicationService.bautistaPostHttp();
     }
+
+    @GetMapping("/zapataPostHttp")
+    public void zapataPostHttp() throws IOException{
+        applicationService.zapataPostHttp();
+    }
 }
 

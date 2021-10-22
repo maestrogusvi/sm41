@@ -24,6 +24,7 @@ public interface ApplicationService {
     ZapataDTO zapataHttp() throws IOException ;
 
     void bautistaPostHttp() throws IOException;
+    void zapataPostHttp() throws IOException;
 
 
 }

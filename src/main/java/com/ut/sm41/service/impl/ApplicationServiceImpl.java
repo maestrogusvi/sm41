@@ -100,4 +100,14 @@ public class ApplicationServiceImpl implements ApplicationService{
 
     }
 
+    public void zapataPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        ZapataDTO zapataDTO = new ZapataDTO();
+        zapataDTO.setId(501);
+        zapataDTO.setName("from Post");
+        zapataDTO.setStatus("Success");
+
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://zapatasm41.free.beeceptor.com/api/v1/zapataPost","POST",null,null,"json" ,zapataDTO.toJson(), null));
+
+    }
 }
