@@ -1,7 +1,7 @@
 package com.ut.sm41.dto;
 
 public class DominguezDTO {
-    int id;
+    String id;
     String name;
     String status;
 
@@ -9,13 +9,11 @@ public class DominguezDTO {
     public DominguezDTO() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    public void setId(int id) {this.id = id;}
 
     public String getName() {
         return name;
@@ -32,4 +30,23 @@ public class DominguezDTO {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "DominguezDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
+    public String toJson() {
+        return "DominguezDTO{" +
+                "\"id\":\"" + id + "\"," +
+                "\"name\":\"" + name + "\"," +
+                "\"status\":\"" + status +"\""+
+                '}';
+    }
+
+
 }
