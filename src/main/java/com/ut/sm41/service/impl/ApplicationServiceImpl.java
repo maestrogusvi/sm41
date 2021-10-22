@@ -43,7 +43,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         anotaDTO.setId(12);
         anotaDTO.setName("from Post");
         anotaDTO.setStatus("Success");
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/testPost","POST",null,null,"json",anotaDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/anotaPost","POST",null,null,"json",anotaDTO.toJson(), null));
 
     }
 
