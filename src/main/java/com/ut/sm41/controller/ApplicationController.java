@@ -82,5 +82,10 @@ public class ApplicationController {
     public void sotoPostHttp() throws IOException{
         applicationService.sotoPostHttp();
     }
+
+    @GetMapping("/tukPostHttp")
+    public void tukPostHttp() throws IOException{
+        applicationService.tukPostHttp();
+    }
 }
 
