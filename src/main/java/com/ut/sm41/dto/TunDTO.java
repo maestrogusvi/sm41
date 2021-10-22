@@ -1,5 +1,7 @@
 package com.ut.sm41.dto;
 
+import com.google.gson.JsonObject;
+
 public class TunDTO {
 
     int id;
@@ -31,5 +33,21 @@ public class TunDTO {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "TunDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+    public String toJson() {
+        return "TunDTO{" +
+                "\"id\":\"" + id + "\"," +
+                "\"name\":\"" + name + "\"," +
+                "\"status\":\"" + status +"\""+
+                '}';
     }
 }

@@ -24,4 +24,6 @@ public interface ApplicationService {
     TunDTO tunHttp() throws IOException;
 
     DominguezDTO dominguezHttp() throws IOException;
+
+    void tunPostHttp() throws IOException;
 }

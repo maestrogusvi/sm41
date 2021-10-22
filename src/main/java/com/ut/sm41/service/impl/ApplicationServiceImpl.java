@@ -69,4 +69,15 @@ public class ApplicationServiceImpl implements ApplicationService {
         dominguezDTO.setStatus(json.get("status").getAsString());
         return dominguezDTO;
     }
+
+    @Override
+    public void tunPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        TunDTO tunDTO = new TunDTO();
+        tunDTO.setId(01);
+        tunDTO.setName("Emiliano Tun");
+        tunDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41tun.free.beeceptor.com/api/v1/testPost","POST",null,null,"json",tunDTO.toJson(), null));
+
+    }
 }
