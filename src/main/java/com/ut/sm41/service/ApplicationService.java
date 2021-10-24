@@ -16,7 +16,7 @@ public interface ApplicationService {
      BeeceptorDTO testHttp() throws IOException ;
 
      BatunDTO batunHttp() throws IOException;
-     void batunPosthttp() throws IOException;
+     void batunPostHttp() throws IOException;
 
 
 

@@ -41,7 +41,7 @@ HttpService httpService;
         return batunDTO;
     }
     @Override
-    public void batunPosthttp() throws IOException {
+    public void batunPostHttp() throws IOException {
         JsonParser parser = new JsonParser();
         BatunDTO batunDTO = new BatunDTO();
         batunDTO.setName("name");
