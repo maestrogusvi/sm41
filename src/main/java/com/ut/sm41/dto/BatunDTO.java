@@ -5,7 +5,6 @@ public class BatunDTO {
     int id;
     String name;
     String status;
-    String String;
 
     public BatunDTO() {
 
@@ -40,7 +39,6 @@ public class BatunDTO {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", status='" + status + '\'' +
-                ", String=" + String +  '\'' +
                 '}';
     }
 
@@ -49,7 +47,6 @@ public class BatunDTO {
                 "id=" + id +
                 "\" name=\":\"" + name + "\"" +
                 "\" status=\":\"" + status + "\"" +
-                "\" String=\":\"" + String + "\"" +
                 '}';
     }
 
