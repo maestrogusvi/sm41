@@ -64,6 +64,16 @@ public class ApplicationServiceImpl implements ApplicationService {
         return ramirezDTO;
     }
 
+    public void ramirezPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        RamirezDTO ramirezDTO = new RamirezDTO();
+        ramirezDTO.setId(200);
+        ramirezDTO.setName("Christopher Ramirez");
+        ramirezDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://christopher.free.beeceptor.com/api/v1/ramirezPost","POST",null,null,"json",ramirezDTO.toJson(), null));
+    }
+
+
     @Override
     public HauDTO hauHttp() throws IOException {
         JsonParser parser = new JsonParser();

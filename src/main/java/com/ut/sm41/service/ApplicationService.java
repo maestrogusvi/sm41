@@ -23,6 +23,7 @@ public interface ApplicationService {
      void estradaPostHttp() throws IOException;
 
      RamirezDTO ramirezHttp() throws IOException ;
+     void ramirezPostHttp() throws IOException;
 
      HauDTO hauHttp() throws IOException ;
      void hauPostHttp() throws IOException;

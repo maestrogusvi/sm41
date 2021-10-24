@@ -52,6 +52,11 @@ public class ApplicationController {
         return applicationService.ramirezHttp();
     }
 
+    @GetMapping("/ramirezPostHttp")
+    public void ramirezPostHttp() throws IOException {
+        applicationService.ramirezPostHttp();
+    }
+
     @GetMapping("/hauHttp")
     public HauDTO hauHttp() throws IOException {
         return applicationService.hauHttp();
