@@ -11,8 +11,6 @@ public class BatunDTO {
 
     }
 
-
-
     public int getId(){
         return id;
     }
@@ -36,7 +34,6 @@ public class BatunDTO {
         return status;
     }
 
-
     @Override
     public String toString() {
         return "{" +
@@ -55,6 +52,7 @@ public class BatunDTO {
                 "\" String=\":\"" + String + "\"" +
                 '}';
     }
+
 }
 
 

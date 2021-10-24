@@ -40,7 +40,7 @@ HttpService httpService;
         batunDTO.setStatus(json.get("status").getAsString());
         return batunDTO;
     }
-
+    @Override
     public void batunPosthttp() throws IOException {
         JsonParser parser = new JsonParser();
         BatunDTO batunDTO = new BatunDTO();
@@ -50,8 +50,6 @@ HttpService httpService;
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://batunsm41.free.beeceptor.com/api/v1/batunPost","POST",null,null,"json", batunDTO.toJson(), null));
 
     }
-
-
     @Override
     public MartinezDTO martinezHttp() throws IOException {
         JsonParser parser = new JsonParser();
