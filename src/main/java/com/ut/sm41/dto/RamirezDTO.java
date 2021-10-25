@@ -1,11 +1,13 @@
 package com.ut.sm41.dto;
 
-public class HauDTO {
+public class RamirezDTO {
+
     int id;
     String name;
     String status;
 
-    public HauDTO() {
+
+    public RamirezDTO() {
     }
 
     public int getId() {
@@ -27,7 +29,6 @@ public class HauDTO {
     public String getStatus() {
         return status;
     }
-
     public void setStatus(String status) {
         this.status = status;
     }
@@ -42,9 +43,9 @@ public class HauDTO {
 
     public String toJson() {
         return "{" +
-                "\"id\":\"" + id + "\"," +
-                "\"name\":\"" + name + "\"," +
-                "\"status\":\"" + status + "\"" +
+                "\"id\":" + id + "," +
+                " \"name\":\"" + name + "\"," +
+                " \"status\":\"" + status +"\""+
                 '}';
     }
 }

@@ -1,5 +1,6 @@
 
 package com.ut.sm41.controller;
+
 import com.google.gson.JsonObject;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.dto.EstradaDTO;
@@ -35,9 +36,15 @@ public class ApplicationController {
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
     }
+
     @GetMapping("/estradaHttp")
     public EstradaDTO estradaHttp() throws IOException {
         return applicationService.estradaHttp();
+    }
+
+    @GetMapping("/estradaPostHttp")
+    public void testPostHttp() throws IOException {
+        applicationService.estradaPostHttp();
     }
 
     @GetMapping("/ramirezHttp")
@@ -45,14 +52,19 @@ public class ApplicationController {
         return applicationService.ramirezHttp();
     }
 
+    @GetMapping("/ramirezPostHttp")
+    public void ramirezPostHttp() throws IOException {
+        applicationService.ramirezPostHttp();
+    }
 
     @GetMapping("/hauHttp")
     public HauDTO hauHttp() throws IOException {
         return applicationService.hauHttp();
     }
 
-    @GetMapping("/testPostHttp")
-    public void testPostHttp() throws IOException {
-        applicationService.testPostHttp();
+    @GetMapping("/hauPostHttp")
+    public void hauPostHttp() throws IOException {
+        applicationService.hauPostHttp();
     }
+
 }
