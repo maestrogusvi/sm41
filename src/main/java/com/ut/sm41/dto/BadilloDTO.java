@@ -32,4 +32,21 @@ public class BadilloDTO {
     public void setStatus(String status) {
         Status = status;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status='" + Status + '\'' +
+                '}';
+    }
+
+    public  String toJson() {
+        return "{" +
+                "id=" + id +
+                "\" name=\":\"" + name + "\"" +
+                "\" status=\":\"" + Status + "\"" +
+                '}';
+    }
 }
