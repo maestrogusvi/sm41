@@ -69,8 +69,8 @@ public class ApplicationController {
     public CadenaDTO cadenaHttp() throws IOException {
         return applicationService.cadenaHttp();
     }
-    @GetMapping("/cadenaPostHttp")
-    public void cadenaPostHttp() throws IOException {
-        applicationService.cadenaPostHttp();
+    @PostMapping("/cadenaPostHttp")
+    public CadenaDTO cadenaPostHttp(@RequestBody CadenaDTO cadenaDTO) throws IOException {
+       return applicationService.cadenaPostHttp(cadenaDTO);
     }
 }
