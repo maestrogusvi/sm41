@@ -68,7 +68,18 @@ HttpService httpService;
         badilloDTO.setStatus(json.get("status").getAsString());
         return badilloDTO;
     }
+
     @Override
+    public void badilloPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        BadilloDTO badilloDTO = new BadilloDTO();
+        badilloDTO.setId(230);
+        badilloDTO.setName("Jair Badillo");
+        badilloDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://badillosm41.free.beeceptor.com/api/v1/badilloPost","POST",null,null,"json", badilloDTO.toJson(), null));
+
+
+        @Override
     public VarguezDTO varguezHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://misael41.free.beeceptor.com","GET",null,null,"json",null, null));
