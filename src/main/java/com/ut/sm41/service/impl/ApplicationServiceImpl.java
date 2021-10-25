@@ -70,13 +70,10 @@ JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https:
         return villagranDTO;
     }
     @Override
-    public void villagranPostHttp() throws IOException{
+    public VillagranDTO villagranPostHttp(VillagranDTO villagranDTO) throws IOException{
         JsonParser parser = new JsonParser();
-        VillagranDTO villagranDTO= new VillagranDTO();
-        villagranDTO.setId(12);
-        villagranDTO.setName("from Post");
-        villagranDTO.setStatus("Success");
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com/api/v1/villagranPost","POST",null,null,"json", villagranDTO.toJson(),null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com/api/v1/villagranPostHttp","POST",null,null,"json", villagranDTO.toJson(),null));
+    return villagranDTO;
     }
 
     @Override
