@@ -12,4 +12,5 @@ public interface ApplicationService {
      String firstService();
      BeeceptorDTO testHttp() throws IOException ;
      void testPostHttp(BeeceptorDTO beeceptorDTO) throws IOException;
+     void testMyFirstObject(BeeceptorDTO beeceptorDTO);
 }

@@ -4,6 +4,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.BeeceptorDTO;
 import com.ut.sm41.exception.BusinessException;
+import com.ut.sm41.model.UserModel;
+import com.ut.sm41.repository.UserRepository;
 import com.ut.sm41.service.ApplicationService;
 import com.ut.sm41.service.HttpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Autowired
     HttpService httpService;
+
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     public String firstService(){
@@ -41,6 +46,14 @@ public class ApplicationServiceImpl implements ApplicationService {
     public void testPostHttp(BeeceptorDTO beeceptorDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com/api/v1/testPost","POST",null,null,"json",beeceptorDTO.toJson(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(beeceptorDTO.getMessage());
+        userRepository.save(userModel);
+    }
+
+    @Override
+    public void testMyFirstObject(BeeceptorDTO beeceptorDTO) {
 
     }
+
 }

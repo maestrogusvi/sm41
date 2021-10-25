@@ -33,8 +33,10 @@ public class ApplicationController {
         return applicationService.testHttp();
     }
 
-    @PostMapping("/postHttp")
+    @PostMapping("/post")
     public void testPostHttp(@RequestBody  BeeceptorDTO beeceptorDTO) throws IOException{
-        applicationService.testPostHttp(beeceptorDTO);
+        applicationService.testMyFirstObject(beeceptorDTO);
     }
+
+
 }
