@@ -1,16 +1,14 @@
 package com.ut.sm41.controller;
 
-import com.ut.sm41.dto.BadilloDTO;
-import com.ut.sm41.dto.BeeceptorDTO;
-import com.ut.sm41.dto.MartinezDTO;
-import com.ut.sm41.dto.VarguezDTO;
+import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import com.ut.sm41.dto.BatunDTO;
 import java.io.IOException;
+
 
 @RestController
 @RequestMapping("/api/v1")
@@ -34,10 +32,18 @@ public class ApplicationController {
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
     }
+    @GetMapping("/batunHttp")
+    public BatunDTO batunHttp() throws IOException {
+        return applicationService.batunHttp ();
+    }
+    @GetMapping("/batunPostHttp")
+    public void  batunPostHttp( ) throws IOException {
+        applicationService.batunPosthttp();
+    }
 
-    @GetMapping("/BadilloHttp")
-    public BadilloDTO BadilloHttp() throws IOException {
-        return applicationService.BadilloHttp();
+    @GetMapping("/badilloHttp")
+    public BadilloDTO badilloHttp() throws IOException {
+        return applicationService.badilloHttp();
     }
 
     @GetMapping("/martinezHttp")
@@ -48,5 +54,10 @@ public class ApplicationController {
     @GetMapping("/varguezHttp")
     public VarguezDTO varguezHttp() throws IOException {
         return applicationService.varguezHttp();
+    }
+
+    @GetMapping("/cadenaHttp")
+    public CadenaDTO cadenaHttp() throws IOException {
+        return applicationService.cadenaHttp();
     }
 }

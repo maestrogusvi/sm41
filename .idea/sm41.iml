@@ -23,6 +23,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+<<<<<<< HEAD
+=======
+      <excludeFolder url="file://$MODULE_DIR$/${project.build.directory}/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/${project.build.directory}/test-classes" />
+>>>>>>> origin/Matrix
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -46,11 +51,15 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.5" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.12.5" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.10" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.10" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.10" level="project" />
+=======
+    <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.10" level="project" />
+>>>>>>> origin/Matrix
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.springframework.boot:spring-boot-starter-tomcat:2.5.5" level="project" />
     <orderEntry type="library" name="Maven: jakarta.annotation:jakarta.annotation-api:1.3.5" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.53" level="project" />
@@ -91,5 +100,12 @@
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.14" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.15" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.0" level="project" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="Maven: org.springframework:spring-context:5.3.10" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.10" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.10" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.10" level="project" />
+>>>>>>> origin/Matrix
   </component>
 </module>
