@@ -54,7 +54,7 @@ public class ApplicationController {
     }
 
 
-    @GetMapping("/caamalPostHttp")
+    @PostMapping("/caamalPostHttp")
     public void caamalPostHttp() throws IOException{
       applicationService.caamalPostHttp();
     }
