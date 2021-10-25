@@ -119,13 +119,8 @@ public class ApplicationServiceImpl implements ApplicationService {
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://miner512.free.beeceptor.com/api/v1/miner512Post", "POST", null, null, "json", sotoDTO.toJson(), null));
     }
 
-    public void ariasPostHttp() throws IOException {
+    public void ariasPostHttp(AriasDTO ariasDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        AriasDTO ariasDTO = new AriasDTO();
-        ariasDTO.setId(501);
-        ariasDTO.setName("from Post");
-        ariasDTO.setStatus("Success");
-
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ariasmaysm41.free.beeceptor.com", "POST", null, null, "json", ariasDTO.toJson(), null));
 
     }
