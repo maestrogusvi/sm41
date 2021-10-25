@@ -46,7 +46,7 @@ public class AnotaDTO {
 
     public String toJson() {
         return "{" +
-                "\"id\":\"" + id + "\"," +
+                "\"id\":" + id + "," +
                 "\"name\":\"" + name + "\"," +
                 "\"status\":\"" + status + "\"" +
                 '}';

@@ -36,9 +36,9 @@ public class ApplicationController {
     public AnotaDTO anotaHttp() throws IOException {
         return applicationService.anotaHttp();
     }
-    @GetMapping("/anotaPostHttp")
-    public void anotaPostHttp() throws IOException {
-        applicationService.anotaPostHttp();
+    @PostMapping ("/anotaPostHttp")
+    public AnotaDTO anotaPostHttp(@RequestBody AnotaDTO anotaDTO) throws IOException {
+        return applicationService.anotaPostHttp(anotaDTO);
     }
     @GetMapping("/villagranHttp")
     public VillagranDTO villagranHttp() throws IOException {

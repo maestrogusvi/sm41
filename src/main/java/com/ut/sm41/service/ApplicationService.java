@@ -14,7 +14,7 @@ public interface ApplicationService {
     BeeceptorDTO testHttp() throws IOException;
 
     AnotaDTO anotaHttp() throws IOException;
-    void anotaPostHttp() throws IOException;
+    AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException;
 
     VillagranDTO villagranHttp() throws IOException;
     VillagranDTO villagranPostHttp(VillagranDTO villagranDTO) throws IOException;
