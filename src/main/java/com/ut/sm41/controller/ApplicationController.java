@@ -42,9 +42,9 @@ public class ApplicationController {
         return applicationService.estradaHttp();
     }
 
-    @GetMapping("/estradaPostHttp")
-    public void testPostHttp() throws IOException {
-        applicationService.estradaPostHttp();
+    @PostMapping("/estradaPostHttp")
+    public EstradaDTO estradaPostHttp(@RequestBody EstradaDTO estradaDTO) throws IOException {
+        return applicationService.estradaPostHttp(estradaDTO);
     }
 
     @GetMapping("/ramirezHttp")

@@ -45,13 +45,10 @@ public class ApplicationServiceImpl implements ApplicationService {
         return estradaDTO;
     }
 
-    public void estradaPostHttp() throws IOException {
+    public EstradaDTO estradaPostHttp(EstradaDTO estradaDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        EstradaDTO estradaDTO = new EstradaDTO();
-        estradaDTO.setId(200);
-        estradaDTO.setName("Luis Estrada");
-        estradaDTO.setStatus("Success");
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://estrada.free.beeceptor.com/api/v1/estradaPostHttp","POST",null,null,"json",estradaDTO.toJson(), null));
+        return estradaDTO;
     }
 
     public RamirezDTO ramirezHttp() throws IOException {
