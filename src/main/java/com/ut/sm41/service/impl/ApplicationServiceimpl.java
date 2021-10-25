@@ -81,6 +81,17 @@ HttpService httpService;
         varguezDTO.setStatus(json.get("status").getAsString());
         return varguezDTO;
     }
+
+    @Override
+    public void varguezPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        VarguezDTO varguezDTO = new VarguezDTO();
+        varguezDTO.setId(360);
+        varguezDTO.setName("Misael Varguez");
+        varguezDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://misael41.free.beeceptor.com/api/v1/varguezPost","POST",null,null,"json", varguezDTO.toJson(), null));
+
+    }
     @Override
     public CadenaDTO cadenaHttp() throws IOException {
         JsonParser parser = new JsonParser();
