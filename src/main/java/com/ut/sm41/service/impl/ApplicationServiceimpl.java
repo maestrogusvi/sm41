@@ -41,12 +41,9 @@ HttpService httpService;
         return batunDTO;
     }
     @Override
-    public void batunPostHttp() throws IOException {
+    public void batunPostHttp(BatunDTO batunDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        BatunDTO batunDTO = new BatunDTO();
-        batunDTO.setName("name");
-        batunDTO.setId(500);
-        batunDTO.setStatus("Success");
+
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://batunsm41.free.beeceptor.com/api/v1/batunPost","POST",null,null,"json", batunDTO.toJson(), null));
 
     }
@@ -83,7 +80,18 @@ HttpService httpService;
         badilloDTO.setStatus(json.get("status").getAsString());
         return badilloDTO;
     }
+
     @Override
+    public void badilloPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        BadilloDTO badilloDTO = new BadilloDTO();
+        badilloDTO.setId(230);
+        badilloDTO.setName("Jair Badillo");
+        badilloDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://badillosm41.free.beeceptor.com/api/v1/badilloPost","POST",null,null,"json", badilloDTO.toJson(), null));
+
+
+        @Override
     public VarguezDTO varguezHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://misael41.free.beeceptor.com","GET",null,null,"json",null, null));
@@ -113,6 +121,17 @@ HttpService httpService;
         cadenaDTO.setId(json.get("id").getAsInt());
         cadenaDTO.setStatus(json.get("status").getAsString());
         return cadenaDTO;
+    }
+
+    @Override
+    public void cadenaPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        CadenaDTO cadenaDTO = new CadenaDTO();
+        cadenaDTO.setId(12);
+        cadenaDTO.setName("Saul Cadena");
+        cadenaDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://cadenasm41.free.beeceptor.com/api/v1/cadenaPost","POST",null,null,"json", cadenaDTO.toJson(), null));
+
     }
 }
 

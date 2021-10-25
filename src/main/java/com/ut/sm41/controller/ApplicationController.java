@@ -36,9 +36,9 @@ public class ApplicationController {
     public BatunDTO batunHttp() throws IOException {
         return applicationService.batunHttp ();
     }
-    @GetMapping("/batunPostHttp")
-    public void  batunPostHttp( ) throws IOException {
-        applicationService.batunPostHttp();
+    @PostMapping("/batunPostHttp")
+    public void batunPostHttp(@RequestBody BatunDTO batunDTO) throws IOException {
+        applicationService.batunPostHttp( batunDTO );
     }
 
     @GetMapping("/badilloHttp")
@@ -69,5 +69,9 @@ public class ApplicationController {
     @GetMapping("/cadenaHttp")
     public CadenaDTO cadenaHttp() throws IOException {
         return applicationService.cadenaHttp();
+    }
+    @GetMapping("/cadenaPostHttp")
+    public void cadenaPostHttp() throws IOException {
+        applicationService.cadenaPostHttp();
     }
 }
