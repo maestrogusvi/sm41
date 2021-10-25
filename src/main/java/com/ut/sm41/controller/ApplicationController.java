@@ -59,4 +59,8 @@ public class ApplicationController {
     public void testPostHttp() throws IOException{
         applicationService.vazquezPostHttp();
     }
+    @GetMapping("/romanoPostHttp")
+    public void romanoPostHttp() throws IOException{
+        applicationService.romanoPostHttp();
+    }
 }
