@@ -80,9 +80,10 @@ public class ApplicationController {
     }
 
 
-    @GetMapping("/sotoPostHttp")
-    public void sotoPostHttp() throws IOException{
-        applicationService.sotoPostHttp();
+    @PostMapping("/sotoPostHttp")
+    public SotoDTO sotoPostHttp(@RequestBody SotoDTO sotoDTO) throws IOException{
+        applicationService.sotoPostHttp(sotoDTO);
+        return sotoDTO;
     }
 
     @GetMapping("/tukPostHttp")
