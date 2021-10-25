@@ -59,9 +59,8 @@ public class ApplicationController {
     public VazquezDTO vazquezPostHttp(@RequestBody VazquezDTO vazquezDTO) throws IOException{
         return applicationService.vazquezPostHttp(vazquezDTO);
     }
-
-    @GetMapping("/romanoPostHttp")
-    public void romanoPostHttp() throws IOException{
-        applicationService.romanoPostHttp();
+    @PostMapping("/romanoPostHttp")
+    public RomanoDTO romanoPostHttp(@RequestBody RomanoDTO romanoDTO) throws IOException{
+        return applicationService.romanoPostHttp(romanoDTO);
     }
 }

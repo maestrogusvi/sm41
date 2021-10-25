@@ -86,13 +86,9 @@ public class ApplicationServiceImpl implements ApplicationService {
         return  vazquezDTO;
     }
     @Override
-    public void romanoPostHttp() throws IOException {
+    public RomanoDTO romanoPostHttp(RomanoDTO romanoDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        RomanoDTO romanoDTO = new RomanoDTO();
-        romanoDTO.setId(500);
-        romanoDTO.setName("Saulo Post");
-        romanoDTO.setStatus("Success");
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com/api/v1/romanoPost","POST",null,null,"json",romanoDTO.toJSON(), null));
-
+        return romanoDTO;
     }
 }
