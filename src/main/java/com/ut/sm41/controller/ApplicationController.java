@@ -1,5 +1,4 @@
 package com.ut.sm41.controller;
-
 import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.service.ApplicationService;
@@ -8,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.ut.sm41.dto.BatunDTO;
 import java.io.IOException;
-
 
 @RestController
 @RequestMapping("/api/v1")
@@ -61,9 +59,10 @@ public class ApplicationController {
     public VarguezDTO varguezHttp() throws IOException {
         return applicationService.varguezHttp();
     }
-    @GetMapping("/varguezPostHttp")
-    public void varguezPostHttp() throws IOException {
-        applicationService.varguezPostHttp();
+    @PostMapping("/varguezPostHttp")
+    public VarguezDTO varguezPostHttp(@RequestBody VarguezDTO varguezDTO) throws IOException{
+        applicationService.varguezPostHttp(varguezDTO);
+        return varguezDTO;
     }
 
     @GetMapping("/cadenaHttp")

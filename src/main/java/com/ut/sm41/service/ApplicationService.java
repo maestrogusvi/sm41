@@ -7,7 +7,6 @@ import java.io.IOException;
 @Service
 public interface ApplicationService {
 
-
      String firstService();
 
      BeeceptorDTO testHttp() throws IOException ;
@@ -22,7 +21,7 @@ public interface ApplicationService {
      void badilloPostHttp() throws IOException;
 
      VarguezDTO varguezHttp() throws IOException;
-     void varguezPostHttp() throws IOException;
+     void varguezPostHttp(VarguezDTO varguezDTO) throws IOException;
 
 
      CadenaDTO cadenaHttp() throws IOException;
