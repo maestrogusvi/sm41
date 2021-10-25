@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 @Service
-public class ApplicationServiceImpl implements ApplicationService {
+public abstract class ApplicationServiceImpl implements ApplicationService {
 
     @Autowired
     HttpService httpService;
@@ -98,17 +98,10 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     }
 
-    public void zapataPostHttp() throws IOException {
+    public void zapataPostHttp(ZapataDTO zapataDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        ZapataDTO zapataDTO = new ZapataDTO();
-        zapataDTO.setId(501);
-        zapataDTO.setName("from Post");
-        zapataDTO.setStatus("Success");
-
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://zapatasm41.free.beeceptor.com/api/v1/zapataPost", "POST", null, null, "json", zapataDTO.toJson(), null));
-
     }
-
     public void sotoPostHttp(SotoDTO sotoDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://miner512.free.beeceptor.com/api/v1/miner512Post", "POST", null, null, "json", sotoDTO.toJson(), null));
@@ -130,4 +123,5 @@ public class ApplicationServiceImpl implements ApplicationService {
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://tukerubiel01.free.beeceptor.com/api/v1/tukPost", "POST", null, null, "json", tukDTO.toJson(), null));
 
     }
+
 }
