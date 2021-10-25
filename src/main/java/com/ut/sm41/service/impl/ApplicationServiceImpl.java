@@ -1,6 +1,5 @@
 package com.ut.sm41.service.impl;
 
-
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.*;
@@ -38,14 +37,8 @@ public class ApplicationServiceImpl implements ApplicationService {
         return beeceptorDTO;
     }
 
-    @Override
-    public void testPostHttp() throws IOException {
+    public void testPostHttp(BeeceptorDTO beeceptorDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        BeeceptorDTO beeceptorDTO = new BeeceptorDTO();
-        beeceptorDTO.setStatus("Success");
-        beeceptorDTO.setMessage("from Post");
-        beeceptorDTO.setCode("500");
-
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com/api/v1/testPost", "POST", null, null, "json", beeceptorDTO.toJson(), null));
     }
 
@@ -99,14 +92,8 @@ public class ApplicationServiceImpl implements ApplicationService {
         return tukDTO;
     }
 
-    @Override
-    public void bautistaPostHttp() throws IOException {
+    public void bautistaPostHttp(BautistaDTO bautistaDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        BautistaDTO bautistaDTO = new BautistaDTO();
-        bautistaDTO.setId(501);
-        bautistaDTO.setName("from Post");
-        bautistaDTO.setStatus("Success");
-
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://bautistasm41.free.beeceptor.com/api/v1/bautistaPost", "POST", null, null, "json", bautistaDTO.toJson(), null));
 
     }
@@ -130,7 +117,6 @@ public class ApplicationServiceImpl implements ApplicationService {
         sotoDTO.setStatus("Success");
 
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://miner512.free.beeceptor.com/api/v1/miner512Post", "POST", null, null, "json", sotoDTO.toJson(), null));
-
     }
 
     public void ariasPostHttp() throws IOException {

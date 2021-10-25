@@ -23,8 +23,8 @@ public interface ApplicationService {
     TukDTO tukHttp() throws IOException ;
     ZapataDTO zapataHttp() throws IOException ;
 
-    void testPostHttp() throws IOException;
-    void bautistaPostHttp() throws IOException;
+    void testPostHttp(BeeceptorDTO beeceptorDTO) throws IOException;
+    void bautistaPostHttp(BautistaDTO bautistaDTO) throws IOException;
     void zapataPostHttp() throws IOException;
     void sotoPostHttp() throws IOException;
     void ariasPostHttp() throws IOException;
