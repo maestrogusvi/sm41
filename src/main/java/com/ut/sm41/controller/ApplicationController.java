@@ -55,10 +55,11 @@ public class ApplicationController {
         return applicationService.martinezHttp();
     }
 
-    @GetMapping("/vazquezPostHttp")
-    public void testPostHttp() throws IOException{
-        applicationService.vazquezPostHttp();
+    @PostMapping("/vazquezPostHttp")
+    public VazquezDTO vazquezPostHttp(@RequestBody VazquezDTO vazquezDTO) throws IOException{
+        return applicationService.vazquezPostHttp(vazquezDTO);
     }
+
     @GetMapping("/romanoPostHttp")
     public void romanoPostHttp() throws IOException{
         applicationService.romanoPostHttp();

@@ -80,14 +80,10 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public void vazquezPostHttp() throws IOException {
+    public VazquezDTO vazquezPostHttp(VazquezDTO vazquezDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        VazquezDTO vazquezDTO = new VazquezDTO();
-        vazquezDTO.setId(500);
-        vazquezDTO.setName("Freddy Post");
-        vazquezDTO.setStatus("Success");
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com/api/v1/vazquezPost","POST",null,null,"json",vazquezDTO.toJSON(), null));
-
+        return  vazquezDTO;
     }
     @Override
     public void romanoPostHttp() throws IOException {
