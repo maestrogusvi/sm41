@@ -44,7 +44,7 @@ public class ApplicationController {
     public VillagranDTO villagranHttp() throws IOException {
         return applicationService.villagranHttp();
     }
-    @GetMapping("/villagranPostHttp")
+    @PostMapping("/villagranPostHttp")
     public VillagranDTO villagranPostHttp(@RequestBody VillagranDTO villagranDTO) throws IOException {
         return applicationService.villagranPostHttp(villagranDTO);
     }
@@ -64,9 +64,9 @@ public class ApplicationController {
         return applicationService.caamalHttp();
     }
 
-    @GetMapping("/caamalPostHttp")
-    public void caamalPostHttp() throws IOException{
-        applicationService.caamalPostHttp();
+    @PostMapping("/caamalPostHttp")
+    public CaamalDTO caamalPostHttp(@RequestBody CaamalDTO caamalDTO) throws IOException{
+        return applicationService.caamalPostHttp(caamalDTO);
     }
 
 

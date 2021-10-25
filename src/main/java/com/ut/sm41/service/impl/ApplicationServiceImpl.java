@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.io.IOException;
 
 @Service
-public class ApplicationServiceImpl implements ApplicationService {
+public abstract class ApplicationServiceImpl implements ApplicationService {
 
     @Autowired
     HttpService httpService;
@@ -102,15 +102,12 @@ JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https:
     }
 
     @Override
-    public void caamalPostHttp() throws IOException {
+    public CaamalDTO caamalPostHttp(CaamalDTO caamalDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        CaamalDTO caamalDTO = new CaamalDTO();
-        caamalDTO.setId(13);
-        caamalDTO.setName("from Post");
-        caamalDTO.setStatus("Success");
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com/api/v1/caamalPost", "POST", null, null, "json", caamalDTO.toJson(), null));
-
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com/api/v1/caamalPostHttp", "POST", null, null, "json", caamalDTO.toJson(), null));
+        return caamalDTO;
     }
+
 
 
 }
