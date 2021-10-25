@@ -23,7 +23,7 @@ HttpService httpService;
 @Override
     public BeeceptorDTO testHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://pavelsm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
         BeeceptorDTO beeceptorDTO = new BeeceptorDTO();
         beeceptorDTO.setCode(json.get("code").getAsString());
         beeceptorDTO.setMessage(json.get("message").getAsString());
@@ -53,12 +53,24 @@ HttpService httpService;
     @Override
     public MartinezDTO martinezHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://batunsm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://pavelsm41.free.beeceptor.com","GET",null,null,"json",null, null));
         MartinezDTO martinezDTO = new MartinezDTO();
         martinezDTO.setName(json.get("name").getAsString());
         martinezDTO.setId(json.get("id").getAsInt());
         martinezDTO.setStatus(json.get("status").getAsString());
         return martinezDTO;
+    }
+
+    @Override
+    public void martinezPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        MartinezDTO martinezDTO = new MartinezDTO();
+        martinezDTO.setStatus("Success");
+        martinezDTO.setId(500);
+        martinezDTO.setName("from Post");
+
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://pavelsm41.free.beeceptor.com/api/v1/martinezPost","GET",null,null,"json", martinezDTO.toJson(), null));
+
     }
 
     @Override

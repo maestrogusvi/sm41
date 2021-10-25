@@ -9,6 +9,7 @@ public class MartinezDTO {
     public MartinezDTO() {
     }
 
+
     public int getId() {
         return id;
     }
@@ -31,5 +32,22 @@ public class MartinezDTO {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
+    public String toJson() {
+        return "{" +
+                "\"id\":\"" + id + "\"," +
+                "\"name\":\"" + name + "\"," +
+                "\"status\":\"" + status + "\"," +
+                '}';
     }
 }
