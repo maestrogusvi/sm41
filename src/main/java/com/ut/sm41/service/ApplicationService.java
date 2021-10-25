@@ -24,6 +24,7 @@ public interface ApplicationService {
 
 
      CadenaDTO cadenaHttp() throws IOException;
+     void cadenaPostHttp() throws IOException;
 
 }
 

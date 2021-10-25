@@ -102,5 +102,16 @@ HttpService httpService;
         cadenaDTO.setStatus(json.get("status").getAsString());
         return cadenaDTO;
     }
+
+    @Override
+    public void cadenaPostHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        CadenaDTO cadenaDTO = new CadenaDTO();
+        cadenaDTO.setId(12);
+        cadenaDTO.setName("Saul Cadena");
+        cadenaDTO.setStatus("Success");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://cadenasm41.free.beeceptor.com/api/v1/cadenaPost","POST",null,null,"json", cadenaDTO.toJson(), null));
+
+    }
 }
 
