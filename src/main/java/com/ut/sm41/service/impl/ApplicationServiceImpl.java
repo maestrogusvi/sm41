@@ -38,14 +38,10 @@ JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https:
     }
 
     @Override
-    public void anotaPostHttp() throws IOException {
+    public AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        AnotaDTO anotaDTO = new AnotaDTO();
-        anotaDTO.setId(12);
-        anotaDTO.setName("from Post");
-        anotaDTO.setStatus("Success");
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/anotaPost","POST",null,null,"json",anotaDTO.toJson(), null));
-
+        return anotaDTO;
     }
 
     @Override
