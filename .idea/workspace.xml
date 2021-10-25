@@ -4,6 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="8ec78ae3-7b17-4e27-87df-710dd9f66e89" name="Changes" comment="Feat(ApplicationServiceImpl) add new endpoint and logical business">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/controller/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/controller/ApplicationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/dto/VarguezDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/dto/VarguezDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/ApplicationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/ApplicationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/impl/ApplicationServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/impl/ApplicationServiceimpl.java" afterDir="false" />
+    </list>
     <list default="true" id="dcfb1457-cae8-46c0-a9c1-0909461496a0" name="Changes" comment="Feat(BusinessException)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,34 +41,34 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Matrix" />
+        <entry key="$PROJECT_DIR$" value="Matrix_Varguez" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1zAXJ8rr7OrFRPGV1tB7m2Y64gm" />
+  <component name="ProjectId" id="1zTbzIhmHJeszmHWK9LsqTOutSs" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+    <property name="OverrideImplement.combined" value="false" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.ut.sm41" />
-    </key>
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
     <configuration name="Sm41Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -74,47 +82,45 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="dcfb1457-cae8-46c0-a9c1-0909461496a0" name="Changes" comment="" />
-      <created>1633591792762</created>
+      <changelist id="8ec78ae3-7b17-4e27-87df-710dd9f66e89" name="Changes" comment="Feat(ApplicationServiceImpl) add new" />
+      <created>1634175287555</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1633591792762</updated>
-      <workItem from="1633591795527" duration="628000" />
-      <workItem from="1634095238109" duration="608000" />
-      <workItem from="1634096017249" duration="3344000" />
-      <workItem from="1634157293879" duration="42000" />
-      <workItem from="1634176292868" duration="119000" />
-      <workItem from="1634176514701" duration="597000" />
-      <workItem from="1634198555020" duration="350000" />
-      <workItem from="1634213379730" duration="8371000" />
+      <updated>1634175287555</updated>
+      <workItem from="1634175292102" duration="6547000" />
+      <workItem from="1634217489542" duration="4280000" />
+      <workItem from="1634581201377" duration="352000" />
+      <workItem from="1634829134719" duration="1620000" />
+      <workItem from="1634829498271" duration="2336000" />
+      <workItem from="1634853626021" duration="6878000" />
     </task>
-    <task id="LOCAL-00001" summary="Feat(MartinezDTO) new DTO">
-      <created>1634097052567</created>
+    <task id="LOCAL-00001" summary="feat(BatunDTO) new DTO">
+      <created>1634193243238</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1634097052567</updated>
+      <updated>1634193243238</updated>
     </task>
-    <task id="LOCAL-00002" summary="Fix(ApplicationController) add new endpoint martinezHttp">
-      <created>1634218286264</created>
+    <task id="LOCAL-00002" summary="fix(ApplicationController)add new endpoint BatunHttp">
+      <created>1634221465270</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1634218286264</updated>
+      <updated>1634221465270</updated>
     </task>
-    <task id="LOCAL-00003" summary="Fix(ApplicationService) add new endpoint badilloHttp">
-      <created>1634219350697</created>
+    <task id="LOCAL-00003" summary="fix(ApplicationController)add new endpoint BatunHttp">
+      <created>1634679021797</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1634219350698</updated>
+      <updated>1634679021797</updated>
     </task>
-    <task id="LOCAL-00004" summary="Feat(BusinessException)">
-      <created>1634232503951</created>
+    <task id="LOCAL-00004" summary="Feat(ApplicationServiceImpl) add new">
+      <created>1634814366894</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1634232503951</updated>
+      <updated>1634814366894</updated>
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
@@ -127,7 +133,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/master" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -135,10 +168,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Feat(MartinezDTO) new DTO" />
-    <MESSAGE value="Fix(ApplicationController) add new endpoint martinezHttp" />
-    <MESSAGE value="Fix(ApplicationService) add new endpoint badilloHttp" />
-    <MESSAGE value="Feat(BusinessException)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Feat(BusinessException)" />
+    <MESSAGE value="feat(BatunDTO) new DTO" />
+    <MESSAGE value="fix(ApplicationController)add new endpoint BatunHttp" />
+    <MESSAGE value="Feat(ApplicationServiceImpl) add new" />
+    <MESSAGE value="Feat(ApplicationServiceImpl) add new impl" />
+    <MESSAGE value="Feat(ApplicationServiceImpl) add new endpoint and logical business" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feat(ApplicationServiceImpl) add new endpoint and logical business" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/sm41$Sm41Application.ic" NAME="Sm41Application Coverage Results" MODIFIED="1634858461712" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
