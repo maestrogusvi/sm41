@@ -51,6 +51,7 @@ public class ApplicationServiceImpl implements ApplicationService {
         return estradaDTO;
     }
 
+    @Override
     public RamirezDTO ramirezHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://christopher.free.beeceptor.com", "GET", null, null, "json", null, null));
@@ -61,13 +62,11 @@ public class ApplicationServiceImpl implements ApplicationService {
         return ramirezDTO;
     }
 
-    public void ramirezPostHttp() throws IOException {
-        JsonParser parser = new JsonParser();
-        RamirezDTO ramirezDTO = new RamirezDTO();
-        ramirezDTO.setId(200);
-        ramirezDTO.setName("Christopher Ramirez");
-        ramirezDTO.setStatus("Success");
+    @Override
+    public RamirezDTO ramirezPostHttp(RamirezDTO ramirezDTO) throws IOException {
+        JsonParser parser  = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://christopher.free.beeceptor.com/api/v1/ramirezPost","POST",null,null,"json",ramirezDTO.toJson(), null));
+        return ramirezDTO;
     }
 
 

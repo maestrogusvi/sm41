@@ -52,9 +52,9 @@ public class ApplicationController {
         return applicationService.ramirezHttp();
     }
 
-    @GetMapping("/ramirezPostHttp")
-    public void ramirezPostHttp() throws IOException {
-        applicationService.ramirezPostHttp();
+    @PostMapping("/ramirezPostHttp")
+    public RamirezDTO ramirezDTOPostHttp(@RequestBody RamirezDTO ramirezDTO) throws IOException {
+        return applicationService.ramirezPostHttp(ramirezDTO);
     }
 
     @GetMapping("/hauHttp")
