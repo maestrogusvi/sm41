@@ -41,12 +41,9 @@ HttpService httpService;
         return batunDTO;
     }
     @Override
-    public void batunPostHttp() throws IOException {
+    public void batunPostHttp(BatunDTO batunDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        BatunDTO batunDTO = new BatunDTO();
-        batunDTO.setName("name");
-        batunDTO.setId(500);
-        batunDTO.setStatus("Success");
+
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://batunsm41.free.beeceptor.com/api/v1/batunPost","POST",null,null,"json", batunDTO.toJson(), null));
 
     }
