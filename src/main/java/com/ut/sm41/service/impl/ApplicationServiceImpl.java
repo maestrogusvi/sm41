@@ -8,6 +8,7 @@ import com.ut.sm41.service.HttpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.io.IOException;
 
@@ -90,16 +91,11 @@ JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https:
     }
 
     @Override
-    public void silvaPostHttp() throws IOException {
+    public SilvaDTO silvaPostHttp(SilvaDTO silvaDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        SilvaDTO silvaDTO = new SilvaDTO();
-        silvaDTO.setId(500);
-        silvaDTO.setName("Andres");
-        silvaDTO.setStatus("Success");
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita1.free.beeceptor.com/api/v1/silvaPostHttp","POST",null,null,"json",silvaDTO.toJson(), null));
+        return silvaDTO;
     }
-
-
 
     @Override
     public CaamalDTO caamalHttp() throws IOException {
