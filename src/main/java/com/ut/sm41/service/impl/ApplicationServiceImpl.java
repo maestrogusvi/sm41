@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.io.IOException;
 
 @Service
-public abstract class ApplicationServiceImpl implements ApplicationService {
+public class ApplicationServiceImpl implements ApplicationService {
 
     @Autowired
     HttpService httpService;
