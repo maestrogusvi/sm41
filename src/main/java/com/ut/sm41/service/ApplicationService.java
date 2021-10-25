@@ -22,7 +22,7 @@ public interface ApplicationService {
      BeeceptorDTO testHttp() throws IOException;
 
      EstradaDTO estradaHttp() throws IOException ;
-     void estradaPostHttp() throws IOException;
+     EstradaDTO estradaPostHttp(EstradaDTO estradaDTO) throws IOException;
 
      RamirezDTO ramirezHttp() throws IOException ;
      void ramirezPostHttp() throws IOException;
