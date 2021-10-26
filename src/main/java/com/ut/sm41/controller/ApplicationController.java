@@ -43,6 +43,10 @@ public class ApplicationController {
     public BadilloDTO badilloHttp() throws IOException {
         return applicationService.badilloHttp();
     }
+    @PostMapping("/badilloPostHttp")
+    public void badilloPostHttp(@RequestBody BadilloDTO badilloDTO) throws IOException {
+         applicationService.badilloPostHttp(badilloDTO);
+    }
 
     @GetMapping("/martinezHttp")
     public MartinezDTO martinezHttp() throws IOException {

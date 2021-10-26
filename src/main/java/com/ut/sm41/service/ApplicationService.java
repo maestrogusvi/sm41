@@ -18,7 +18,7 @@ public interface ApplicationService {
      void martinezPostHttp() throws IOException;
 
      BadilloDTO badilloHttp() throws IOException;
-     void badilloPostHttp() throws IOException;
+     void badilloPostHttp(BadilloDTO badilloDTO) throws IOException;
 
      VarguezDTO varguezHttp() throws IOException;
      void varguezPostHttp(VarguezDTO varguezDTO) throws IOException;

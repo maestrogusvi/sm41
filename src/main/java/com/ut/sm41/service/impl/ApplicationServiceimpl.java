@@ -82,12 +82,9 @@ HttpService httpService;
     }
 
     @Override
-    public void badilloPostHttp() throws IOException {
+    public void badilloPostHttp(BadilloDTO badilloDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        BadilloDTO badilloDTO = new BadilloDTO();
-        badilloDTO.setId(230);
-        badilloDTO.setName("Jair Badillo");
-        badilloDTO.setStatus("Success");
+
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://badillosm41.free.beeceptor.com/api/v1/badilloPost", "POST", null, null, "json", badilloDTO.toJson(), null));
 
     }
