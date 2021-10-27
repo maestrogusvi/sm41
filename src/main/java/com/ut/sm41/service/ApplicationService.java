@@ -11,7 +11,7 @@ public interface ApplicationService {
 
     String firstService();
     BeeceptorDTO testHttp() throws IOException;
-    void testMyFirstObject();
+    void testMyFirstObject(AnotaDTO anotaDTO);
 
     AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException;
 

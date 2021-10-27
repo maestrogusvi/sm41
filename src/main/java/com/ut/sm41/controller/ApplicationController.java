@@ -70,8 +70,8 @@ public class ApplicationController {
         return applicationService.caamalPostHttp(caamalDTO);
     }
 
-    @PostMapping ("/Post")
-    public void testPostHttp() throws IOException {
-        applicationService.testMyFirstObject();
+    @PostMapping ("/anotapost")
+    public void testPostHttp(@RequestBody AnotaDTO anotaDTO) throws IOException {
+        applicationService.testMyFirstObject(anotaDTO);
     }
 }

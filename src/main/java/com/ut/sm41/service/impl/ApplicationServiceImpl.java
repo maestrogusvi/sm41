@@ -43,16 +43,18 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public void testMyFirstObject() {
-        UserModel userModel = new UserModel();
-        userModel.setName("Hannia anota");
-        userRepository.save(userModel);
+    public void testMyFirstObject(AnotaDTO anotaDTO) {
+
     }
+
 
     @Override
     public AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/anotaPost","POST",null,null,"json",anotaDTO.toJson(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(anotaDTO.getMessage);
+        userRepository.save(userModel);
         return anotaDTO;
     }
 
