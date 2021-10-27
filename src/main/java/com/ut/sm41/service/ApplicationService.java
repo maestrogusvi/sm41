@@ -12,7 +12,7 @@ public interface ApplicationService {
      BeeceptorDTO testHttp() throws IOException ;
 
      BatunDTO batunHttp() throws IOException;
-     void batunPostHttp(BatunDTO batunDTO) throws IOException;
+     BatunDTO batunPostHttp(BatunDTO batunDTO) throws IOException;
 
      MartinezDTO martinezHttp() throws IOException;
      void martinezPostHttp(MartinezDTO martinezDTO) throws IOException;
