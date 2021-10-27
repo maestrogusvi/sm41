@@ -41,7 +41,7 @@ public class RamirezDTO {
                 '}';
     }
 
-    public String toJson() {
+    public String RamirezDTO() {
         return "{" +
                 "\"id\":" + id + "," +
                 " \"name\":\"" + name + "\"," +
