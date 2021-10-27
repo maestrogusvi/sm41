@@ -25,7 +25,7 @@ public class ApplicationController {
     @GetMapping("/")
     public String inicio() {
         return applicationService.firstService();
-        
+
     }
 
     @GetMapping("/testHttp")
