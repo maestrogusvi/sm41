@@ -64,9 +64,8 @@ public class ApplicationController {
     }
 
     @PostMapping("/bautistaPostHttp")
-    public BautistaDTO bautistaPostHttp(@RequestBody BautistaDTO bautistaDTO) throws IOException{
+    public void bautistaPostHttp(@RequestBody BautistaDTO bautistaDTO) throws IOException{
         applicationService.bautistaPostHttp(bautistaDTO);
-        return bautistaDTO;
     }
 
 
@@ -92,5 +91,6 @@ public class ApplicationController {
         applicationService.zapataPostHttp(zapataDTO);
         return zapataDTO;
     }
+
 }
 
