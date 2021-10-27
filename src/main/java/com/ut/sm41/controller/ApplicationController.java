@@ -23,8 +23,9 @@ public class ApplicationController {
     }
 
     @GetMapping("/")
-    public String inicio(){
+    public String inicio() {
         return applicationService.firstService();
+        
     }
 
     @GetMapping("/testHttp")
@@ -69,5 +70,8 @@ public class ApplicationController {
         return applicationService.caamalPostHttp(caamalDTO);
     }
 
-
+    @PostMapping ("/Post")
+    public void testPostHttp() throws IOException {
+        applicationService.testMyFirstObject();
+    }
 }

@@ -10,21 +10,22 @@ import java.io.IOException;
 public interface ApplicationService {
 
     String firstService();
-
     BeeceptorDTO testHttp() throws IOException;
+    void testMyFirstObject();
 
-    AnotaDTO anotaHttp() throws IOException;
     AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException;
 
+    AnotaDTO anotaHttp() throws IOException;
+
     VillagranDTO villagranHttp() throws IOException;
+
     VillagranDTO villagranPostHttp(VillagranDTO villagranDTO) throws IOException;
 
     SilvaDTO silvaHttp() throws IOException;
-    SilvaDTO silvaPostHttp(SilvaDTO silvaDTO) throws  IOException;
+
+    SilvaDTO silvaPostHttp(SilvaDTO silvaDTO) throws IOException;
 
     CaamalDTO caamalHttp() throws IOException;
+
     CaamalDTO caamalPostHttp(CaamalDTO caamalDTO) throws IOException;
-
-
-
 }

@@ -3,6 +3,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
+import com.ut.sm41.model.UserModel;
+import com.ut.sm41.repository.UserRepository;
 import com.ut.sm41.service.ApplicationService;
 import com.ut.sm41.service.HttpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,9 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Autowired
     HttpService httpService;
 
+    @Autowired
+    UserRepository userRepository;
+
     @Override
     public String firstService(){
         return "service";
@@ -26,7 +31,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public BeeceptorDTO testHttp() throws IOException {
         JsonParser parser = new JsonParser();
-JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
         if(json.get("code")== null){
             throw new BusinessException("Code doesn´t exist", HttpStatus.FORBIDDEN);
         }
@@ -35,6 +40,13 @@ JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https:
         beeceptorDTO.setMessage(json.get("message").getAsString());
         beeceptorDTO.setStatus(json.get("status").getAsString());
         return beeceptorDTO;
+    }
+
+    @Override
+    public void testMyFirstObject() {
+        UserModel userModel = new UserModel();
+        userModel.setName("Hannia anota");
+        userRepository.save(userModel);
     }
 
     @Override
@@ -107,7 +119,6 @@ JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https:
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com/api/v1/caamalPostHttp", "POST", null, null, "json", caamalDTO.toJson(), null));
         return caamalDTO;
     }
-
 
 
 }
