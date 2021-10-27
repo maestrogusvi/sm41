@@ -2,7 +2,6 @@ package com.ut.sm41.dto;
 
 public class VillagranDTO {
 
-    public String getMessage;
     int id;
     String name;
     String status;
