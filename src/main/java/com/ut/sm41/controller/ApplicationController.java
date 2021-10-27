@@ -53,10 +53,10 @@ public class ApplicationController {
         return applicationService.martinezHttp();
     }
 
-    @GetMapping("/martinezPostHttp")
-    public void martinezPostHttp() throws IOException{
-        applicationService.martinezPostHttp();
-
+    @PostMapping("/martinezPostHttp")
+    public MartinezDTO martinezPostHttp(@RequestBody MartinezDTO martinezDTO) throws IOException{
+        applicationService.martinezPostHttp(martinezDTO);
+        return martinezDTO;
     }
 
     @GetMapping("/varguezHttp")

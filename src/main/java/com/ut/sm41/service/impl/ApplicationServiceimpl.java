@@ -59,14 +59,10 @@ HttpService httpService;
     }
 
     @Override
-    public void martinezPostHttp() throws IOException {
+    public void martinezPostHttp(MartinezDTO martinezDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        MartinezDTO martinezDTO = new MartinezDTO();
-        martinezDTO.setStatus("Success");
-        martinezDTO.setId(500);
-        martinezDTO.setName("from Post");
 
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://pavelsm41.free.beeceptor.com/api/v1/martinezPost","GET",null,null,"json", martinezDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://pavelsm41.free.beeceptor.com/api/v1/martinezPost","POST",null,null,"json", martinezDTO.toJson(), null));
 
     }
 

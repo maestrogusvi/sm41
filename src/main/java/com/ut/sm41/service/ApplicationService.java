@@ -15,7 +15,7 @@ public interface ApplicationService {
      void batunPostHttp(BatunDTO batunDTO) throws IOException;
 
      MartinezDTO martinezHttp() throws IOException;
-     void martinezPostHttp() throws IOException;
+     void martinezPostHttp(MartinezDTO martinezDTO) throws IOException;
 
      BadilloDTO badilloHttp() throws IOException;
      void badilloPostHttp(BadilloDTO badilloDTO) throws IOException;
