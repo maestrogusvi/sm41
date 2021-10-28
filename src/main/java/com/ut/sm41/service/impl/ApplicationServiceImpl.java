@@ -108,6 +108,9 @@ public abstract class ApplicationServiceImpl implements ApplicationService {
     public void zapataPostHttp(ZapataDTO zapataDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://zapatasm41.free.beeceptor.com/api/v1/zapataPost", "POST", null, null, "json", zapataDTO.toJson(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(zapataDTO.getName());
+        userRepository.save(userModel);
     }
     public void sotoPostHttp(SotoDTO sotoDTO) throws IOException {
         JsonParser parser = new JsonParser();
