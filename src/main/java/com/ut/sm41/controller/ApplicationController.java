@@ -81,7 +81,7 @@ public class ApplicationController {
         return sotoDTO;
     }
 
-    @GetMapping("/tukPostHttp")
+    @PostMapping("/tukPostHttp")
     public TukDTO tukPostHttp(@RequestBody TukDTO tukDTO) throws IOException{
         applicationService.tukPostHttp(tukDTO);
         return tukDTO;
