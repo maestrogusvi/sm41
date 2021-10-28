@@ -1,4 +1,3 @@
-
 package com.ut.sm41.controller;
 
 import com.google.gson.JsonObject;
@@ -45,6 +44,11 @@ public class ApplicationController {
     @PostMapping("/estradaPostHttp")
     public EstradaDTO estradaPostHttp(@RequestBody EstradaDTO estradaDTO) throws IOException {
         return applicationService.estradaPostHttp(estradaDTO);
+    }
+
+    @PostMapping("/estradapost")
+    public void testPostHttp (@RequestBody EstradaDTO estradaDTO) throws IOException {
+        applicationService.testMyFirstObject(estradaDTO);
     }
 
     @GetMapping("/ramirezHttp")

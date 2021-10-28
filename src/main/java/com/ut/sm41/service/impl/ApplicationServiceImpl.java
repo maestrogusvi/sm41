@@ -1,10 +1,14 @@
 package com.ut.sm41.service.impl;
+
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
+import com.ut.sm41.model.UserModel;
+import com.ut.sm41.repository.UserRepository;
 import com.ut.sm41.service.ApplicationService;
 import com.ut.sm41.service.HttpService;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -17,10 +21,11 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Autowired
     HttpService httpService;
 
+    @Autowired
+    UserRepository userRepository;
+
     @Override
-    public String firstService() {
-        return "service";
-    }
+    public String firstService() { return "service"; }
 
     public BeeceptorDTO testHttp() throws IOException {
         JsonParser parser = new JsonParser();
@@ -49,6 +54,13 @@ public class ApplicationServiceImpl implements ApplicationService {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://estrada.free.beeceptor.com/api/v1/estradaPostHttp","POST",null,null,"json",estradaDTO.toJson(), null));
         return estradaDTO;
+    }
+
+    @Override
+    public void testMyFirstObject(EstradaDTO estradaDTO) {
+        UserModel userModel = new UserModel();
+        userModel.setName(estradaDTO.getName());
+        userRepository.save(userModel);
     }
 
     @Override

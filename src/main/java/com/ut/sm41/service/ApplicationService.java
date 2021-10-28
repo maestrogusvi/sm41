@@ -21,6 +21,7 @@ public interface ApplicationService {
 
      EstradaDTO estradaHttp() throws IOException ;
      EstradaDTO estradaPostHttp(EstradaDTO estradaDTO) throws IOException;
+     void testMyFirstObject(EstradaDTO estradaDTO);
 
      RamirezDTO ramirezHttp() throws IOException ;
      RamirezDTO ramirezPostHttp(RamirezDTO ramirezDTO) throws IOException;
