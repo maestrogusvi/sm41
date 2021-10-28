@@ -1,6 +1,5 @@
 package com.ut.sm41.service;
 
-import ch.qos.logback.core.pattern.parser.Parser;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.*;
@@ -23,12 +22,13 @@ public interface ApplicationService {
     TukDTO tukHttp() throws IOException ;
     ZapataDTO zapataHttp() throws IOException ;
 
-    void testPostHttp() throws IOException;
-    void bautistaPostHttp() throws IOException;
-    void zapataPostHttp() throws IOException;
-    void sotoPostHttp() throws IOException;
-    void ariasPostHttp() throws IOException;
+    void testPostHttp(BeeceptorDTO beeceptorDTO) throws IOException;
+    void bautistaPostHttp(BautistaDTO bautistaDTO) throws IOException;
+    void ariasPostHttp(AriasDTO ariasDTO) throws IOException;
+    void zapataPostHttp(ZapataDTO zapataDTO) throws IOException;
+    void sotoPostHttp(SotoDTO sotoDTO) throws IOException;
     void tukPostHttp() throws IOException;
+
 
 
 }

@@ -32,9 +32,9 @@ public class ApplicationController {
     public BeeceptorDTO testHttp() throws IOException {
         return applicationService.testHttp();
     }
-    @GetMapping("/testPostHttp")
-    public void testPostHttp() throws IOException{
-        applicationService.testPostHttp();
+    @PostMapping("/testPostHttp")
+    public void testPostHttp(@RequestBody BeeceptorDTO beeceptorDTO) throws IOException{
+        applicationService.testPostHttp(beeceptorDTO);
     }
 
     @GetMapping("/zapataHttp")
@@ -62,30 +62,34 @@ public class ApplicationController {
         return applicationService.tukHttp();
     }
 
-    @GetMapping("/bautistaPostHttp")
-    public void bautistaPostHttp() throws IOException{
-        applicationService.bautistaPostHttp();
+    @PostMapping("/bautistaPostHttp")
+    public void bautistaPostHttp(@RequestBody BautistaDTO bautistaDTO) throws IOException{
+        applicationService.bautistaPostHttp(bautistaDTO);
     }
 
-    @GetMapping("/zapataPostHttp")
-    public void zapataPostHttp() throws IOException{
-        applicationService.zapataPostHttp();
-    }
 
     @GetMapping("/ariasPostHttp")
-    public void ariasPostHttp() throws IOException{
-        applicationService.ariasPostHttp();
+    public AriasDTO ariasPostHttp(@RequestBody AriasDTO ariasDTO) throws IOException{
+        applicationService.ariasPostHttp(ariasDTO);
+        return ariasDTO;
     }
 
 
-    @GetMapping("/sotoPostHttp")
-    public void sotoPostHttp() throws IOException{
-        applicationService.sotoPostHttp();
+    @PostMapping("/sotoPostHttp")
+    public SotoDTO sotoPostHttp(@RequestBody SotoDTO sotoDTO) throws IOException{
+        applicationService.sotoPostHttp(sotoDTO);
+        return sotoDTO;
     }
 
     @GetMapping("/tukPostHttp")
     public void tukPostHttp() throws IOException{
         applicationService.tukPostHttp();
     }
+    @PostMapping("/zapataPostHttp")
+    public ZapataDTO zapataPostHttp(@RequestBody ZapataDTO zapataDTO) throws IOException {
+        applicationService.zapataPostHttp(zapataDTO);
+        return zapataDTO;
+    }
+
 }
 
