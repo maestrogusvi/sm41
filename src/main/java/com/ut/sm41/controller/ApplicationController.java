@@ -55,12 +55,13 @@ public class ApplicationController {
 
 
     @PostMapping("/caamalPostHttp")
-    public void caamalPostHttp() throws IOException{
-      applicationService.caamalPostHttp();
+    public void caamalPostHttp(@RequestBody CaamalDTO caamalDTO) throws IOException{
+      applicationService.testMyFirsObject(caamalDTO);
+
     }
 
     @GetMapping("/dominguezPostHttp")
     public void dominguezPostHttp() throws IOException{
-        applicationService.caamalPostHttp();
+        applicationService.dominguezPostHttp();
     }
 }

@@ -6,6 +6,8 @@ import com.ut.sm41.dto.CaamalDTO;
 import com.ut.sm41.dto.DominguezDTO;
 import com.ut.sm41.dto.TunDTO;
 import com.ut.sm41.exception.BusinessException;
+import com.ut.sm41.model.UserModel;
+import com.ut.sm41.repository.UserRepository;
 import com.ut.sm41.service.ApplicationService;
 import com.ut.sm41.service.HttpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,10 @@ import java.io.IOException;
 public class ApplicationServiceImpl implements ApplicationService {
     @Autowired
     HttpService httpService;
+
+    @Autowired
+    UserRepository userRepository;
+
 
     @Override
 
@@ -103,6 +109,13 @@ public class ApplicationServiceImpl implements ApplicationService {
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ernestodp11.free.beeceptor.com/api/v1/testPost","POST",null,null,"json", dominguezDTO.toJson(), null));
 
 
+    }
+
+    @Override
+    public void testMyFirsObject(CaamalDTO caamalDTO) {
+        UserModel userModel = new UserModel();
+        userModel.setName(caamalDTO.getMenssage);
+        userRepository.save(userModel);
     }
 
 
