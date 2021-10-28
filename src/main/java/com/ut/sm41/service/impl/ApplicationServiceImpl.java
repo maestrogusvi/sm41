@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 
 @Service
-public abstract class ApplicationServiceImpl implements ApplicationService {
+public class ApplicationServiceImpl implements ApplicationService {
 
     @Autowired
     HttpService httpService;
