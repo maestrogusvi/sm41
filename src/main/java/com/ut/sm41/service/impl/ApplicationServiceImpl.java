@@ -103,10 +103,12 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public SilvaDTO silvaPostHttp(SilvaDTO silvaDTO) throws IOException {
+    public void silvaPostHttp(SilvaDTO silvaDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita1.free.beeceptor.com/api/v1/silvaPostHttp","POST",null,null,"json",silvaDTO.toJson(), null));
-        return silvaDTO;
+        UserModel userModel = new UserModel();
+        userModel.setName(silvaDTO.getName());
+        userRepository.save(userModel);
     }
 
     @Override
