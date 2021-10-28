@@ -12,13 +12,13 @@ public interface ApplicationService {
      BeeceptorDTO testHttp() throws IOException ;
 
      BatunDTO batunHttp() throws IOException;
-     void batunPostHttp(BatunDTO batunDTO) throws IOException;
+     BatunDTO batunPostHttp(BatunDTO batunDTO) throws IOException;
 
      MartinezDTO martinezHttp() throws IOException;
-     void martinezPostHttp() throws IOException;
+     void martinezPostHttp(MartinezDTO martinezDTO) throws IOException;
 
      BadilloDTO badilloHttp() throws IOException;
-     void badilloPostHttp() throws IOException;
+     void badilloPostHttp(BadilloDTO badilloDTO) throws IOException;
 
      VarguezDTO varguezHttp() throws IOException;
      VarguezDTO varguezPostHttp(VarguezDTO varguezDTO) throws IOException;
@@ -26,7 +26,7 @@ public interface ApplicationService {
 
 
      CadenaDTO cadenaHttp() throws IOException;
-     void cadenaPostHttp() throws IOException;
+     CadenaDTO cadenaPostHttp(CadenaDTO cadenaDTO) throws  IOException;
 
 }
 

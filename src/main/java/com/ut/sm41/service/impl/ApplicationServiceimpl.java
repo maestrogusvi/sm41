@@ -45,11 +45,11 @@ UserRepository userRepository;
         return batunDTO;
     }
     @Override
-    public void batunPostHttp(BatunDTO batunDTO) throws IOException {
+    public BatunDTO batunPostHttp(BatunDTO batunDTO) throws IOException {
         JsonParser parser = new JsonParser();
 
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://batunsm41.free.beeceptor.com/api/v1/batunPost","POST",null,null,"json", batunDTO.toJson(), null));
-
+        return batunDTO;
     }
     @Override
     public MartinezDTO martinezHttp() throws IOException {
@@ -63,14 +63,10 @@ UserRepository userRepository;
     }
 
     @Override
-    public void martinezPostHttp() throws IOException {
+    public void martinezPostHttp(MartinezDTO martinezDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        MartinezDTO martinezDTO = new MartinezDTO();
-        martinezDTO.setStatus("Success");
-        martinezDTO.setId(500);
-        martinezDTO.setName("from Post");
 
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://pavelsm41.free.beeceptor.com/api/v1/martinezPost","GET",null,null,"json", martinezDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://pavelsm41.free.beeceptor.com/api/v1/martinezPost","POST",null,null,"json", martinezDTO.toJson(), null));
 
     }
 
@@ -86,12 +82,9 @@ UserRepository userRepository;
     }
 
     @Override
-    public void badilloPostHttp() throws IOException {
+    public void badilloPostHttp(BadilloDTO badilloDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        BadilloDTO badilloDTO = new BadilloDTO();
-        badilloDTO.setId(230);
-        badilloDTO.setName("Jair Badillo");
-        badilloDTO.setStatus("Success");
+
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://badillosm41.free.beeceptor.com/api/v1/badilloPost", "POST", null, null, "json", badilloDTO.toJson(), null));
 
     }
@@ -131,14 +124,10 @@ UserRepository userRepository;
     }
 
     @Override
-    public void cadenaPostHttp() throws IOException {
+    public CadenaDTO cadenaPostHttp(CadenaDTO cadenaDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        CadenaDTO cadenaDTO = new CadenaDTO();
-        cadenaDTO.setId(12);
-        cadenaDTO.setName("Saul Cadena");
-        cadenaDTO.setStatus("Success");
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://cadenasm41.free.beeceptor.com/api/v1/cadenaPost","POST",null,null,"json", cadenaDTO.toJson(), null));
-
+        return cadenaDTO;
     }
 }
 

@@ -35,13 +35,18 @@ public class ApplicationController {
         return applicationService.batunHttp ();
     }
     @PostMapping("/batunPostHttp")
-    public void batunPostHttp(@RequestBody BatunDTO batunDTO) throws IOException {
-        applicationService.batunPostHttp( batunDTO );
+    public BatunDTO batunPostHttp(@RequestBody BatunDTO batunDTO) throws IOException {
+         applicationService.batunPostHttp( batunDTO );
+        return batunDTO;
     }
 
     @GetMapping("/badilloHttp")
     public BadilloDTO badilloHttp() throws IOException {
         return applicationService.badilloHttp();
+    }
+    @PostMapping("/badilloPostHttp")
+    public void badilloPostHttp(@RequestBody BadilloDTO badilloDTO) throws IOException {
+         applicationService.badilloPostHttp(badilloDTO);
     }
 
     @GetMapping("/martinezHttp")
@@ -49,10 +54,10 @@ public class ApplicationController {
         return applicationService.martinezHttp();
     }
 
-    @GetMapping("/martinezPostHttp")
-    public void martinezPostHttp() throws IOException{
-        applicationService.martinezPostHttp();
-
+    @PostMapping("/martinezPostHttp")
+    public MartinezDTO martinezPostHttp(@RequestBody MartinezDTO martinezDTO) throws IOException{
+        applicationService.martinezPostHttp(martinezDTO);
+        return martinezDTO;
     }
 
     @GetMapping("/varguezHttp")
@@ -69,8 +74,8 @@ public class ApplicationController {
     public CadenaDTO cadenaHttp() throws IOException {
         return applicationService.cadenaHttp();
     }
-    @GetMapping("/cadenaPostHttp")
-    public void cadenaPostHttp() throws IOException {
-        applicationService.cadenaPostHttp();
+    @PostMapping("/cadenaPostHttp")
+    public CadenaDTO cadenaPostHttp(@RequestBody CadenaDTO cadenaDTO) throws IOException {
+       return applicationService.cadenaPostHttp(cadenaDTO);
     }
 }
