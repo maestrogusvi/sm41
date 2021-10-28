@@ -25,5 +25,6 @@ public interface ApplicationService {
     MartinezDTO martinezHttp() throws IOException;
     VazquezDTO vazquezPostHttp(VazquezDTO vazquezDTO) throws IOException;
     RomanoDTO romanoPostHttp(RomanoDTO romanoDTO) throws IOException;
+    void testMyFirstObject();
 
 }
