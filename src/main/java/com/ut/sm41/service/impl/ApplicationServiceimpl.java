@@ -131,10 +131,13 @@ UserRepository userRepository;
     }
 
     @Override
-    public CadenaDTO cadenaPostHttp(CadenaDTO cadenaDTO) throws IOException {
+    public void cadenaPostHttp(CadenaDTO cadenaDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://cadenasm41.free.beeceptor.com/api/v1/cadenaPost","POST",null,null,"json", cadenaDTO.toJson(), null));
-        return cadenaDTO;
+        UserModel userModel = new UserModel();
+        userModel.setName(cadenaDTO.getName());
+        userRepository.save(userModel);
+
     }
 }
 

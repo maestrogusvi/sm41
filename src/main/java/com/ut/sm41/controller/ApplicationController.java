@@ -75,7 +75,7 @@ public class ApplicationController {
         return applicationService.cadenaHttp();
     }
     @PostMapping("/cadenaPostHttp")
-    public CadenaDTO cadenaPostHttp(@RequestBody CadenaDTO cadenaDTO) throws IOException {
-       return applicationService.cadenaPostHttp(cadenaDTO);
+    public void cadenaPostHttp(@RequestBody CadenaDTO cadenaDTO) throws IOException {
+       applicationService.cadenaPostHttp(cadenaDTO);
     }
 }
