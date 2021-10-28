@@ -115,6 +115,9 @@ public abstract class ApplicationServiceImpl implements ApplicationService {
     public void sotoPostHttp(SotoDTO sotoDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://miner512.free.beeceptor.com/api/v1/miner512Post", "POST", null, null, "json", sotoDTO.toJson(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(sotoDTO.getName());
+        userRepository.save(userModel);
     }
 
     public void ariasPostHttp(AriasDTO ariasDTO) throws IOException {
