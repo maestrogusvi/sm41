@@ -21,7 +21,8 @@ public interface ApplicationService {
      void badilloPostHttp() throws IOException;
 
      VarguezDTO varguezHttp() throws IOException;
-     void varguezPostHttp(VarguezDTO varguezDTO) throws IOException;
+     VarguezDTO varguezPostHttp(VarguezDTO varguezDTO) throws IOException;
+     void varguezMyFirstObject(VarguezDTO varguezDTO);
 
 
      CadenaDTO cadenaHttp() throws IOException;

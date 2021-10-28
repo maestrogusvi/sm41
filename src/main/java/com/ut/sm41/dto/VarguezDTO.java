@@ -1,7 +1,7 @@
 package com.ut.sm41.dto;
 
 public class VarguezDTO {
-
+public String getMessage;
     int id;
     String name;
     String status;
@@ -32,6 +32,7 @@ public class VarguezDTO {
     public void setStatus(String status) {
         this.status = status;
     }
+
     @Override
     public String toString() {
         return "{" +
@@ -41,11 +42,12 @@ public class VarguezDTO {
                 '}';
     }
 
-    public  String toJson() {
+    public String toJson() {
         return "{" +
                 "id=" + id +
                 "\" name=\":\"" + name + "\"" +
                 "\" status=\":\"" + status + "\"" + +
                 '}';
     }
+
 }

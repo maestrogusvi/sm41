@@ -2,6 +2,8 @@ package com.ut.sm41.service.impl;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.*;
+import com.ut.sm41.model.UserModel;
+import com.ut.sm41.repository.UserRepository;
 import com.ut.sm41.service.ApplicationService;
 import com.ut.sm41.service.HttpService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,8 @@ public class ApplicationServiceimpl implements ApplicationService {
 
 @Autowired
 HttpService httpService;
+@Autowired
+UserRepository userRepository;
 
 
     @Override
@@ -91,6 +95,7 @@ HttpService httpService;
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://badillosm41.free.beeceptor.com/api/v1/badilloPost", "POST", null, null, "json", badilloDTO.toJson(), null));
 
     }
+    @Override
     public VarguezDTO varguezHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://misael41.free.beeceptor.com","GET",null,null,"json",null, null));
@@ -100,12 +105,20 @@ HttpService httpService;
         varguezDTO.setStatus(json.get("status").getAsString());
         return varguezDTO;
     }
-    
-        public void varguezPostHttp(VarguezDTO varguezDTO)throws IOException {
-            JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://misael41.free.beeceptor.com/api/v1/varguezPost","POST",null,null,"json", varguezDTO.toJson(), null));
+    @Override
+        public VarguezDTO varguezPostHttp(VarguezDTO varguezDTO)throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://misael41.free.beeceptor.com/api/v1/varguezPost", "POST", null, null, "json", varguezDTO.toJson(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(varguezDTO.getMessage);
+        userRepository.save(userModel);
+        return varguezDTO;
+    }
+    @Override
+    public void varguezMyFirstObject(VarguezDTO varguezDTO) {
 
     }
+
     @Override
     public CadenaDTO cadenaHttp() throws IOException {
         JsonParser parser = new JsonParser();

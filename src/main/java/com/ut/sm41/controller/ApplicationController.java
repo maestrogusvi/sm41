@@ -59,9 +59,9 @@ public class ApplicationController {
     public VarguezDTO varguezHttp() throws IOException {
         return applicationService.varguezHttp();
     }
-    @PostMapping("/varguezPostHttp")
+    @PostMapping("/PostHttp")
     public VarguezDTO varguezPostHttp(@RequestBody VarguezDTO varguezDTO) throws IOException{
-        applicationService.varguezPostHttp(varguezDTO);
+        applicationService.varguezMyFirstObject(varguezDTO);
         return varguezDTO;
     }
 
