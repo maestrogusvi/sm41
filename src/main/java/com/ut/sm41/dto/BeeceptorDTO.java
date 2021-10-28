@@ -5,8 +5,17 @@ public class BeeceptorDTO {
     String status;
     String code;
     String message;
+    ExampleDTO exampleDTO;
 
     public BeeceptorDTO() {
+    }
+
+    public ExampleDTO getExampleDTO() {
+        return exampleDTO;
+    }
+
+    public void setExampleDTO(ExampleDTO exampleDTO) {
+        this.exampleDTO = exampleDTO;
     }
 
     public String getStatus() {
