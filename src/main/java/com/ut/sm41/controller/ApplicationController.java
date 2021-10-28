@@ -65,13 +65,14 @@ public class ApplicationController {
         return applicationService.caamalHttp();
     }
 
-    @PostMapping("/caamalPostHttp")
+    @PostMapping("/caamalPost")
     public CaamalDTO caamalPostHttp(@RequestBody CaamalDTO caamalDTO) throws IOException{
-        return applicationService.caamalPostHttp(caamalDTO);
+        return applicationService.testMyFirstObject(caamalDTO);
     }
 
     @PostMapping ("/anotapost")
     public void testPostHttp(@RequestBody AnotaDTO anotaDTO) throws IOException {
         applicationService.testMyFirstObject(anotaDTO);
     }
+
 }

@@ -2,7 +2,6 @@ package com.ut.sm41.service;
 
 import com.ut.sm41.dto.*;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.io.IOException;
 
@@ -12,6 +11,8 @@ public interface ApplicationService {
     String firstService();
     BeeceptorDTO testHttp() throws IOException;
     void testMyFirstObject(AnotaDTO anotaDTO);
+
+    CaamalDTO testMyFirstObject(CaamalDTO caamalDTO);
 
     AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException;
 
@@ -28,4 +29,5 @@ public interface ApplicationService {
     CaamalDTO caamalHttp() throws IOException;
 
     CaamalDTO caamalPostHttp(CaamalDTO caamalDTO) throws IOException;
+
 }

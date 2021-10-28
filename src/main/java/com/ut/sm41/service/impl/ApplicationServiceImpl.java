@@ -10,7 +10,6 @@ import com.ut.sm41.service.HttpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.io.IOException;
 
@@ -46,7 +45,10 @@ public class ApplicationServiceImpl implements ApplicationService {
     public void testMyFirstObject(AnotaDTO anotaDTO) {
 
     }
-
+    @Override
+    public CaamalDTO testMyFirstObject(CaamalDTO caamalDTO){
+        return caamalDTO;
+    }
 
     @Override
     public AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException {
@@ -122,6 +124,9 @@ public class ApplicationServiceImpl implements ApplicationService {
     public CaamalDTO caamalPostHttp(CaamalDTO caamalDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com/api/v1/caamalPostHttp", "POST", null, null, "json", caamalDTO.toJson(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(caamalDTO.getName());
+        userRepository.save(userModel);
         return caamalDTO;
     }
 
