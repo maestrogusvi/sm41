@@ -36,7 +36,7 @@ public class ApplicationController {
     }
     @PostMapping("/batunPostHttp")
     public BatunDTO batunPostHttp(@RequestBody BatunDTO batunDTO) throws IOException {
-         applicationService.batunPostHttp( batunDTO );
+         applicationService.batunMyFirstObject( batunDTO );
         return batunDTO;
     }
 
