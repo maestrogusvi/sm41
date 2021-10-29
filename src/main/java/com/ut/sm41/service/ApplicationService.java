@@ -28,7 +28,4 @@ public interface ApplicationService {
     void zapataPostHttp(ZapataDTO zapataDTO) throws IOException;
     void sotoPostHttp(SotoDTO sotoDTO) throws IOException;
     void tukPostHttp(TukDTO tukDTO) throws IOException;
-
-
-
 }

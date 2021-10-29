@@ -1,6 +1,5 @@
 package com.ut.sm41.controller;
 
-import com.google.gson.JsonObject;
 import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.service.ApplicationService;
@@ -82,10 +81,11 @@ public class ApplicationController {
     }
 
     @PostMapping("/tukPostHttp")
-    public TukDTO tukPostHttp(@RequestBody TukDTO tukDTO) throws IOException{
+    public TukDTO tukPostHttp(@RequestBody TukDTO tukDTO) throws IOException {
         applicationService.tukPostHttp(tukDTO);
         return tukDTO;
     }
+
     @PostMapping("/zapataPostHttp")
     public ZapataDTO zapataPostHttp(@RequestBody ZapataDTO zapataDTO) throws IOException {
         applicationService.zapataPostHttp(zapataDTO);

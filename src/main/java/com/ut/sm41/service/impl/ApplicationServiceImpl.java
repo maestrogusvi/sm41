@@ -131,7 +131,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     public void tukPostHttp(TukDTO tukDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://tukerubiel01.free.beeceptor.com/api/v1/tukPost", "POST", null, null, "json", tukDTO.toJson(), null));
+        //JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://tukerubiel01.free.beeceptor.com/api/v1/tukPost", "GET", null, null, "json", null, null));
         UserModel userModel = new UserModel();
         userModel.setName(tukDTO.getName());
         userRepository.save(userModel);
