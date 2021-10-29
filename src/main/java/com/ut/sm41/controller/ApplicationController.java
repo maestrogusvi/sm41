@@ -54,7 +54,7 @@ public class ApplicationController {
     }
 
 
-    @PostMapping("/caamalPostHttp")
+    @PostMapping("/caamalPost")
     public void caamalPostHttp(@RequestBody CaamalDTO caamalDTO) throws IOException{
       applicationService.testMyFirsObject(caamalDTO);
 

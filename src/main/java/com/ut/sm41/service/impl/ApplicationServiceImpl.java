@@ -114,7 +114,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public void testMyFirsObject(CaamalDTO caamalDTO) {
         UserModel userModel = new UserModel();
-        userModel.setName(caamalDTO.getMenssage);
+        userModel.setName(caamalDTO.getName());
         userRepository.save(userModel);
     }
 
