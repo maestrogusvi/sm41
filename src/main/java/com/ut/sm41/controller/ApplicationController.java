@@ -74,12 +74,9 @@ public class ApplicationController {
     }
 
     @PostMapping("/caamalPost")
-    public CaamalDTO caamalPostHttp(@RequestBody CaamalDTO caamalDTO) throws IOException{
-        return applicationService.caamalPostHttp(caamalDTO);
+    public void caamalPost(@RequestBody CaamalDTO caamalDTO) throws IOException{
+         applicationService.caamalPost(caamalDTO);
     }
 
-    @PostMapping ("/caamalPost")
-    public void caamalPost(@RequestBody CaamalDTO caamalDTO) throws IOException {
-        applicationService.caamalPost(caamalDTO);
-    }
+
 }
