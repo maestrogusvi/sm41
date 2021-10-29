@@ -81,6 +81,13 @@ public class ApplicationServiceImpl implements ApplicationService {
         return ramirezDTO;
     }
 
+    @Override
+    public void testMyFirstObject(RamirezDTO ramirezDTO) {
+        UserModel userModel = new UserModel();
+        userModel.setName(ramirezDTO.getName());
+        userRepository.save(userModel);
+    }
+
 
     @Override
     public HauDTO hauHttp() throws IOException {
@@ -101,5 +108,6 @@ public class ApplicationServiceImpl implements ApplicationService {
         hauDTO.setStatus("Success");
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://hau.free.beeceptor.com/api/v1/hauPostHttp","POST",null,null,"json",hauDTO.toJson(), null));
     }
+
 
 }

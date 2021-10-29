@@ -15,6 +15,8 @@ import java.io.IOException;
 @Service
 public interface ApplicationService {
 
+
+
      String firstService();
 
      BeeceptorDTO testHttp() throws IOException;
@@ -25,9 +27,11 @@ public interface ApplicationService {
 
      RamirezDTO ramirezHttp() throws IOException ;
      RamirezDTO ramirezPostHttp(RamirezDTO ramirezDTO) throws IOException;
+     void testMyFirstObject(RamirezDTO ramirezDTO);
 
      HauDTO hauHttp() throws IOException ;
      void hauPostHttp() throws IOException;
+
 
 
 }
