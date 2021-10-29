@@ -68,15 +68,18 @@ public class ApplicationController {
         applicationService.silvaPostHttp(silvaDTO);
     }
 
-    @GetMapping("/caamalpostHttp")
+    @GetMapping("/caamalHttp")
     public CaamalDTO caamalHttp() throws IOException {
         return applicationService.caamalHttp();
     }
 
-    @PostMapping("/caamalPost")
-    public void caamalPost(@RequestBody CaamalDTO caamalDTO) throws IOException{
-         applicationService.caamalPost(caamalDTO);
+    @PostMapping("/caamalPostHttp")
+    public CaamalDTO caamalPostHttp(@RequestBody CaamalDTO caamalDTO) throws IOException{
+        return applicationService.caamalPostHttp(caamalDTO);
     }
 
-
+    @PostMapping ("/caamalPost")
+    public void caamalPost(@RequestBody CaamalDTO caamalDTO) throws IOException {
+        applicationService.caamalPost(caamalDTO);
+    }
 }
