@@ -20,7 +20,7 @@ public interface ApplicationService {
 
     VillagranDTO villagranHttp() throws IOException;
 
-    VillagranDTO villagranPostHttp(VillagranDTO villagranDTO) throws IOException;
+    void villagranPostHttp(VillagranDTO villagranDTO) throws IOException;
 
     SilvaDTO silvaHttp() throws IOException;
 

@@ -82,13 +82,13 @@ public class ApplicationServiceImpl implements ApplicationService {
         return villagranDTO;
     }
     @Override
-    public VillagranDTO villagranPostHttp(VillagranDTO villagranDTO) throws IOException{
+    public void villagranPostHttp(VillagranDTO villagranDTO) throws IOException{
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com/api/v1/villagranPost","POST",null,null,"json", villagranDTO.toJson(),null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com/api/v1/villagranPostHttp","POST",null,null,"json", villagranDTO.toJson(),null));
         UserModel userModel = new UserModel();
         userModel.setName(villagranDTO.getName());
         userRepository.save(userModel);
-        return villagranDTO;
+
     }
 
     @Override
