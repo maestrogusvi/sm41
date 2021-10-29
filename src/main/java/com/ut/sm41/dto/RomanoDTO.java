@@ -44,7 +44,7 @@ public class RomanoDTO {
 
     public String toJSON() {
         return "{" +
-                "\"id\":\"" + id + "\"," +
+                "\"id\":" + id + "," +
                 "\"name\":\"" + name + "\"" +
                 "\"status\":\"" + status + "\"" +
                 '}';

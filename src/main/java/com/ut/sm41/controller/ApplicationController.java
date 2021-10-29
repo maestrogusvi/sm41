@@ -61,8 +61,8 @@ public class ApplicationController {
     }
 
     @PostMapping("/romanoPostHttp")
-    public RomanoDTO romanoPostHttp(@RequestBody RomanoDTO romanoDTO) throws IOException{
-        return applicationService.romanoPostHttp(romanoDTO);
+    public void romanoPostHttp(@RequestBody RomanoDTO romanoDTO) throws IOException{
+         applicationService.romanoPostHttp(romanoDTO);
     }
 
     @PostMapping("/postHttp")

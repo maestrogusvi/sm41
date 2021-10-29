@@ -91,10 +91,12 @@ public class ApplicationServiceImpl implements ApplicationService {
         return  vazquezDTO;
     }
     @Override
-    public RomanoDTO romanoPostHttp(RomanoDTO romanoDTO) throws IOException {
+    public void romanoPostHttp(RomanoDTO romanoDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com/api/v1/romanoPost","POST",null,null,"json",romanoDTO.toJSON(), null));
-        return romanoDTO;
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-safalu.free.beeceptor.com/api/v1/romanoPostHttp","POST",null,null,"json",romanoDTO.toJSON(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(romanoDTO.getName());
+        userRepository.save(userModel);
     }
 
     @Override
