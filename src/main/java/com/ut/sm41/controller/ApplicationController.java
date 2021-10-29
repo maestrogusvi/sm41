@@ -68,7 +68,7 @@ public class ApplicationController {
     }
 
 
-    @GetMapping("/ariasPostHttp")
+    @PostMapping("/ariasPostHttp")
     public AriasDTO ariasPostHttp(@RequestBody AriasDTO ariasDTO) throws IOException{
         applicationService.ariasPostHttp(ariasDTO);
         return ariasDTO;

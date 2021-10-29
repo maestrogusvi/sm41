@@ -122,7 +122,10 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     public void ariasPostHttp(AriasDTO ariasDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ariasmaysm41.free.beeceptor.com", "POST", null, null, "json", ariasDTO.toJson(), null));
+        //JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://ariasmaysm41.free.beeceptor.com/api/v1/ariasPost", "POST", null, null, "json", ariasDTO.toJson(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(ariasDTO.getName());
+        userRepository.save(userModel);
 
     }
 
