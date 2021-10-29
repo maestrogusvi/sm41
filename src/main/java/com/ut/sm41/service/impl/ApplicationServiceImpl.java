@@ -85,10 +85,12 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public VazquezDTO vazquezPostHttp(VazquezDTO vazquezDTO) throws IOException {
+    public void vazquezPostHttp(VazquezDTO vazquezDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com/api/v1/vazquezPost","POST",null,null,"json",vazquezDTO.toJSON(), null));
-        return  vazquezDTO;
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com/api/v1/vazquezPostHttp","POST",null,null,"json",vazquezDTO.toJSON(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(vazquezDTO.getName());
+        userRepository.save(userModel);
     }
     @Override
     public void romanoPostHttp(RomanoDTO romanoDTO) throws IOException {
@@ -99,10 +101,4 @@ public class ApplicationServiceImpl implements ApplicationService {
         userRepository.save(userModel);
     }
 
-    @Override
-    public void testMyFirstObject() {
-        UserModel userModel = new UserModel();
-        userModel.setName("Freddy Vazquez");
-        userRepository.save(userModel);
-    }
 }

@@ -56,8 +56,8 @@ public class ApplicationController {
     }
 
     @PostMapping("/vazquezPostHttp")
-    public VazquezDTO vazquezPostHttp(@RequestBody VazquezDTO vazquezDTO) throws IOException{
-        return applicationService.vazquezPostHttp(vazquezDTO);
+    public void vazquezPostHttp(@RequestBody VazquezDTO vazquezDTO) throws IOException{
+         applicationService.vazquezPostHttp(vazquezDTO);
     }
 
     @PostMapping("/romanoPostHttp")
@@ -65,8 +65,4 @@ public class ApplicationController {
          applicationService.romanoPostHttp(romanoDTO);
     }
 
-    @PostMapping("/postHttp")
-    public void testPostHttp() throws IOException{
-         applicationService.testMyFirstObject();
-    }
 }

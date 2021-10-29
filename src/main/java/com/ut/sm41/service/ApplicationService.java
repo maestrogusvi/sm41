@@ -23,8 +23,7 @@ public interface ApplicationService {
     RomanoDTO romanoHttp() throws IOException;
     MontejoDTO montejoHttp() throws IOException;
     MartinezDTO martinezHttp() throws IOException;
-    VazquezDTO vazquezPostHttp(VazquezDTO vazquezDTO) throws IOException;
+    void vazquezPostHttp(VazquezDTO vazquezDTO) throws IOException;
     void romanoPostHttp(RomanoDTO romanoDTO) throws IOException;
-    void testMyFirstObject();
 
 }
