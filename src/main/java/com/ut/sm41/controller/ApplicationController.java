@@ -61,6 +61,10 @@ public class ApplicationController {
         return applicationService.ramirezPostHttp(ramirezDTO);
     }
 
+    @PostMapping("/ramirezpost")
+    public void testPostHttp (@RequestBody RamirezDTO ramirezDTO) throws IOException {
+        applicationService.testMyFirstObject(ramirezDTO);
+
     @GetMapping("/hauHttp")
     public HauDTO hauHttp() throws IOException {
         return applicationService.hauHttp();

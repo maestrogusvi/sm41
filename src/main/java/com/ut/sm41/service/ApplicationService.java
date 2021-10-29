@@ -27,8 +27,11 @@ public interface ApplicationService {
 
      RamirezDTO ramirezHttp() throws IOException ;
      RamirezDTO ramirezPostHttp(RamirezDTO ramirezDTO) throws IOException;
+     void testMyFirstObject(RamirezDTO ramirezDTO);
 
      HauDTO hauHttp() throws IOException ;
      void hauPostHttp() throws IOException;
+
+
 
 }
