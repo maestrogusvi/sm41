@@ -132,5 +132,10 @@ public class ApplicationServiceImpl implements ApplicationService {
         return caamalDTO;
     }
 
-
+    @Override
+    public void caamalPost(CaamalDTO caamalDTO) {
+        UserModel userModel = new UserModel();
+        userModel.setName(caamalDTO.getName());
+        userRepository.save(userModel);
+    }
 }

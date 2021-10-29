@@ -31,4 +31,5 @@ public interface ApplicationService {
 
     CaamalDTO caamalPostHttp(CaamalDTO caamalDTO) throws IOException;
 
+    void caamalPost(CaamalDTO caamalDTO);
 }
