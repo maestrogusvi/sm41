@@ -37,14 +37,22 @@ public class ApplicationController {
     public AnotaDTO anotaHttp() throws IOException {
         return applicationService.anotaHttp();
     }
+
     @PostMapping ("/anotaPostHttp")
     public AnotaDTO anotaPostHttp(@RequestBody AnotaDTO anotaDTO) throws IOException {
         return applicationService.anotaPostHttp(anotaDTO);
     }
+
+    @PostMapping ("/anotaPost")
+    public void anotaPost(@RequestBody AnotaDTO anotaDTO) throws IOException {
+        applicationService.anotaPost(anotaDTO);
+    }
+
     @GetMapping("/villagranHttp")
     public VillagranDTO villagranHttp() throws IOException {
         return applicationService.villagranHttp();
     }
+
     @PostMapping("/villagranPost")
     public void villagranPostHttp(@RequestBody VillagranDTO villagranDTO) throws IOException {
          applicationService.villagranPostHttp(villagranDTO);
@@ -68,11 +76,6 @@ public class ApplicationController {
     @PostMapping("/caamalPost")
     public CaamalDTO caamalPostHttp(@RequestBody CaamalDTO caamalDTO) throws IOException{
         return applicationService.caamalPostHttp(caamalDTO);
-    }
-
-    @PostMapping ("/anotapost")
-    public void testPostHttp(@RequestBody AnotaDTO anotaDTO) throws IOException {
-        applicationService.testMyFirstObject(anotaDTO);
     }
 
     @PostMapping ("/caamalpost")

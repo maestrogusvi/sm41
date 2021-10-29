@@ -10,13 +10,14 @@ public interface ApplicationService {
 
     String firstService();
     BeeceptorDTO testHttp() throws IOException;
-    void testMyFirstObject(AnotaDTO anotaDTO);
 
     CaamalDTO testMyFirstObject(CaamalDTO caamalDTO);
 
+    AnotaDTO anotaHttp() throws IOException;
+
     AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException;
 
-    AnotaDTO anotaHttp() throws IOException;
+    void anotaPost(AnotaDTO anotaDTO);
 
     VillagranDTO villagranHttp() throws IOException;
 

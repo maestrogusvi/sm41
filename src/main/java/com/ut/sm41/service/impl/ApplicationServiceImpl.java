@@ -42,22 +42,8 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public void testMyFirstObject(AnotaDTO anotaDTO) {
-
-    }
-    @Override
     public CaamalDTO testMyFirstObject(CaamalDTO caamalDTO){
         return caamalDTO;
-    }
-
-    @Override
-    public AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/anotaPost","POST",null,null,"json",anotaDTO.toJson(), null));
-        UserModel userModel = new UserModel();
-        userModel.setName(anotaDTO.getMessage);
-        userRepository.save(userModel);
-        return anotaDTO;
     }
 
     @Override
@@ -69,6 +55,20 @@ public class ApplicationServiceImpl implements ApplicationService {
         anotaDTO.setId(json.get("id").getAsInt());
         anotaDTO.setStatus(json.get("status").getAsString());
         return anotaDTO;
+    }
+
+    @Override
+    public AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/anotaPost","POST",null,null,"json",anotaDTO.toJson(), null));
+        return anotaDTO;
+    }
+
+    @Override
+    public void anotaPost(AnotaDTO anotaDTO) {
+        UserModel userModel = new UserModel();
+        userModel.setName(anotaDTO.getName());
+        userRepository.save(userModel);
     }
 
     @Override

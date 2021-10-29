@@ -4,7 +4,6 @@ import org.yaml.snakeyaml.events.Event;
 
 public class AnotaDTO {
 
-    public String getMessage;
     int id;
     String name;
     String status;
