@@ -121,7 +121,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public CaamalDTO caamalPostHttp(CaamalDTO caamalDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com/api/v1/caamalPost", "POST", null, null, "json", caamalDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com/api/v1/caamalPostHttp", "POST", null, null, "json", caamalDTO.toJson(), null));
         return caamalDTO;
     }
 
