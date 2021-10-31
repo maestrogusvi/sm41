@@ -11,7 +11,6 @@ public interface ApplicationService {
     String firstService();
     BeeceptorDTO testHttp() throws IOException;
 
-    CaamalDTO testMyFirstObject(CaamalDTO caamalDTO);
 
     AnotaDTO anotaHttp() throws IOException;
 
@@ -32,4 +31,6 @@ public interface ApplicationService {
     CaamalDTO caamalPostHttp(CaamalDTO caamalDTO) throws IOException;
 
     void caamalPost(CaamalDTO caamalDTO);
+
+
 }

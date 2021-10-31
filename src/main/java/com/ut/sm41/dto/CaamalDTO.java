@@ -28,6 +28,7 @@ public class CaamalDTO {
     public String getStatus() {
         return status;
     }
+
     public void setStatus(String status) {
         this.status = status;
     }
@@ -43,7 +44,7 @@ public class CaamalDTO {
 
     public String toJson() {
         return "{" +
-                "\"id\":\"" + id + "\"," +
+                "\"id\":" + id + "," +
                 "\"name\":\"" + name + "\"," +
                 "\"status\":\"" + status + "\"" +
                 '}';
