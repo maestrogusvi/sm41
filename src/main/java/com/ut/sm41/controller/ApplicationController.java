@@ -68,6 +68,11 @@ public class ApplicationController {
         applicationService.silvaPostHttp(silvaDTO);
     }
 
+    @GetMapping("/twichHttp")
+    public TwichDTO twichHttp() throws  IOException {
+        return applicationService.twichHttp();
+    }
+
     @GetMapping("/caamalHttp")
     public CaamalDTO caamalHttp() throws IOException {
         return applicationService.caamalHttp();

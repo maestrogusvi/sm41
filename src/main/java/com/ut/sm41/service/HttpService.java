@@ -23,7 +23,7 @@ public class HttpService {
 
 
 
-    public String sendRequestHttpS(String url, String method, String username, String password, String type, String body, String token) throws IOException {
+    public String sendRequestHttpS(String url, String method, String username, String password, String type, String body, String token, String client) throws IOException {
         HttpResponse<String> response;
         HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
                 .uri(URI.create(url));
@@ -54,6 +54,9 @@ public class HttpService {
             }
             if(token!= null){
                 requestBuilder.setHeader("Authorization", token);
+            }
+            if (client != null){
+                requestBuilder.setHeader("Client-Id", client);
             }
             if(type.equals("json")){
                 requestBuilder.setHeader("Content-Type","application/json; charset=utf-8");
@@ -109,7 +112,5 @@ public class HttpService {
         return finalString;
 
     }
-
-
 
 }
