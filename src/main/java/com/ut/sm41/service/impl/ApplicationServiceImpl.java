@@ -112,6 +112,18 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
+    public CloudflareDTO cloudflareHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://api.cloudflare.com/client/v4/user","GET",null,null,"json",null, "Bearer 3tyd-uFF_wqnFD2IKVH7x9qQXtY8YpfBelH89B33",null));
+        JsonObject object = (JsonObject) json.get("result");
+        CloudflareDTO cloudflareDTO = new CloudflareDTO();
+        cloudflareDTO.setId(object.get("id").getAsString());
+        cloudflareDTO.setEmail(object.get("email").getAsString());
+        cloudflareDTO.setUsername(object.get("username").getAsString());
+        return cloudflareDTO;
+    }
+
+    @Override
     public void silvaPostHttp(SilvaDTO silvaDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita1.free.beeceptor.com/api/v1/silvaPostHttp","POST",null,null,"json",silvaDTO.toJson(), null,null));
@@ -145,6 +157,4 @@ public class ApplicationServiceImpl implements ApplicationService {
         userModel.setName(caamalDTO.getName());
         userRepository.save(userModel);
     }
-
-
 }

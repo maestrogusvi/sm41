@@ -63,14 +63,19 @@ public class ApplicationController {
         return applicationService.silvaHttp();
     }
 
+    @GetMapping("/twichHttp")
+    public TwichDTO twichHttp() throws IOException {
+        return applicationService.twichHttp();
+    }
+
+    @GetMapping("/cloudflareHttp")
+    public CloudflareDTO cloudflareHttp() throws IOException{
+        return applicationService.cloudflareHttp();
+    }
+
     @PostMapping("/silvaPost")
     public void silvaPostHttp(@RequestBody SilvaDTO silvaDTO) throws IOException {
         applicationService.silvaPostHttp(silvaDTO);
-    }
-
-    @GetMapping("/twichHttp")
-    public TwichDTO twichHttp() throws  IOException {
-        return applicationService.twichHttp();
     }
 
     @GetMapping("/caamalHttp")
