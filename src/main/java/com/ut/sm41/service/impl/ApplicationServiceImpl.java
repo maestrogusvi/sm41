@@ -97,10 +97,8 @@ public class ApplicationServiceImpl implements ApplicationService {
         return tukDTO;
     }
 
-    public void bautistaPostHttp(BautistaDTO bautistaDTO) throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://bautistasm41.free.beeceptor.com/api/v1/bautistaPost", "POST", null, null, "json", bautistaDTO.toJson(), null));
-        UserModel userModel = new UserModel();
+    public void bautistaPostHttp(BautistaDTO bautistaDTO) {
+         UserModel userModel = new UserModel();
         userModel.setName(bautistaDTO.getName());
         userRepository.save(userModel);
     }
