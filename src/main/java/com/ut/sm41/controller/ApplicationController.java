@@ -38,6 +38,11 @@ public class ApplicationController {
         return applicationService.anotaHttp();
     }
 
+    @GetMapping("/mercadoHttp")
+    public MercadoDTO mercadoHttp() throws IOException{
+        return applicationService.mercadoHttp();
+    }
+
     @PostMapping ("/anotaPostHttp")
     public AnotaDTO anotaPostHttp(@RequestBody AnotaDTO anotaDTO) throws IOException {
         return applicationService.anotaPostHttp(anotaDTO);

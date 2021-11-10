@@ -13,6 +13,8 @@ public interface ApplicationService {
 
     AnotaDTO anotaHttp() throws IOException;
 
+    MercadoDTO mercadoHttp() throws IOException;
+
     AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException;
 
     void anotaPost(AnotaDTO anotaDTO);

@@ -54,6 +54,18 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
+    public MercadoDTO mercadoHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://api.mercadolibre.com/sites/MCO/search?q=samsungA30s","GET",null,null,"json",null, null,null));
+        JsonObject object = (JsonObject) json.get("paging");
+        MercadoDTO mercadoDTO = new MercadoDTO();
+        mercadoDTO.setQuery(json.get("query").getAsString());
+        mercadoDTO.setTotal(object.get("total").getAsString());
+        mercadoDTO.setPrimary_results(object.get("primary_results").getAsString());
+        return mercadoDTO;
+    }
+
+    @Override
     public AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/anotaPost","POST",null,null,"json",anotaDTO.toJson(), null,null));
