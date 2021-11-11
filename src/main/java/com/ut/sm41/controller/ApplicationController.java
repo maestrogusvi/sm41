@@ -44,8 +44,8 @@ public class ApplicationController {
     }
 
     @PostMapping("/estradapost")
-    public void testPostHttp (@RequestBody EstradaDTO estradaDTO) throws IOException {
-        applicationService.testMyFirstObject(estradaDTO);
+    public void testPostHttpEstrada (@RequestBody EstradaDTO estradaDTO) throws IOException {
+        applicationService.testObject(estradaDTO);
     }
 
     @GetMapping("/playHttp")
