@@ -13,6 +13,8 @@ public interface ApplicationService {
 
      BatunDTO batunHttp() throws IOException;
      BatunDTO batunPostHttp(BatunDTO batunDTO) throws IOException;
+     void batunMyFirstObject(BatunDTO batunDTO);
+
 
      MartinezDTO martinezHttp() throws IOException;
      void martinezPostHttp(MartinezDTO martinezDTO) throws IOException;
