@@ -54,7 +54,7 @@ UserRepository userRepository;
         return batunDTO;
     }
     @Override
-    public void batunMyFirstObject( BatunDTO batunDTO) {
+    public void batunMyFirstObject( BatunDTO batunDTO){
 
     }
 
