@@ -1,10 +1,7 @@
 package com.ut.sm41.controller;
 
 import com.google.gson.JsonObject;
-import com.ut.sm41.dto.BeeceptorDTO;
-import com.ut.sm41.dto.EstradaDTO;
-import com.ut.sm41.dto.RamirezDTO;
-import com.ut.sm41.dto.HauDTO;
+import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +48,11 @@ public class ApplicationController {
         applicationService.testMyFirstObject(estradaDTO);
     }
 
+    @GetMapping("/playHttp")
+    public PlayDTO playHttp() throws IOException {
+        return applicationService.playHttp();
+    }
+
     @GetMapping("/ramirezHttp")
     public RamirezDTO ramirezHttp() throws IOException {
         return applicationService.ramirezHttp();
@@ -64,6 +66,7 @@ public class ApplicationController {
     @PostMapping("/ramirezpost")
     public void testPostHttp (@RequestBody RamirezDTO ramirezDTO) throws IOException {
         applicationService.testMyFirstObject(ramirezDTO);
+    }
 
     @GetMapping("/hauHttp")
     public HauDTO hauHttp() throws IOException {

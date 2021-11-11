@@ -8,7 +8,6 @@ import com.ut.sm41.model.UserModel;
 import com.ut.sm41.repository.UserRepository;
 import com.ut.sm41.service.ApplicationService;
 import com.ut.sm41.service.HttpService;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -61,6 +60,17 @@ public class ApplicationServiceImpl implements ApplicationService {
         UserModel userModel = new UserModel();
         userModel.setName(estradaDTO.getName());
         userRepository.save(userModel);
+    }
+
+    @Override
+    public PlayDTO playHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("","GET",null,null,"json",null, "",null));
+        JsonObject object = (JsonObject) json.get("result");
+        PlayDTO playDTO = new PlayDTO();
+        playDTO.setName(object.get("name").getAsString());
+        playDTO.setId(object.get("id").getAsString());
+        return playDTO;
     }
 
     @Override
