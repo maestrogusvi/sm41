@@ -132,5 +132,16 @@ UserRepository userRepository;
         userRepository.save(userModel);
 
     }
+
+    @Override
+    public MercadolibreDTO mercadolibreHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://api.mercadolibre.com/users/me","GET",null,null,"json",null, "Bearer APP_USR-3769362128886944-111104-f11c6d5e4e8b7cd8a7fd94e404836e9d-1016592949"));
+        MercadolibreDTO mercadolibreDTO = new MercadolibreDTO();
+        mercadolibreDTO.setId(json.get("id").getAsString());
+        mercadolibreDTO.setFirst_name(json.get("first_name").getAsString());
+        mercadolibreDTO.setCountry_id(json.get("country_id").getAsString());
+        return mercadolibreDTO;
+    }
 }
 

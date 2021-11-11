@@ -78,4 +78,9 @@ public class ApplicationController {
     public void cadenaPostHttp(@RequestBody CadenaDTO cadenaDTO) throws IOException {
        applicationService.cadenaPostHttp(cadenaDTO);
     }
+
+    @GetMapping("/mercadolibreHttp")
+    public MercadolibreDTO mercadolibreHttp() throws IOException {
+        return applicationService.mercadolibreHttp();
+    }
 }
