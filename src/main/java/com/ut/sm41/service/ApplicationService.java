@@ -20,7 +20,7 @@ public interface ApplicationService {
 
      EstradaDTO estradaHttp() throws IOException ;
      EstradaDTO estradaPostHttp(EstradaDTO estradaDTO) throws IOException;
-     void testMyFirstObject(EstradaDTO estradaDTO);
+     void testObject(EstradaDTO estradaDTO);
 
      PlayDTO playHttp() throws IOException;
 

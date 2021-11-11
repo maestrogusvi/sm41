@@ -56,7 +56,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public void testMyFirstObject(EstradaDTO estradaDTO) {
+    public void testObject(EstradaDTO estradaDTO) {
         UserModel userModel = new UserModel();
         userModel.setName(estradaDTO.getName());
         userRepository.save(userModel);
