@@ -173,7 +173,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public FacebookDTO facebookHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://graph.facebook.com/me?access_token=EAANCbAPdm4sBAL3TqbgIeZBmlTe85dXy8Rlf0aJXXZCKv0JTc2IULxJFrbwAEQfyGUXYSt8KERH8ADDAcnJVqxtsM4ApFrHhmG9ZB0ytoXmVPUni0AOCUDaSFUqRC0SYmrgZBjBOiZCX4DzVUlc2O9dWo9xDk0s3sZBnYdXui7AUOKJjB8LAKoeoCQ9tozUfKOhJvWIwH43NYozvWwGlaQxjNzZCVI66Y54W4JtG6E46AZDZD", "GET", null, null, "json", null, null,null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://graph.facebook.com/me?access_token=EAAEeJ6iN6gYBAAZAb17gGnZBQCd5om785DmZBjeTpkoHEeZAD8pdqpau3hixd5SjHf5Lhak8U60QZApBXian2rusBPqVGfiyVYQvB4BkHvnX9p6D064iQBhqOcobGIhRDidXPujSl25KrQWtjuWwBNSrcj4zV9OU04KxPw2c1ZAvywvRfWrFuTZAsmh3RZBWoMlTrnKMdmh8EYtLvdRsE7sKkcI4TwNH9fPbyqRMV9196gZDZD&fields=id,name,likes,gender,birthday", "GET", null, null, "json", null, null,null));
         FacebookDTO facebookDTO = new FacebookDTO();
         facebookDTO.setId(json.get("id").getAsString());
         facebookDTO.setName(json.get("name").getAsString());
