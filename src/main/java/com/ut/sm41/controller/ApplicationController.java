@@ -61,6 +61,11 @@ public class ApplicationController {
          applicationService.romanoPostHttp(romanoDTO);
     }
 
+    @PostMapping("/martinezPostHttp")
+    public void martinezPostHttp(@RequestBody MartinezDTO martinezDTO) throws IOException{
+        applicationService.martinezPostHttp(martinezDTO);
+    }
+
     @GetMapping("/discordDTO")
     public DiscordDTO discordHttp() throws  IOException{
         return applicationService.discordHttp();

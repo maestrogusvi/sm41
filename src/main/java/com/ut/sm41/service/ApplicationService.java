@@ -22,5 +22,6 @@ public interface ApplicationService {
     MartinezDTO martinezHttp() throws IOException;
     void vazquezPostHttp(VazquezDTO vazquezDTO) throws IOException;
     void romanoPostHttp(RomanoDTO romanoDTO) throws IOException;
+    void martinezPostHttp(MartinezDTO martinezDTO) throws IOException;
     DiscordDTO discordHttp() throws IOException;
 }
