@@ -37,4 +37,7 @@ public interface ApplicationService {
 
     void caamalPost(CaamalDTO caamalDTO);
 
+    FacebookDTO facebookHttp() throws IOException;
+    
+
 }

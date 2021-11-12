@@ -45,7 +45,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public AnotaDTO anotaHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com","GET",null,null,"json",null, null, null));
         AnotaDTO anotaDTO = new AnotaDTO();
         anotaDTO.setName(json.get("name").getAsString());
         anotaDTO.setId(json.get("id").getAsInt());
@@ -102,7 +102,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public SilvaDTO silvaHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita.free.beeceptor.com","GET",null,null,"json",null, null, null));
         SilvaDTO silvaDTO = new SilvaDTO();
         silvaDTO.setName(json.get("name").getAsString());
         silvaDTO.setId(json.get("id").getAsInt());
@@ -170,5 +170,14 @@ public class ApplicationServiceImpl implements ApplicationService {
         userRepository.save(userModel);
     }
 
+    @Override
+    public FacebookDTO facebookHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://graph.facebook.com/me?access_token=EAANCbAPdm4sBAL3TqbgIeZBmlTe85dXy8Rlf0aJXXZCKv0JTc2IULxJFrbwAEQfyGUXYSt8KERH8ADDAcnJVqxtsM4ApFrHhmG9ZB0ytoXmVPUni0AOCUDaSFUqRC0SYmrgZBjBOiZCX4DzVUlc2O9dWo9xDk0s3sZBnYdXui7AUOKJjB8LAKoeoCQ9tozUfKOhJvWIwH43NYozvWwGlaQxjNzZCVI66Y54W4JtG6E46AZDZD", "GET", null, null, "json", null, null,null));
+        FacebookDTO facebookDTO = new FacebookDTO();
+        facebookDTO.setId(json.get("id").getAsString());
+        facebookDTO.setName(json.get("name").getAsString());
+        return facebookDTO;
+    }
 
 }

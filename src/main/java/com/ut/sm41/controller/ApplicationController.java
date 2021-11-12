@@ -97,4 +97,10 @@ public class ApplicationController {
     public void caamalPost(@RequestBody CaamalDTO caamalDTO) throws IOException {
         applicationService.caamalPost(caamalDTO);
     }
+
+    @GetMapping ("/facebookHttp")
+    public FacebookDTO facebookHttp() throws IOException {
+        return applicationService.facebookHttp();
+    }
+
 }
