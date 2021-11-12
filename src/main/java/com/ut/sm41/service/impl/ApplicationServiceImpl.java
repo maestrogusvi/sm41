@@ -65,13 +65,12 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public BooksDTO booksHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://simple-books-api.glitch.me/books","GET",null,null,"json",null, ""));
-        JsonObject object = (JsonObject) json.get("result");
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://simple-books-api.glitch.me/books","GET",null,null,"json",null, null));
         BooksDTO booksDTO = new BooksDTO();
-        booksDTO.setId(object.get("id").getAsString());
-        booksDTO.setName(object.get("name").getAsString());
-        booksDTO.setType(object.get("type").getAsString());
-        booksDTO.setAvailable(object.get("available").getAsString());
+        booksDTO.setId(json.get("id").getAsString());
+        booksDTO.setName(json.get("name").getAsString());
+        booksDTO.setType(json.get("type").getAsString());
+        booksDTO.setAvailable(json.get("available").getAsBoolean());
         return booksDTO;
     }
 
