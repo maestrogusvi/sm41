@@ -159,7 +159,8 @@ public class ApplicationServiceImpl implements ApplicationService {
         return mercadolibreDTO;
     }
 
-    @Override FacebookDTO facebookHttp() throws IOException {
+    @Override
+    public FacebookDTO facebookHttp() throws IOException {
         JsonParser parser = new JsonParser();
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://graph.facebook.com/me?access_token=EAAIxexLKcZC0BAD9xjY7BCZAqIgxAdYasbQ9n0AbirSC52avMYbK5eYgYTXS8dDGOnLveZC7EaHnDVTf8PditcGcZCxPhy3F7HieUj7LtZAN1BZAkcm2F05p58xZAq8VGngrdRKKW47Gt9inqXHQUFoRRRMCxCZB2n1KjvyjJKToa1MDuD4pyjFeoiTfdGIiPe1PNZCxRRjJYOOXcnQ8oZCE98soismIx1vumGmm0rUJgrlwZDZD&fields=id,name,likes,gender,birthday", "GET", null, null, "json", null, null));
         FacebookDTO facebookDTO = new FacebookDTO();
