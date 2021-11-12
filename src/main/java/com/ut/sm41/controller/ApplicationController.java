@@ -1,5 +1,4 @@
 package com.ut.sm41.controller;
-
 import com.google.gson.JsonObject;
 import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
@@ -33,6 +32,11 @@ public class ApplicationController {
         return applicationService.testHttp();
     }
 
+    @GetMapping("/mercadoHttp")
+    public MercadoLibreDTO mercadoHttp() throws IOException{
+        return applicationService.mercadoHttp();
+    }
+
     @GetMapping("/caamalHttp")
     public CaamalDTO caamalHttp() throws IOException {
         return applicationService.caamalHttp();
@@ -64,4 +68,7 @@ public class ApplicationController {
     public void dominguezPostHttp() throws IOException{
         applicationService.dominguezPostHttp();
     }
+
+
+
 }

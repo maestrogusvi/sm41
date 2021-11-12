@@ -34,17 +34,17 @@ public class MercadoLibreDTO {
     @Override
     public String toString() {
         return "{" +
-                "id=" + total + '\''+
-                ", name='" + primary_results + '\'' +
-                ", status='" + query + '\'' +
+                "total=" + total + '\''+
+                ", primary_results='" + primary_results + '\'' +
+                ", query='" + query + '\'' +
                 '}';
     }
 
     public String deJson() {
         return "{" +
-                "\"id\":\"" + total +
-                "\","+"\"name\":\"" + primary_results +
-                "\","+ "\"status\":\"" + query + "\"" +
+                "\"total\":\"" + total +
+                "\","+"\"primary_results\":\"" + primary_results +
+                "\","+ "\"query\":\"" + query + "\"" +
                 '}';
     }
 }

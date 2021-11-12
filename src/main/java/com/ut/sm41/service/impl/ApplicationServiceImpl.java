@@ -1,9 +1,7 @@
 package com.ut.sm41.service.impl;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.ut.sm41.dto.BeeceptorDTO;
-import com.ut.sm41.dto.DominguezDTO;
-import com.ut.sm41.dto.TunDTO;
+import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.model.UserModel;
 import com.ut.sm41.repository.UserRepository;
@@ -12,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import java.io.IOException;
+import com.ut.sm41.service.ApplicationService;
 
 @Service
 public class ApplicationServiceImpl implements ApplicationService {
@@ -23,7 +22,6 @@ public class ApplicationServiceImpl implements ApplicationService {
 
 
     @Override
-
     public String firstService(){
         return "service";
     }
@@ -96,6 +94,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     }
 
+
     @Override
     public void dominguezPostHttp() throws IOException {
         JsonParser parser = new JsonParser();
@@ -113,6 +112,18 @@ public class ApplicationServiceImpl implements ApplicationService {
         UserModel userModel = new UserModel();
         userModel.setName(caamalDTO.getName());
         userRepository.save(userModel);
+    }
+
+    @Override
+    public MercadoLibreDTO mercadoHttp()throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://api.mercadolibre.com/sites/MCO/search?q=MCO1055", "GET", null, null, "json", null, null));
+        JsonObject object = (JsonObject) json.get("paging");
+        MercadoLibreDTO mercadoDTO = new MercadoLibreDTO();
+        mercadoDTO.setQuery(json.get("query").getAsString());
+        mercadoDTO.setTotal(json.get("total").getAsInt());
+        mercadoDTO.setPrimary_results(json.get("primary_results").getAsInt());
+        return mercadoDTO;
     }
 
 
