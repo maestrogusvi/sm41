@@ -5,7 +5,7 @@ public class BooksDTO {
     String id;
     String name;
     String type;
-    String available;
+    Boolean available;
 
     public BooksDTO() {}
 
@@ -33,11 +33,11 @@ public class BooksDTO {
         this.type = type;
     }
 
-    public String getAvailable() {
+    public Boolean getAvailable() {
         return available;
     }
 
-    public void setAvailable(String available) {
+    public void setAvailable(Boolean available) {
         this.available = available;
     }
 
