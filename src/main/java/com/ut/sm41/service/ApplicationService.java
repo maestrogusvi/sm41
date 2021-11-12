@@ -21,9 +21,10 @@ public interface ApplicationService {
     SotoDTO sotoHttp() throws IOException ;
     TukDTO tukHttp() throws IOException ;
     ZapataDTO zapataHttp() throws IOException ;
+    TwitchDTO twitchHttp() throws IOException ;
 
     void testPostHttp(BeeceptorDTO beeceptorDTO) throws IOException;
-    void bautistaPostHttp(BautistaDTO bautistaDTO);
+    void bautistaPostHttp(BautistaDTO bautistaDTO) throws IOException;
     void ariasPostHttp(AriasDTO ariasDTO) throws IOException;
     void zapataPostHttp(ZapataDTO zapataDTO) throws IOException;
     void sotoPostHttp(SotoDTO sotoDTO) throws IOException;

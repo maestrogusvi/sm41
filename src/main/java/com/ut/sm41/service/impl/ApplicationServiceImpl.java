@@ -97,8 +97,10 @@ public class ApplicationServiceImpl implements ApplicationService {
         return tukDTO;
     }
 
-    public void bautistaPostHttp(BautistaDTO bautistaDTO) {
-         UserModel userModel = new UserModel();
+    public void bautistaPostHttp(BautistaDTO bautistaDTO) throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://bautistasm41.free.beeceptor.com/api/v1/bautistaPost", "GET", null, null, "json", bautistaDTO.toJson(), null));
+        UserModel userModel = new UserModel();
         userModel.setName(bautistaDTO.getName());
         userRepository.save(userModel);
     }
@@ -133,6 +135,16 @@ public class ApplicationServiceImpl implements ApplicationService {
         UserModel userModel = new UserModel();
         userModel.setName(tukDTO.getName());
         userRepository.save(userModel);
+    }
+
+    public TwitchDTO twitchHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://id.twitch.tv/oauth2/validate", "GET", null, null, "json", null, "Bearer 7cudpow4wd5m0amukxxl9b1oaxfvfr"));
+        TwitchDTO twitchDTO = new TwitchDTO();
+        twitchDTO.setClient_id(json.get("client_id").getAsString());
+        twitchDTO.setScopes(json.get("scopes").getAsString());
+        twitchDTO.setExpires_in(json.get("expires_in").getAsInt());
+        return twitchDTO;
     }
 
 }

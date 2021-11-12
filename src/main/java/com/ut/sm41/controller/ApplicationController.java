@@ -91,6 +91,9 @@ public class ApplicationController {
         applicationService.zapataPostHttp(zapataDTO);
         return zapataDTO;
     }
-
+    @GetMapping("/twitchHttp")
+    public TwitchDTO twitchHttp() throws IOException {
+        return applicationService.twitchHttp();
+    }
 }
 
