@@ -35,7 +35,7 @@ public class MercadolibreDTO {
     @Override
     public String toString() {
         return "{" +
-                "id=" + id +
+                "id=" + id + '\'' +
                 ", first_name='" + first_name + '\'' +
                 ", country_id='" + country_id + '\'' +
                 '}';
