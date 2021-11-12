@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ec78ae3-7b17-4e27-87df-710dd9f66e89" name="Changes" comment="Feat(ApplicationServiceImpl) add new impl">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/sm41_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/sm41_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/dto/MercadolibreDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/dto/MercadolibreDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/impl/ApplicationServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/impl/ApplicationServiceimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sm41.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sm41.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/HttpService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/HttpService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +41,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Matrix_Cadena" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -82,9 +84,9 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RunManager">
     <configuration name="Sm41Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -114,6 +116,7 @@
       <workItem from="1635409852825" duration="197000" />
       <workItem from="1636147653287" duration="266000" />
       <workItem from="1636635067210" duration="325000" />
+      <workItem from="1636701392137" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="feat(BatunDTO) new DTO">
       <created>1634193243238</created>
