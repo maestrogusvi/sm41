@@ -38,6 +38,11 @@ public class ApplicationController {
         return applicationService.anotaHttp();
     }
 
+    @GetMapping("/mercadoHttp")
+    public MercadoDTO mercadoHttp() throws IOException{
+        return applicationService.mercadoHttp();
+    }
+
     @PostMapping ("/anotaPostHttp")
     public AnotaDTO anotaPostHttp(@RequestBody AnotaDTO anotaDTO) throws IOException {
         return applicationService.anotaPostHttp(anotaDTO);
@@ -61,6 +66,16 @@ public class ApplicationController {
     @GetMapping("/silvaHttp")
     public SilvaDTO silvaHttp() throws IOException {
         return applicationService.silvaHttp();
+    }
+
+    @GetMapping("/twichHttp")
+    public TwichDTO twichHttp() throws IOException {
+        return applicationService.twichHttp();
+    }
+
+    @GetMapping("/cloudflareHttp")
+    public CloudflareDTO cloudflareHttp() throws IOException{
+        return applicationService.cloudflareHttp();
     }
 
     @PostMapping("/silvaPost")

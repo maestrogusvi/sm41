@@ -11,8 +11,9 @@ public interface ApplicationService {
     String firstService();
     BeeceptorDTO testHttp() throws IOException;
 
-
     AnotaDTO anotaHttp() throws IOException;
+
+    MercadoDTO mercadoHttp() throws IOException;
 
     AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException;
 
@@ -24,6 +25,10 @@ public interface ApplicationService {
 
     SilvaDTO silvaHttp() throws IOException;
 
+    TwichDTO twichHttp() throws IOException;
+
+    CloudflareDTO cloudflareHttp () throws IOException;
+
     void silvaPostHttp(SilvaDTO silvaDTO) throws IOException;
 
     CaamalDTO caamalHttp() throws IOException;
@@ -31,6 +36,5 @@ public interface ApplicationService {
     CaamalDTO caamalPostHttp(CaamalDTO caamalDTO) throws IOException;
 
     void caamalPost(CaamalDTO caamalDTO);
-
 
 }

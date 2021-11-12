@@ -1,4 +1,5 @@
 package com.ut.sm41.service.impl;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.ut.sm41.dto.*;
@@ -30,7 +31,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public BeeceptorDTO testHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41.free.beeceptor.com","GET",null,null,"json",null, null,null));
         if(json.get("code")== null){
             throw new BusinessException("Code doesn´t exist", HttpStatus.FORBIDDEN);
         }
@@ -53,9 +54,21 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
+    public MercadoDTO mercadoHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://api.mercadolibre.com/sites/MCO/search?q=samsungA30s","GET",null,null,"json",null, null,null));
+        JsonObject object = (JsonObject) json.get("paging");
+        MercadoDTO mercadoDTO = new MercadoDTO();
+        mercadoDTO.setQuery(json.get("query").getAsString());
+        mercadoDTO.setTotal(object.get("total").getAsString());
+        mercadoDTO.setPrimary_results(object.get("primary_results").getAsString());
+        return mercadoDTO;
+    }
+
+    @Override
     public AnotaDTO anotaPostHttp(AnotaDTO anotaDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/anotaPost","POST",null,null,"json",anotaDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita.free.beeceptor.com/api/v1/anotaPost","POST",null,null,"json",anotaDTO.toJson(), null,null));
         return anotaDTO;
     }
 
@@ -69,7 +82,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public VillagranDTO villagranHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com","GET",null,null,"json",null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com","GET",null,null,"json",null, null,null));
         VillagranDTO villagranDTO = new VillagranDTO();
         villagranDTO.setName(json.get("name").getAsString());
         villagranDTO.setId(json.get("id").getAsInt());
@@ -79,7 +92,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public void villagranPostHttp(VillagranDTO villagranDTO) throws IOException{
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com/api/v1/villagranPostHttp","POST",null,null,"json", villagranDTO.toJson(),null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://dinamita-sm41.free.beeceptor.com/api/v1/villagranPostHttp","POST",null,null,"json", villagranDTO.toJson(),null,null));
         UserModel userModel = new UserModel();
         userModel.setName(villagranDTO.getName());
         userRepository.save(userModel);
@@ -98,9 +111,34 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
+    public TwichDTO twichHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://api.twitch.tv/helix/channels?broadcaster_id=1000","GET",null,null,"json",null, "Bearer u4zdum0k4jo7x9d2ewnqnsxuyhoqak","o9u6pyyuvkv4b80rx9c67yxae9noqt"));
+        JsonArray jsonArray = json.get("data").getAsJsonArray();
+        JsonObject object = (JsonObject) jsonArray.get(0);
+        TwichDTO twichDTO = new TwichDTO();
+        twichDTO.setBroadcaster_login(object.get("broadcaster_login").getAsString());
+        twichDTO.setBroadcaster_language(object.get("broadcaster_language").getAsString());
+        twichDTO.setGame_name(object.get("game_name").getAsString());
+        return twichDTO;
+    }
+
+    @Override
+    public CloudflareDTO cloudflareHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://api.cloudflare.com/client/v4/user","GET",null,null,"json",null, "Bearer 3tyd-uFF_wqnFD2IKVH7x9qQXtY8YpfBelH89B33",null));
+        JsonObject object = (JsonObject) json.get("result");
+        CloudflareDTO cloudflareDTO = new CloudflareDTO();
+        cloudflareDTO.setId(object.get("id").getAsString());
+        cloudflareDTO.setEmail(object.get("email").getAsString());
+        cloudflareDTO.setUsername(object.get("username").getAsString());
+        return cloudflareDTO;
+    }
+
+    @Override
     public void silvaPostHttp(SilvaDTO silvaDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita1.free.beeceptor.com/api/v1/silvaPostHttp","POST",null,null,"json",silvaDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41-dinamita1.free.beeceptor.com/api/v1/silvaPostHttp","POST",null,null,"json",silvaDTO.toJson(), null,null));
         UserModel userModel = new UserModel();
         userModel.setName(silvaDTO.getName());
         userRepository.save(userModel);
@@ -109,7 +147,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public CaamalDTO caamalHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com", "GET", null, null, "json", null, null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com", "GET", null, null, "json", null, null,null));
         CaamalDTO caamalDTO = new CaamalDTO();
         caamalDTO.setName(json.get("name").getAsString());
         caamalDTO.setId(json.get("id").getAsInt());
@@ -121,7 +159,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public CaamalDTO caamalPostHttp(CaamalDTO caamalDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com/api/v1/caamalPostHttp", "POST", null, null, "json",caamalDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://sm41dinamita-team.free.beeceptor.com/api/v1/caamalPost", "POST", null, null, "json", caamalDTO.toJson(), null,null));
         return caamalDTO;
     }
 
