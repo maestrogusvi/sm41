@@ -23,6 +23,7 @@ public interface ApplicationService {
     ZapataDTO zapataHttp() throws IOException ;
     TwitchDTO twitchHttp() throws IOException ;
     MercadolibreDTO mercadoHttp() throws IOException;
+    FacebookDTO facebookHttp() throws IOException;
 
     void testPostHttp(BeeceptorDTO beeceptorDTO) throws IOException;
     void bautistaPostHttp(BautistaDTO bautistaDTO) throws IOException;

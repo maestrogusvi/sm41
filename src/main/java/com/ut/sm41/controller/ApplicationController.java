@@ -100,5 +100,10 @@ public class ApplicationController {
     public MercadolibreDTO mercadoHttp() throws IOException {
         return applicationService.mercadoHttp();
     }
+
+    @GetMapping("/facebookHttp")
+    public FacebookDTO facebookHttp() throws IOException {
+        return applicationService.facebookHttp();
+    }
 }
 
