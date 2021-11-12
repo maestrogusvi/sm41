@@ -104,10 +104,11 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public void martinezPostHttp(MartinezDTO martinezDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com/api/v1/martinezPostHttp","POST",null,null,"json",martinezDTO.toJSON(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://utsm41-safalu.free.beeceptor.com/api/v1/martinezPostHttp", "POST", null, null, "json", martinezDTO.toJSON(), null));
         UserModel userModel = new UserModel();
         userModel.setName(martinezDTO.getName());
         userRepository.save(userModel);
+    }
 
     @Override
     public DiscordDTO discordHttp() throws IOException {
