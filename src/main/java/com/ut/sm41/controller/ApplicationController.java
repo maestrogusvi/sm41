@@ -95,5 +95,10 @@ public class ApplicationController {
     public TwitchDTO twitchHttp() throws IOException {
         return applicationService.twitchHttp();
     }
+
+    @GetMapping("mercadoHttp")
+    public MercadolibreDTO mercadoHttp() throws IOException {
+        return applicationService.mercadoHttp();
+    }
 }
 

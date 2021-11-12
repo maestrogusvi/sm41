@@ -147,4 +147,16 @@ public class ApplicationServiceImpl implements ApplicationService {
         return twitchDTO;
     }
 
+
+    public MercadolibreDTO mercadoHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://api.mercadolibre.com/users/me", "GET", null, null, "json", null, "Bearer APP_USR-7232154862357679-111205-98c729dc628071934a734bd9e006d9fa-307407457"));
+        MercadolibreDTO mercadolibreDTO = new MercadolibreDTO();
+        mercadolibreDTO.setId(json.get("id").getAsInt());
+        mercadolibreDTO.setNickname(json.get("nickname").getAsString());
+        mercadolibreDTO.setCountry_id(json.get("country_id").getAsString());
+        mercadolibreDTO.setEmail(json.get("email").getAsString());
+        return mercadolibreDTO;
+    }
+
 }
