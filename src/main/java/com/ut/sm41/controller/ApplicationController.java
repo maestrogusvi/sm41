@@ -1,6 +1,5 @@
 package com.ut.sm41.controller;
 
-import com.google.gson.JsonObject;
 import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.service.ApplicationService;
@@ -48,9 +47,9 @@ public class ApplicationController {
         applicationService.testObject(estradaDTO);
     }
 
-    @GetMapping("/playHttp")
-    public PlayDTO playHttp() throws IOException {
-        return applicationService.playHttp();
+    @GetMapping("/booksHttp")
+    public BooksDTO booksHttp() throws IOException {
+        return applicationService.booksHttp();
     }
 
     @GetMapping("/ramirezHttp")
@@ -73,9 +72,9 @@ public class ApplicationController {
         return applicationService.hauHttp();
     }
 
-    @GetMapping("/hauPostHttp")
-    public void hauPostHttp() throws IOException {
-        applicationService.hauPostHttp();
+    @PostMapping("/hauPostHttp")
+    public HauDTO hauPostHttp(@RequestBody HauDTO hauDTO) throws IOException {
+        return applicationService.hauPostHttp(hauDTO);
     }
 
 }

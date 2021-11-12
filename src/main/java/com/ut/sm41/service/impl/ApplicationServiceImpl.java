@@ -63,14 +63,16 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
-    public PlayDTO playHttp() throws IOException {
+    public BooksDTO booksHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("","GET",null,null,"json",null, "",null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://simple-books-api.glitch.me/books","GET",null,null,"json",null, ""));
         JsonObject object = (JsonObject) json.get("result");
-        PlayDTO playDTO = new PlayDTO();
-        playDTO.setName(object.get("name").getAsString());
-        playDTO.setId(object.get("id").getAsString());
-        return playDTO;
+        BooksDTO booksDTO = new BooksDTO();
+        booksDTO.setId(object.get("id").getAsString());
+        booksDTO.setName(object.get("name").getAsString());
+        booksDTO.setType(object.get("type").getAsString());
+        booksDTO.setAvailable(object.get("available").getAsString());
+        return booksDTO;
     }
 
     @Override
@@ -110,14 +112,10 @@ public class ApplicationServiceImpl implements ApplicationService {
         return hauDTO;
     }
 
-    public void hauPostHttp() throws IOException {
+    public HauDTO hauPostHttp(HauDTO hauDTO) throws IOException {
         JsonParser parser = new JsonParser();
-        HauDTO hauDTO = new HauDTO();
-        hauDTO.setId(100);
-        hauDTO.setName("Gregorio Hau");
-        hauDTO.setStatus("Success");
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://hau.free.beeceptor.com/api/v1/hauPostHttp","POST",null,null,"json",hauDTO.toJson(), null));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://hau.free.beeceptor.com/api/v1/estradaPostHttp","POST",null,null,"json",hauDTO.toJson(), null));
+        return hauDTO;
     }
-
 
 }
