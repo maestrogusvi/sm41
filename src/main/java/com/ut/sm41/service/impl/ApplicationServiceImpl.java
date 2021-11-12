@@ -104,7 +104,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public DiscordDTO discordHttp() throws IOException {
         JsonParser parser = new JsonParser();
-        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://discord.com/api/v9/users/@me","GET",null,null,"json",null, "Bot OTA3NDc4NDA2NDcwNDY3NjU0.YYnxIA.muSk7EoP4xee9fHtLzlAWoifWq8"));
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://discord.com/api/v9/users/@me","GET",null,null,"json",null, "Bot OTA3NDc4NDA2NDcwNDY3NjU0.YYnxIA.E6v5AlHWjDFdkaaBN5aW_i-uUuQ   "));
         DiscordDTO discordDTO = new DiscordDTO();
         discordDTO.setId(json.get("id").getAsString());
         discordDTO.setUsername(json.get("username").getAsString());
