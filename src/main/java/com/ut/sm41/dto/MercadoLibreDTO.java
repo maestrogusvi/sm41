@@ -1,6 +1,6 @@
 package com.ut.sm41.dto;
 
-public class MercadoLibreDTO {
+public class  MercadoLibreDTO {
     int total;
     int primary_results;
     String query;

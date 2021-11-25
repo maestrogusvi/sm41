@@ -108,6 +108,13 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
+    public void testMyFirsObject(DominguezDTO dominguezDTO) {
+        UserModel userModel = new UserModel();
+        userModel.setName(dominguezDTO.getName());
+        userRepository.save(userModel);
+    }
+
+    @Override
     public void testMyFirsObject(CaamalDTO caamalDTO) {
         UserModel userModel = new UserModel();
         userModel.setName(caamalDTO.getName());

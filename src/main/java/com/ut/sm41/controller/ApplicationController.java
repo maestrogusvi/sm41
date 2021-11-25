@@ -64,9 +64,9 @@ public class ApplicationController {
 
     }
 
-    @GetMapping("/dominguezPostHttp")
-    public void dominguezPostHttp() throws IOException{
-        applicationService.dominguezPostHttp();
+    @GetMapping("/dominguezPost")
+    public void dominguezPostHttp(@RequestBody DominguezDTO dominguezDTO ) throws IOException{
+        applicationService.testMyFirsObject(dominguezDTO);
     }
 
 

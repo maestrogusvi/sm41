@@ -26,6 +26,8 @@ public interface ApplicationService {
 
     void dominguezPostHttp() throws IOException;
 
+    void testMyFirsObject(DominguezDTO dominguezDTO);
+
     void testMyFirsObject(CaamalDTO caamalDTO);
 
 

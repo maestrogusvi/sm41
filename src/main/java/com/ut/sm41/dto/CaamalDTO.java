@@ -1,6 +1,6 @@
 package com.ut.sm41.dto;
 
-public class CaamalDTO {
+public class   CaamalDTO {
 
     public String getMenssage;
     int id;
