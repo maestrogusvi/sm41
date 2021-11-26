@@ -28,7 +28,7 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic().disable().formLogin(AbstractHttpConfigurer::disable).csrf(AbstractHttpConfigurer::disable)
                 .cors().and()
                 .authorizeRequests(authorize -> authorize.antMatchers(URL_CONFIG_PRIVATE_AUTHETICATION).authenticated()
-                        .antMatchers("/sm41/login*").permitAll())
+                        .antMatchers("/voltux/login*").permitAll())
                 .sessionManagement(
                         sessionManagement -> sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .oauth2ResourceServer().jwt().authenticationManager(customAuthenticationManager());

@@ -19,19 +19,19 @@ import static com.ut.sm41.constants.AuthenticationConstants.URL_PRIVATE_AUTHETIC
 public class AuthenticationController {
 
     @Autowired
-    private AuthenticationService auhtenticationService;
+    private AuthenticationService authenticationService;
 
     @Autowired
     UserRepository userRepository;
 
     @PostMapping("/login")
     public ResponseEntity<GenericResponse>  login(@RequestParam("user") String username, @RequestParam("password") String pwd) {
-        return new ResponseEntity<>(new GenericResponse(200,"success",auhtenticationService.loginAuthentication(username,pwd)), HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(new GenericResponse(200,"success",authenticationService.loginAuthentication(username,pwd)), HttpStatus.ACCEPTED);
     }
 
     @PostMapping("/api/v1/user")
     public @ResponseBody UserDTO newUser(@RequestBody UserDTO user) {
-        return auhtenticationService.createUser(user);
+        return authenticationService.createUser(user);
     }
 
 

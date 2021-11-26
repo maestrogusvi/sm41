@@ -1,4 +1,4 @@
-package com.ut.sm41.model;
+package com.ut.sm41.resource;
 
 public class Tokenz {
 

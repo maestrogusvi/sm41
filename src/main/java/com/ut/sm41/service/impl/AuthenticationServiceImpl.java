@@ -6,10 +6,11 @@ import com.nimbusds.jose.shaded.json.JSONArray;
 import com.nimbusds.jose.shaded.json.JSONObject;
 import com.ut.sm41.dto.UserDTO;
 import com.ut.sm41.exception.BusinessException;
-import com.ut.sm41.model.*;
+import com.ut.sm41.model.UserModel;
 import com.ut.sm41.repository.UserRepository;
+import com.ut.sm41.resource.Tokenz;
 import com.ut.sm41.service.AuthenticationService;
-import com.ut.sm41.service.impl.UserService;
+import com.ut.sm41.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -44,14 +45,14 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public JSONObject loginAuthentication(String username, String rawPassword) {
-        Optional<User> user = userRepository.findByName(username);
+        Optional<UserModel> userModel = userRepository.findByName(username);
 
-        if (!user.isPresent()) {
+        if (!userModel.isPresent()) {
             // 401 Unauthorized
             throw new BusinessException("Access is denied due to invalid credentials.", HttpStatus.UNAUTHORIZED,401);
         }
 
-        String encodedPassword = user.get().getPassword();
+        String encodedPassword = userModel.get().getPassword();
         boolean isAuthenticated = passwordEncoder.matches(rawPassword, encodedPassword);
 
         if (!isAuthenticated) {
@@ -68,8 +69,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         JSONObject jsonObject = new JSONObject();
         JSONObject usuario = new JSONObject();
         jsonObject.put("permissions", new JSONArray());
-        usuario.put("username", user.get().getName());
-        usuario.put("role", RoleEnum.roleFromShort(user.get().getRole()));
+        usuario.put("username", userModel.get().getName());
+        usuario.put("role", userModel.get().getRole());
         jsonObject.put("user", usuario);
         jsonObject.put("token", tokenz.getToken());
         return jsonObject;
