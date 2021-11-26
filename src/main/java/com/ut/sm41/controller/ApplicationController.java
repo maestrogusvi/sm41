@@ -4,13 +4,17 @@ import com.ut.sm41.dto.*;
 import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.service.ApplicationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
+import static com.ut.sm41.constants.AuthenticationConstants.URL_PRIVATE_AUTHETICATION;
+
 @RestController
-@RequestMapping("/api/v1")
+@CrossOrigin(origins = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS })
+@RequestMapping(path = URL_PRIVATE_AUTHETICATION  + "/api/v1", produces= MediaType.APPLICATION_JSON_VALUE)
 public class ApplicationController {
 
     @Autowired

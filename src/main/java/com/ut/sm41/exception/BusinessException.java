@@ -49,6 +49,13 @@ public class BusinessException extends RuntimeException {
 		this.description = null;
 	}
 
+	public BusinessException(String message, HttpStatus status, int code) {
+		super(message);
+		this.httpStatus = status;
+		this.codigo = null;
+		this.description = null;
+	}
+
 	public static long getSerialVersionUID() {
 		return serialVersionUID;
 	}
