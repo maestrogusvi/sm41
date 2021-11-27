@@ -1,6 +1,7 @@
 package com.ut.sm41.service.impl;
 
 import com.auth0.jwt.JWT;
+import com.ut.sm41.service.enums.RoleEnum;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.nimbusds.jose.shaded.json.JSONArray;
 import com.nimbusds.jose.shaded.json.JSONObject;
@@ -9,7 +10,7 @@ import com.ut.sm41.exception.BusinessException;
 import com.ut.sm41.model.*;
 import com.ut.sm41.repository.UserRepository;
 import com.ut.sm41.service.AuthenticationService;
-import com.ut.sm41.service.impl.UserService;
+import com.ut.sm41.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -44,7 +45,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public JSONObject loginAuthentication(String username, String rawPassword) {
-        Optional<User> user = userRepository.findByName(username);
+        Optional<UserModel> user = userRepository.findByName(username);
 
         if (!user.isPresent()) {
             // 401 Unauthorized

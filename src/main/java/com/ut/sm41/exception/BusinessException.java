@@ -26,7 +26,14 @@ public class BusinessException extends RuntimeException {
 	 */
 	private final HttpStatus httpStatus;
 
-	@Override
+    public BusinessException(String message, HttpStatus httpStatus, int codigo) {
+		super(message);
+		this.httpStatus = null;
+		this.codigo = null;
+		this.description = message;
+    }
+
+    @Override
 	public String toString() {
 		return "BusinessException{" +
 				"codigo='" + codigo + '\'' +
