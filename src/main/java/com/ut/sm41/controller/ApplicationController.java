@@ -36,7 +36,7 @@ public class ApplicationController {
     }
     @PostMapping("/batunPostHttp")
     public BatunDTO batunPostHttp(@RequestBody BatunDTO batunDTO) throws IOException {
-         applicationService.batunPostHttp( batunDTO );
+         applicationService.batunMyFirstObject( batunDTO );
         return batunDTO;
     }
 
@@ -77,5 +77,10 @@ public class ApplicationController {
     @PostMapping("/cadenaPostHttp")
     public void cadenaPostHttp(@RequestBody CadenaDTO cadenaDTO) throws IOException {
        applicationService.cadenaPostHttp(cadenaDTO);
+    }
+
+    @GetMapping("/mercadolibreHttp")
+    public MercadolibreDTO mercadolibreHttp() throws IOException {
+        return applicationService.mercadolibreHttp();
     }
 }

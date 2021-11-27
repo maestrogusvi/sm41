@@ -47,10 +47,17 @@ UserRepository userRepository;
     @Override
     public BatunDTO batunPostHttp(BatunDTO batunDTO) throws IOException {
         JsonParser parser = new JsonParser();
-
         JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://batunsm41.free.beeceptor.com/api/v1/batunPost","POST",null,null,"json", batunDTO.toJson(), null));
+        UserModel userModel = new UserModel();
+        userModel.setName(batunDTO.getMessage);
+        userRepository.save(userModel);
         return batunDTO;
     }
+    @Override
+    public void batunMyFirstObject( BatunDTO batunDTO){
+
+    }
+
     @Override
     public MartinezDTO martinezHttp() throws IOException {
         JsonParser parser = new JsonParser();
@@ -131,6 +138,17 @@ UserRepository userRepository;
         userModel.setName(cadenaDTO.getName());
         userRepository.save(userModel);
 
+    }
+
+    @Override
+    public MercadolibreDTO mercadolibreHttp() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonObject json = (JsonObject) parser.parse(httpService.sendRequestHttpS("https://api.mercadolibre.com/users/1016592949","GET",null,null,"json",null, null));
+        MercadolibreDTO mercadolibreDTO = new MercadolibreDTO();
+        mercadolibreDTO.setId(json.get("id").getAsString());
+        mercadolibreDTO.setFirst_name(json.get("nickname").getAsString());
+        mercadolibreDTO.setCountry_id(json.get("country_id").getAsString());
+        return mercadolibreDTO;
     }
 }
 

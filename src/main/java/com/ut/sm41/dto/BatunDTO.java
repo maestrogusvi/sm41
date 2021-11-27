@@ -1,7 +1,7 @@
 package com.ut.sm41.dto;
 
 public class BatunDTO {
-
+    public String getMessage;
     int id;
     String name;
     String status;
