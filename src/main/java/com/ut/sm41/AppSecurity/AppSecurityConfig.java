@@ -1,4 +1,4 @@
-package com.ut.sm41.service;
+package com.ut.sm41.AppSecurity;
 
 import com.ut.sm41.service.impl.CustomAuthenticationManager;
 import org.springframework.beans.factory.annotation.Value;
