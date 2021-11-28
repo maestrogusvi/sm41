@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/sm41/api/v1")
 public class ApplicationController {
 
     @Autowired
@@ -96,7 +96,7 @@ public class ApplicationController {
         return applicationService.twitchHttp();
     }
 
-    @GetMapping("mercadoHttp")
+    @GetMapping("/mercadoHttp")
     public MercadolibreDTO mercadoHttp() throws IOException {
         return applicationService.mercadoHttp();
     }

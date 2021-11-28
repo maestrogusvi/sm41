@@ -5,12 +5,12 @@ public final class AuthenticationConstants {
     /**
      * Url authenticated
      */
-    public static final String URL_PRIVATE_AUTHETICATION = "/";
+    public static final String URL_PRIVATE_AUTHETICATION = "/sm41";
 
     /**
      * config Url access
      */
-    public static final String URL_CONFIG_PRIVATE_AUTHETICATION = "/api/v1/**";
+    public static final String URL_CONFIG_PRIVATE_AUTHETICATION = "/sm41/api/v1/**";
 
     private AuthenticationConstants() {
         throw new IllegalStateException("Constants class");

@@ -3,7 +3,7 @@ package com.ut.sm41.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 public class UserModel {
 
     @Id
