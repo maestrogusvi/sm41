@@ -9,7 +9,7 @@ import com.ut.sm41.dto.BatunDTO;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/voltux/api/v1")
 public class ApplicationController {
 
     @Autowired
@@ -19,7 +19,8 @@ public class ApplicationController {
     @ResponseBody
     public ResponseEntity<String>userHandler(BusinessException ex) {
         return new ResponseEntity<String>(ex.getMessage(), ex.getHttpStatus());
-    }
+
+     }
 
     @GetMapping("/")
     public String inicio(){
