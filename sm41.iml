@@ -23,15 +23,7 @@
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="SpringSecurityPreauthHasRoleApp" removed="false">
-          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/SpringSecurityPreauthHasRoleApp.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/Sm41Application.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/AppSecurity/SpringPreAuthorizeSecurityConfig.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/AppSecurity/AppSecurityConfig.java</file>
-          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/AppSecurity/SpringPreAuthorizeSecurityConfig.java</file>
-        </fileset>
-      </configuration>
+      <configuration />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">

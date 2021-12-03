@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8aabba7b-65b7-48de-9978-ab58a89e1c8d" name="Changes" comment="User and Roles">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_4_0_b180830_0359.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/SpringSecurityPreauthHasRoleApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/controller/PreAuthorizeRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/repository/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/UserAuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/service/impl/UserRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/sm41_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/sm41_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_5_5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_5_5.xml" afterDir="false" />
+    <list default="true" id="8aabba7b-65b7-48de-9978-ab58a89e1c8d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2021_02_16_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_10_2021_02_16_p__m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sm41.iml" beforeDir="false" afterPath="$PROJECT_DIR$/sm41.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/AppSecurity/AppSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/AppSecurity/AppSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/controller/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ut/sm41/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ut/sm41/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +33,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
