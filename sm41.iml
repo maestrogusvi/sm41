@@ -16,12 +16,22 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="entityManagerFactory" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="SpringSecurityPreauthHasRoleApp" removed="false">
+          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/SpringSecurityPreauthHasRoleApp.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/Sm41Application.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/AppSecurity/SpringPreAuthorizeSecurityConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/AppSecurity/AppSecurityConfig.java</file>
+          <file>file://$MODULE_DIR$/src/main/java/com/ut/sm41/AppSecurity/SpringPreAuthorizeSecurityConfig.java</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
@@ -136,5 +146,7 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.12.5" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.12.5" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.12.5" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: javax.xml.bind:jaxb-api:2.4.0-b180830.0359" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: javax.activation:javax.activation-api:1.2.0" level="project" />
   </component>
 </module>

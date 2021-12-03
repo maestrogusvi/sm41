@@ -17,6 +17,10 @@ public class User {
     public User() {
     }
 
+    public User(String name, String password, String role) {
+
+    }
+
 
     public int getId() {
         return id;
